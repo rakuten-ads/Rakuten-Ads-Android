@@ -1,4 +1,4 @@
-[TOP](#top)　>　[API](./README.md)　>　AdView
+[TOP](/README.md#top)　>　[API](./README.md)　>　AdView
 
 ---
 
@@ -82,7 +82,7 @@ Activity :
 ```
 
 ---
-[TOP](#top)
+[TOP](/README.md#top)
 
 ---
 LANGUAGE :

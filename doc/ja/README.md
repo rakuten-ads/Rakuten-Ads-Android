@@ -46,7 +46,7 @@ allprojects {
 ```
 
 ---
-[Public API](./api/index.md)
+[Public API](./api/README.md)
 
 [Javadoc](https://rakuten-ads.github.io/products/android/javadoc/index.html)
 

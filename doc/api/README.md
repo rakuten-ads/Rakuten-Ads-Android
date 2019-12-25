@@ -1,4 +1,4 @@
-[TOP](#top)　>　API
+[TOP](/README.md#top)　>　API
 
 ---
 
@@ -11,7 +11,7 @@ A listener for receiving notifications during the lifecycle of an ad.
 The View to display the Banner ad.
 
 ---
-[TOP](#top)
+[TOP](/README.md#top)
 
 ---
 LANGUAGE :

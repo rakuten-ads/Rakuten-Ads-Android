@@ -1,4 +1,4 @@
-[TOP](#top)　>　[API](./README.md)　>　AdStateListener
+[TOP](/README.md#top)　>　[API](./README.md)　>　AdStateListener
 
 ---
 
@@ -27,7 +27,7 @@ A listener for receiving notifications during the lifecycle of an ad.
 |void|onLeftApplication()|Called when an ad leaves the application.|
 
 ---
-[TOP](#top)
+[TOP](/README.md#top)
 
 ---
 LANGUAGE :

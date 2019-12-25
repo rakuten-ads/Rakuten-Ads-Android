@@ -1,4 +1,4 @@
-[TOP](#top)　>　Banner Ads
+[TOP](/README.md#top)　>　Banner Ads
 
 ---
 
@@ -125,7 +125,7 @@ findViewById<AdView>(R.id.adview).setAdStateListener(object: AdStateListener() {
 
 
 ---
-[TOP](/#top)
+[TOP](/README.md#top)
 
 ---
 LANGUAGE :
