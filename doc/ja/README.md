@@ -42,7 +42,7 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android:rps:0.1.0'
+  implementation 'com.rakuten.android.ads:rps:0.1.0'
 ```
 
 ---
