@@ -15,4 +15,4 @@ The View to display the Banner ad.
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/index.md)
+> [![ja](/doc/lang/ja.png)](/doc/ja/api/README.md)

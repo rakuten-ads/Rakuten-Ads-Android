@@ -52,4 +52,4 @@ allprojects {
 
 ---
 LANGUAGE :
-> [![en](../lang/en.png)](/)
+> [![en](../lang/en.png)](/README.md#top)
