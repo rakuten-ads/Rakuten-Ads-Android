@@ -47,7 +47,7 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
 
 ---
 
-[Public API](./doc/api/index.md)
+[Public API](./doc/api/README.md)
 
 [Javadoc](https://rakuten-ads.github.io/products/android/javadoc/index.html)
 
