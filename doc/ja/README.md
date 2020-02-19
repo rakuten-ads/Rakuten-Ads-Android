@@ -8,6 +8,7 @@
 ### 広告フォーマット
 
 * **[バナー広告](./bannerads/README.md)**
+* **[App to App](./a2a/README.md)**
 
 ---
 # はじめに

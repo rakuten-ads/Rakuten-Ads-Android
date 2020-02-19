@@ -8,6 +8,7 @@
 ### Ad Formats
 
 * **[Banner](./doc/bannerads/README.md)**
+* **[App to App](./doc/a2a/README.md)**
 
 ---
 # Get Started
