@@ -42,19 +42,9 @@ allprojects {
 Next, open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```groovy
-  implementation 'com.rakuten.android.ads:rps:0.1.3'
+  implementation 'com.rakuten.android.ads:rps:0.2.0'
 ```
 
-## Proguard Setting
-
-Add below setting to proguard setting.
-```
-# Rakuten Ads Android
--dontwarn com.rakuten.android.ads.**
--keep class com.rakuten.android.ads.** { *; }
--keep class rakutenads.** { *; }
--keep class com.google.android.gms.ads.identifier.* { *; }
-```
 
 ---
 
