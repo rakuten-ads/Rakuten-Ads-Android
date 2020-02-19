@@ -16,6 +16,9 @@ Needs add below two implementations to the 'dependencies' of `build.gradle` file
 
 The implementation method is the same as the banner. Please [see it](../bannerads/README.md).
 
+
+<br><br><br><br><br>
+
 ---
 [TOP](/README.md#top)
 
