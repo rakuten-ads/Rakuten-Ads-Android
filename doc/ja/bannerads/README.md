@@ -50,24 +50,25 @@ import com.rakuten.android.ads.rps.AdView;
 import com.rakuten.android.ads.rps.AdStateListener;
 ...
 
-((AdView) findViewById(R.id.adview))
-          .setAdStateListener(new AdStateListener() {
-                @Override
-                public void onLoadSuccess() {
-                      // 広告が読み込みが成功した場合
-                }
+AdView ad = ((AdView) findViewById(R.id.adview))
+                .setAdStateListener(new AdStateListener() {
+                      @Override
+                      public void onLoadSuccess() {
+                            // 広告が読み込みが成功した場合
+                      }
 
-                @Override
-                public void onLoadFailure(@Nullable View v) {
-                      // 広告の読み込みが失敗した場合
-                }
+                      @Override
+                      public void onLoadFailure(@Nullable View adView) {
+                            // 広告の読み込みが失敗した場合
+                            adView.setVisibility(View.GONE);
+                      }
 
-                @Override
-                public void onClick(@Nullable View v) {
-                      // 広告がクリックされた場合
-                }
-          })
-          .show();
+                      @Override
+                      public void onClick(@Nullable View adView) {
+                            // 広告がクリックされた場合
+                      }
+                });
+ad.show();
 ```
 
 **AdStateListener**<br>
@@ -104,23 +105,29 @@ import com.rakuten.android.ads.rps.AdView
 import com.rakuten.android.ads.rps.AdStateListener
 ...
 
-findViewById<AdView>(R.id.adview).setAdStateListener(object: AdStateListener() {
+findViewById<AdView>(R.id.adview)
+.apply {
+      adStateListener = object: AdStateListener() {
 
             override fun onLoadSuccess() {
                 // 広告の読み込みが成功した場合
 
             }
 
-            override fun onLoadFailure(v: View?) {
+            override fun onLoadFailure(adView: View?) {
                 // 広告の読み込みが失敗した場合
-
+                adView?.let {
+                    it.visibility = View.GONE
+                }
             }
 
-            override fun onClick(v: View?) {
+            override fun onClick(adView: View?) {
                 // 広告がクリックされた場合
 
             }
-        }).show()
+      }
+}
+.show()
 ```
 
 

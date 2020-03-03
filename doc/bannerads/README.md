@@ -51,24 +51,25 @@ Below sample code is to use an [`AdStateListener`](../api/AdStateListener.md). S
 import com.rakuten.android.ads.rps.AdStateListener;
 ...
 
-((AdView) findViewById(R.id.adview))
-          .setAdStateListener(new AdStateListener() {
-                @Override
-                public void onLoadSuccess() {
-                      // Code to be executed when an ad finishes loading successfully.
-                }
+AdView ad = ((AdView) findViewById(R.id.adview))
+                .setAdStateListener(new AdStateListener() {
+                      @Override
+                      public void onLoadSuccess() {
+                            // Code to be executed when an ad finishes loading successfully.
+                      }
 
-                @Override
-                public void onLoadFailure(@Nullable View v) {
-                      // Code to be executed when an ad finishes loading failure.
-                }
+                      @Override
+                      public void onLoadFailure(@Nullable View adView) {
+                            // Code to be executed when an ad finishes loading failure.
+                            adView.setVisibility(View.GONE);
+                      }
 
-                @Override
-                public void onClick(@Nullable View v) {
-                      // Code to be executed when clicked an ad.
-                }
-          })
-          .show();
+                      @Override
+                      public void onClick(@Nullable View adView) {
+                            // Code to be executed when clicked an ad.
+                      }
+                });
+ad.show();
 ```
 
 **AdStateListener**<br>
@@ -104,23 +105,29 @@ import com.rakuten.android.ads.rps.AdView
 import com.rakuten.android.ads.rps.AdStateListener
 ...
 
-findViewById<AdView>(R.id.adview).setAdStateListener(object: AdStateListener() {
+findViewById<AdView>(R.id.adview)
+.apply {
+      adStateListener = object: AdStateListener() {
 
             override fun onLoadSuccess() {
-                // Code to be executed when an ad finishes loading successfully.
+                // Code to be executed when an ad finishes loading successfully
 
             }
 
-            override fun onLoadFailure(v: View?) {
+            override fun onLoadFailure(adView: View?) {
                 // Code to be executed when an ad finishes loading failure.
-
+                adView?.let {
+                    it.visibility = View.GONE
+                }
             }
 
-            override fun onClick(v: View?) {
+            override fun onClick(adView: View?) {
                 // Code to be executed when clicked an ad.
 
             }
-        }).show()
+      }
+}
+.show()
 ```
 
 
