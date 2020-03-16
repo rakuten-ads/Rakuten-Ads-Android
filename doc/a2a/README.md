@@ -4,6 +4,12 @@
 
 # App to App
 
+## Objective
+
+How to activate the A2A module is explained in this document.<br>
+The activation of this module enables you to have new sources of revenue through new ad formats.<br>
+Just in case you have a question related to the business background, please feel free to contact with our sales person in charge.
+
 ## Import the AppToApp SDK
 
 Needs add below two implementations to the 'dependencies' of `build.gradle` file.
