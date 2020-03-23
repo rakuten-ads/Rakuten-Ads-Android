@@ -2,7 +2,7 @@
 
 ---
 
-# RPS Public API
+# RUNA Public API
 
 * ### [AdStateListener](./AdStateListener.md)
 > 広告のライフサイクルを通知するリスナー

@@ -5,7 +5,7 @@
 # AdStateListener
 
 [java.lang.Object](https://developer.android.com/reference/java/lang/Object.html)<br>
-&nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.rps.AdStateListener
+&nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdStateListener
 
 広告のライフサイクルイベントを通知するリスナー
 

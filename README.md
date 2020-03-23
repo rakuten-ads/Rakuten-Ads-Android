@@ -3,7 +3,7 @@
 [![Platform](http://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat)](https://developer.android.com)
 [![Android](http://img.shields.io/badge/support-API_Level_15+-blue.svg?style=flat)](https://developer.android.com)
 
-# RakutenPublisherService Android SDK
+# Rakuten Unified Ads (RUNA) SDK Android
 
 ### Ad Formats
 
@@ -23,7 +23,7 @@
 
 <div id="import_sdk"></div>
 
-## Import the RPS Ads SDK
+## Import the RUNA SDK
 
 Apps can import the RDN Mobile Ads SDK with a Gradle dependency.In order to use that repository, you need to reference it in the app's project-level `build.gradle` file. Open yours and look for an allprojects section:
 
@@ -43,7 +43,7 @@ allprojects {
 Next, open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```groovy
-  implementation 'com.rakuten.android.ads:rps:0.2.0'
+  implementation 'com.rakuten.android.ads:runa:0.2.0'
 ```
 
 

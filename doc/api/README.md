@@ -2,7 +2,7 @@
 
 ---
 
-# RPS Public API
+# RUNA Public API
 
 * ### [AdStateListener](./AdStateListener.md)
 A listener for receiving notifications during the lifecycle of an ad.

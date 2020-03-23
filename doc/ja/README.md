@@ -3,7 +3,7 @@
 [![Platform](http://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat)](https://developer.android.com)
 [![Android](http://img.shields.io/badge/support-API_Level_15+-blue.svg?style=flat)](https://developer.android.com)
 
-# RakutenPublisherService Android SDK
+# Rakuten Unified Ads (RUNA) SDK Android
 
 ### 広告フォーマット
 
@@ -23,7 +23,7 @@
 
 <div id="import_sdk"></div>
 
-## RDN Ads SDKのインポート
+## RUNA SDKのインポート
 
 Gradleの依存設定でアプリにインポートすることが出来ます。プロジェクト直下の`build.gradle`のrepositoriesに以下のように参照先を追加する必要があります。
 
@@ -43,7 +43,7 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:rps:0.2.0'
+  implementation 'com.rakuten.android.ads:runa:0.2.0'
 ```
 
 ---
