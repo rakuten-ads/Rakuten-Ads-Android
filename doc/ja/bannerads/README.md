@@ -136,4 +136,4 @@ findViewById<AdView>(R.id.adview)
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/bannerads.md)
+> [![en](/doc/lang/en.png)](/doc/bannerads/README.md)
