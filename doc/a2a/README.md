@@ -14,7 +14,7 @@ Just in case you have a question related to the business background, please feel
 
 Needs add below an implementation to the 'dependencies' of `build.gradle` file.
 ```gradle
-  implementation 'com.rakuten.android.ads:rps:0.2.0'
+  implementation 'com.rakuten.android.ads:runa:0.2.0'
 ```
 
 ## Implementation

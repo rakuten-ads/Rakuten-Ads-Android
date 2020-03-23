@@ -4,7 +4,7 @@
 
 # AdView
 [android.view.ViewGroup](https://developer.android.com/reference/android/view/ViewGroup)<br>
-&nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.rps.AdView
+&nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdView
 
 The View to display the Banner ad. An ad spot ID must be set via xml layout or programatically, before call `show()`.
 
@@ -54,7 +54,7 @@ main_layout.xml :
               android:gravity="center_horizontal"
               android:orientation="vertical">
 
-              <com.rakuten.android.ads.rps.AdView
+              <com.rakuten.android.ads.runa.AdView
                               xmlns:ads="http://schemas.android.com/apk/res-auto"
                               android:id="@+id/adview"
                               android:layout_width="wrap_content"

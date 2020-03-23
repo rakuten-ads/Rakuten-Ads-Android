@@ -11,7 +11,7 @@
 
 R.layout.activity_main
 ```xml
-  <com.rakuten.android.ads.rps.AdView
+  <com.rakuten.android.ads.runa.AdView
         android:id="@+id/adview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@ R.layout.activity_main
 
 MainActivity.java
 ```java
-import com.rakuten.android.ads.rps.AdView;
+import com.rakuten.android.ads.runa.AdView;
 
     ...
     @Overide
@@ -48,7 +48,7 @@ To further customize the behavior of you ad, you can hook a number of events in 
 Below sample code is to use an [`AdStateListener`](../api/AdStateListener.md). Simply call the `setAdStateListener` method of AdView.
 
 ```java
-import com.rakuten.android.ads.rps.AdStateListener;
+import com.rakuten.android.ads.runa.AdStateListener;
 ...
 
 AdView ad = ((AdView) findViewById(R.id.adview))
@@ -87,7 +87,7 @@ ad.show();
 
 MainActivity.kt
 ```kotlin
-import com.rakuten.android.ads.rps.AdView
+import com.rakuten.android.ads.runa.AdView
 
     ...
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -102,7 +102,7 @@ import com.rakuten.android.ads.rps.AdView
 #### Hook ad states
 
 ```kotlin
-import com.rakuten.android.ads.rps.AdStateListener
+import com.rakuten.android.ads.runa.AdStateListener
 ...
 
 findViewById<AdView>(R.id.adview)

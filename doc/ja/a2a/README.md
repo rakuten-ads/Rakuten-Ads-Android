@@ -14,7 +14,7 @@ A2Aモジュールは、その柔軟な広告フォーマットを通じて、�
 
 以下を`build.gradle`のdependenciesに追加してください。
 ```gradle
-  implementation 'com.rakuten.android.ads:rps:0.2.0'
+  implementation 'com.rakuten.android.ads:runa:0.2.0'
 ```
 
 ## 実装
