@@ -12,10 +12,9 @@ Just in case you have a question related to the business background, please feel
 
 ## Import the AppToApp SDK
 
-Needs add below two implementations to the 'dependencies' of `build.gradle` file.
+Needs add below an implementation to the 'dependencies' of `build.gradle` file.
 ```gradle
   implementation 'com.rakuten.android.ads:rps:0.2.0'
-  implementation 'com.rakuten.android.ads:rps-a2a:0.1.0'
 ```
 
 ## Implementation
