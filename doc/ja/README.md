@@ -8,6 +8,7 @@
 ### 広告フォーマット
 
 * **[バナー広告](./bannerads/README.md)**
+* **[App to App](./a2a/README.md)**
 
 ---
 # はじめに
@@ -42,18 +43,7 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:rps:0.1.3'
-```
-
-## Proguardの設定
-
-以下の内容をProguard設定に追加ください。
-```
-# Rakuten Ads Android
--dontwarn com.rakuten.android.ads.**
--keep class com.rakuten.android.ads.** { *; }
--keep class rakutenads.** { *; }
--keep class com.google.android.gms.ads.identifier.* { *; }
+  implementation 'com.rakuten.android.ads:rps:0.2.0'
 ```
 
 ---
