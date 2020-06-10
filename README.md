@@ -43,7 +43,7 @@ allprojects {
 Next, open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:0.2.2'
+  implementation 'com.rakuten.android.ads:runa:0.3.0'
 ```
 
 
