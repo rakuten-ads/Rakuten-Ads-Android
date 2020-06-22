@@ -43,8 +43,18 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:0.3.0'
+  implementation 'com.rakuten.android.ads:runa:1.0.0'
 ```
+
+## 依存関係
+
+本SDKでは以下のライブラリを使用しています。
+
+* com.google.code.gson:gson:2.8.2
+* com.google.android.gms:play-services-ads-identifier:17.0.0
+
+> ※ 既にご利用され重複する場合には[`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-)で除外してください。
+
 
 ---
 [Public API](./api/README.md)

@@ -4,10 +4,40 @@
 
 # バナー広告
 
+* **[広告サイズを指定する](#specify_adsize)**
+* **[レイアウトXMLにAdViewを定義する](#define_adview_xml)**
 * **[Javaによる実装](#implement_java)**
 * **[Kotlinによる実装](#implement_kotlin)**
 
 ---
+
+<div id="specify_adsize"></div>
+
+#### 広告サイズを指定する
+
+`AdView`のサイズを指定するには `AdSize`を指定する必要があります。
+
+enum class<br>
+**com.rakuten.android.ads.runa.AdSize**
+
+|種類|詳細|
+|:---|:---|
+|DEFAULT|ダッシュボードで設定したサイズ（AdSizeを指定しない場合は、DEFAULTで表示されます。）|
+|ASPECT_FIT|画面横幅サイズに自動調整したサイズ|
+|CUSTOM|任意のサイズに調整することができます。<br>但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
+
+`AdSize`は以下のように指定することができます。
+
+```java
+AdView adView = new AdView(context);
+adView.setAdSpotId(123);
+adView.setAdViewSize(AdSize.ASPECT_FIT);
+adView.show();
+```
+
+<div id="define_adview_xml"></div>
+
+#### レイアウトXMLにAdViewを定義する
 
 R.layout.activity_main
 ```xml

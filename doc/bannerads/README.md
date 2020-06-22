@@ -4,10 +4,39 @@
 
 # Banner Ad
 
-* **[Implement via Java](#implement_java)**
-* **[Implement via Kotlin](#implement_kotlin)**
+* **[Specify Ad Size](#specify_adsize)**
+* **[Define AdView in layout xml](#define_adview_xml)**
+* **[Implement by Java](#implement_java)**
+* **[Implement by Kotlin](#implement_kotlin)**
 
 ---
+
+<div id="specify_adsize"></div>
+
+#### Specify ad size
+
+You need to specify `AdSize` to adjust the size of the `AdView`.<br>
+AdSize is enum class.
+
+**com.rakuten.android.ads.runa.AdSize**
+
+|Size Type|Desciption|
+|:---|:---|
+|DEFAULT|The ad size set in DashBoard.|
+|ASPECT_FIT|Fit in display width.|
+|CUSTOM|Can be specified to any size.<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
+
+Set this AdSize to setAdViewSize of AdView.
+
+```java
+AdView adView = new AdView(context);
+adView.setAdSpotId(123);
+adView.setAdViewSize(AdSize.ASPECT_FIT);
+```
+
+<div id="define_adview_xml"></div>
+
+#### Define AdView in layout xml
 
 R.layout.activity_main
 ```xml
@@ -15,7 +44,8 @@ R.layout.activity_main
         android:id="@+id/adview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:adSpotId="@string/ad_spotid" />
+        app:adSpotId="@string/ad_spotid"
+        app:adSpotSize="AspectFit" />
 ```
 > * `app:adSpotId` : It is unique identifier what is issued per position where ad is to be displayed.
 >
@@ -40,7 +70,6 @@ import com.rakuten.android.ads.runa.AdView;
     ...  
 ```
 
-
 #### Hook ad states
 
 To further customize the behavior of you ad, you can hook a number of events in the AdView's each one. You can catch for each events through an [`AdStateListener`](../api/AdStateListener.md) class.
@@ -59,7 +88,7 @@ AdView ad = ((AdView) findViewById(R.id.adview))
                       }
 
                       @Override
-                      public void onLoadFailure(@Nullable View adView) {
+                      public void onLoadFailure(@Nullable View adView, ErrorState errorState) {
                             // Code to be executed when an ad finishes loading failure.
                             adView.setVisibility(View.GONE);
                       }
@@ -114,7 +143,7 @@ findViewById<AdView>(R.id.adview)
 
             }
 
-            override fun onLoadFailure(adView: View?) {
+            override fun onLoadFailure(adView: View?, errorState: ErrorState) {
                 // Code to be executed when an ad finishes loading failure.
                 adView?.let {
                     it.visibility = View.GONE
