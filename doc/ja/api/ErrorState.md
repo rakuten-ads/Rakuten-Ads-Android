@@ -25,4 +25,4 @@ public enum class **ErrorState** extends [Object](https://developer.android.com/
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/ErrorState.md)
+> [![ja](/doc/lang/ja.png)](/doc/api/ErrorState.md)

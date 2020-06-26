@@ -15,9 +15,9 @@ public enum class **AdSize** extends [Object](https://developer.android.com/refe
 
 |Parameter|Description|
 |:---|:---|
-|DEFAULT|The ad size that set in DashBoard.|
-|ASPECT_FIT|The ad is automatically adjusted to the screen width without changing the aspect ratio of the ad.|
-|CUSTOM|Can be specified to any size(pixel).<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < CUSTOM < ASPECT_FIT)|
+|DEFAULT|ダッシュボードで設定した広告サイズ|
+|ASPECT_FIT|デフォルトの広告サイズの比率で画面横幅に合わせたサイズ|
+|CUSTOM|標準サイズが下限、画面横幅サイズを上限に任意のサイズ(px)を指定することができます。但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
 
 
 ---
@@ -25,4 +25,4 @@ public enum class **AdSize** extends [Object](https://developer.android.com/refe
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdSize.md)
+> [![ja](/doc/lang/ja.png)](/doc/api/AdSize.md)
