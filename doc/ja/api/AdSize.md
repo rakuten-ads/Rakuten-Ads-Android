@@ -25,4 +25,4 @@ public enum class **AdSize** extends [Object](https://developer.android.com/refe
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/ErrorState.md)
+> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdSize.md)

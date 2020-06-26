@@ -25,4 +25,4 @@ An enum class for adjusting the size of the [AdView](./AdView.md).
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/ErrorState.md)
+> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdSize.md)
