@@ -59,7 +59,7 @@ allprojects {
 ---
 [Public API](./api/README.md)
 
-[Javadoc](https://rakuten-ads.github.io/products/android/javadoc/index.html)
+[Javadoc](https://rakuten-ads.github.io/products/runa/android/javadoc/index.html)
 
 ---
 LANGUAGE :

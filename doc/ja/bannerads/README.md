@@ -103,10 +103,11 @@ ad.show();
 
 **AdStateListener**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;public abstract class
-* `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。
+* `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。<br><br>
 * `onLoadFailure` : 広告の読み込みが失敗した場合、このメソッドが呼ばれます。また、失敗した場合にAdViewは`View.INVISIBLE`となります。必要に応じてView.GONEにご設定ください。
-* `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。
-* `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。
+  * [`ErrorState`](../api/ErrorState.md) : 広告リクエストでエラーが発生した時のステータスを示します。<br><br>
+* `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。<br><br>
+* `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。<br><br>
 * `onAdClose()` : 広告の目的のページ（或いはアプリ）からアプリに戻ってきた際にこのメソッドが呼ばれます。
 
 

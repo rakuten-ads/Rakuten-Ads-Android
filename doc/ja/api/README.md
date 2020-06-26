@@ -10,6 +10,12 @@
 * ### [AdView](./AdView.md)
 > バナー広告を表示するためのViewオブジェクト
 
+* ### [AdSize](./AdSize.md)
+> AdViewのサイズを定義するためのenumクラス
+
+* ### [ErrorState](./ErrorState.md)
+> 広告リクエストで何らかのエラーが発生した際のステータス
+
 
 ---
 [TOP](../#top)
