@@ -24,7 +24,7 @@ enum class<br>
 |:---|:---|
 |DEFAULT|ダッシュボードで設定したサイズ（AdSizeを指定しない場合は、DEFAULTで表示されます。）|
 |ASPECT_FIT|画面横幅サイズに自動調整したサイズ|
-|CUSTOM|任意のサイズに調整することができます。<br>但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
+|CUSTOM|標準サイズを下限に、画面横幅サイズを上限とした任意のサイズ(px)を指定することができます。<br>但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
 
 `AdSize`は以下のように指定することができます。
 
@@ -103,10 +103,11 @@ ad.show();
 
 **AdStateListener**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;public abstract class
-* `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。
+* `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。<br><br>
 * `onLoadFailure` : 広告の読み込みが失敗した場合、このメソッドが呼ばれます。また、失敗した場合にAdViewは`View.INVISIBLE`となります。必要に応じてView.GONEにご設定ください。
-* `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。
-* `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。
+  * [`ErrorState`](../api/ErrorState.md) : 広告リクエストでエラーが発生した時のステータスを示します。<br><br>
+* `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。<br><br>
+* `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。<br><br>
 * `onAdClose()` : 広告の目的のページ（或いはアプリ）からアプリに戻ってきた際にこのメソッドが呼ばれます。
 
 

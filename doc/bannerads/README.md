@@ -103,10 +103,11 @@ ad.show();
 
 **AdStateListener**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;public abstract class
-* `onLoadSuccess` : It is called this method, if it is loaded an advertise successfully.
+* `onLoadSuccess` : It is called this method, if it is loaded an advertise successfully.<br><br>
 * `onLoadFailure` : It is called this method, in case of loaded an advertise failure. And if it failed, AdView will be hidden(`View.INVISIBLE`) automatically.
-* `onClick` : It is called this method, if it is clicked an advertise. &nbsp; (e.g. You use this method in case of to detect that clicked ad.)
-* `onLeftApplication` : This method is called after `onClick()` when a user click opens browser(transition to ad's destination URL).
+  * [`ErrorState`](../api/ErrorState.md) : Indicates the status when an error occurred in AdRequest.<br><br>
+* `onClick` : It is called this method, if it is clicked an advertise. &nbsp; (e.g. You use this method in case of to detect that clicked ad.)<br><br>
+* `onLeftApplication` : This method is called after `onClick()` when a user click opens browser(transition to ad's destination URL).<br><br>
 * `onAdClose()` : When a user returns to the app after viewing an ad's destination URL, this method is called.
 
 ---
