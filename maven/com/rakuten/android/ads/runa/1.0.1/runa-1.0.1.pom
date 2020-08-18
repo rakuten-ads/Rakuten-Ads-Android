@@ -16,5 +16,10 @@
       <artifactId>runa-common</artifactId>
       <version>1.0.0</version>
     </dependency>
+    <dependency>
+      <groupId>com.rakuten.android.ads</groupId>
+      <artifactId>runa-om</artifactId>
+      <version>0.2.0</version>
+    </dependency>
   </dependencies>
 </project>
