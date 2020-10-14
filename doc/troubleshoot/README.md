@@ -11,7 +11,7 @@
 
 ## 01. Ads won't appear on emulator
 
-**If `AdStateListener` returns onLoadSuccess() but couldn't display ads, try below.**
+**If `AdStateListener` calls back `onLoadSuccess()` but Ads does not appear, &nbsp; please try below.**
 
 Make sure the version of [`Google Chrome`](https://play.google.com/store/apps/details?id=com.android.chrome) on emulator. And update to the latest version if it was old.
 
