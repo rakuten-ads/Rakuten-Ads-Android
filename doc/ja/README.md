@@ -55,7 +55,7 @@ allprojects {
 
 ## ビルド環境
 
-Gradle build toolsは3.5.0以上をご利用ください。 
+Gradle build toolsは3.5.0以上をご利用ください。
 
 * com.android.tools.build:gradle:3.5.0+
 
@@ -66,6 +66,8 @@ Gradle build toolsは3.5.0以上をご利用ください。
 [Public API](./api/README.md)
 
 [Javadoc](https://rakuten-ads.github.io/products/runa/android/javadoc/index.html)
+
+[トラブルシューティング](./troubleshoot/README.md)
 
 ---
 LANGUAGE :

@@ -62,8 +62,10 @@ main_layout.xml :
                               ads:adSpotId="1" />
 </LinearLayout>
 ```
+
 <br>
 Activity :
+
 ```java
   @Override
   public void onCreate(Bundle savedInstanceState) {
