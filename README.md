@@ -67,6 +67,8 @@ Please user version 3.5.0 or higher for Gradle build tools.
 
 [Javadoc](https://rakuten-ads.github.io/products/runa/android/javadoc/index.html)
 
+[Troubleshooting](./doc/troubleshoot/README.md)
+
 ---
 LANGUAGE :
 > [![jp](./doc/lang/ja.png)](./doc/ja)

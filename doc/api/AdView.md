@@ -47,6 +47,7 @@ Related method : setAdSpotId(String adSpotId)
 ### Sample Code
 
 main_layout.xml :
+
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
@@ -62,8 +63,10 @@ main_layout.xml :
                               ads:adSpotId="1" />
 </LinearLayout>
 ```
+
 <br>
 Activity :
+
 ```java
   @Override
   public void onCreate(Bundle savedInstanceState) {
