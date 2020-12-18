@@ -2,7 +2,7 @@
 
 ---
 
-# Banner Ad
+# Banner Ads
 
 * **[Specify Ad Size](#specify_adsize)**
 * **[Define AdView in layout xml](#define_adview_xml)**
@@ -163,6 +163,8 @@ findViewById<AdView>(R.id.adview)
 
 ---
 [TOP](/README.md#top)
+
+[BannerAds Extension](/doc/extension/README.md)
 
 ---
 LANGUAGE :
