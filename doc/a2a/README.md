@@ -12,15 +12,27 @@ Just in case you have a question related to the business background, please feel
 
 ## Import the AppToApp SDK
 
-Needs add below an implementation to the 'dependencies' of `build.gradle` file.
+Needs add below an implementation to the 'dependencies' of `build.gradle` file.<br>
+In addition to the runa module, add the runa-a2a module.
+
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:0.2.0'
+  implementation 'com.rakuten.android.ads:runa:X.X.X'
+  implementation 'com.rakuten.android.ads:runa-a2a:0.2.0'
 ```
 
 ## Implementation
 
-The implementation method is the same as the banner. Please [see it](../bannerads/README.md).
+### The targeting by keyword
 
+Sets keywords by `setKeywords()` method.
+
+```kotlin
+    AdView(context).apply {
+        setKeywords(Keywords("PC", "MAC"))
+    }.show()
+```
+
+The other implementation method is the same as the banner. Please [see it](../bannerads/README.md).
 
 <br><br><br><br><br>
 

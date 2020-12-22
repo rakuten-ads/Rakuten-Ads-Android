@@ -12,14 +12,27 @@ A2Aモジュールは、その柔軟な広告フォーマットを通じて、�
 
 ## AppToApp SDKのインポート
 
-以下を`build.gradle`のdependenciesに追加してください。
+以下を`build.gradle`のdependenciesに追加してください。<br>
+runaモジュールに加え、runa-a2aモジュールを追加します。
+
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:0.2.0'
+  implementation 'com.rakuten.android.ads:runa:X.X.X'
+  implementation 'com.rakuten.android.ads:runa-a2a:0.2.0'
 ```
 
 ## 実装
 
-実装方法は[バナー広告](../bannerads/README.md)と同様となっていますので、そちらをご参照ください。
+### キーワードによるターゲティング
+
+`setKeywords()`メソッドでキーワードを指定します。
+
+```kotlin
+    AdView(context).apply {
+        setKeywords(Keywords("PC", "MAC"))
+    }.show()
+```
+
+その他の実装方法は[バナー広告](../bannerads/README.md)と同様となっていますので、そちらをご参照ください。
 
 
 <br><br><br><br><br>
