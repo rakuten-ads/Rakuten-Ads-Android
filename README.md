@@ -61,6 +61,11 @@ Please user version 3.5.0 or higher for Gradle build tools.
 
 > ※ Exclude it with [`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-) if it is already used and duplicated.
 
+## Implementation
+
+* **[Banner](./doc/bannerads/README.md)**
+* **[App to App](./doc/a2a/README.md)**
+
 ---
 
 [Public API](./doc/api/README.md)

@@ -4,27 +4,32 @@
 
 # バナー広告
 
-* **[広告サイズを指定する](#specify_adsize)**
-* **[レイアウトXMLにAdViewを定義する](#define_adview_xml)**
-* **[Javaによる実装](#implement_java)**
-* **[Kotlinによる実装](#implement_kotlin)**
+* **[1.広告サイズを指定する](#specify_adsize)**
+* **[2.レイアウトXMLにAdViewを定義する](#define_adview_xml)**
+* **[3.Javaによる実装](#implement_java)**
+* **[4.Kotlinによる実装](#implement_kotlin)**
+* **[5.複数のAdView間での重複排除](#avoid_duplication)**
 
 ---
 
 <div id="specify_adsize"></div>
 
-#### 広告サイズを指定する
+### 1. 広告サイズを指定する
 
 `AdView`のサイズを指定するには `AdSize`を指定する必要があります。
 
 enum class<br>
-**com.rakuten.android.ads.runa.AdSize**
+
+<details>
+<summary>com.rakuten.android.ads.runa.AdSize</summary>
 
 |種類|詳細|
 |:---|:---|
 |DEFAULT|ダッシュボードで設定したサイズ（AdSizeを指定しない場合は、DEFAULTで表示されます。）|
 |ASPECT_FIT|画面横幅サイズに自動調整したサイズ|
 |CUSTOM|標準サイズを下限に、画面横幅サイズを上限とした任意のサイズ(px)を指定することができます。<br>但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
+
+</details>
 
 `AdSize`は以下のように指定することができます。
 
@@ -37,7 +42,7 @@ adView.show();
 
 <div id="define_adview_xml"></div>
 
-#### レイアウトXMLにAdViewを定義する
+### 2. レイアウトXMLにAdViewを定義する
 
 R.layout.activity_main
 ```xml
@@ -52,6 +57,8 @@ R.layout.activity_main
 > * ※ `layout_width`と`layout_height`には`wrap_content`"をセットしてください。AdViewが管理画面で設定した広告枠サイズに応じてサイズを適応します。
 
 <div id="implement_java"></div>
+
+### 3. Javaによる実装
 
 [![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
 
@@ -114,6 +121,8 @@ ad.show();
 ---
 <div id="implement_kotlin"></div>
 
+### 4. Kotlinによる実装
+
 [![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 MainActivity.kt
@@ -133,6 +142,7 @@ import com.rakuten.android.ads.runa.AdView
 #### 広告の状態を検知する
 
 ```kotlin
+import com.rakuten.android.ads.runa.AdView
 import com.rakuten.android.ads.runa.AdStateListener
 ...
 
@@ -160,6 +170,40 @@ findViewById<AdView>(R.id.adview)
 }
 .show()
 ```
+
+### 5. 複数のAdView間での重複排除
+
+同一の画面にAdViewを複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
+以下は、AdView1とAdView2で表示コンテンツの重複を回避する実装例となります。<br>
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.AdStateListener
+...
+
+val adSession = RunaAdSession()
+
+val adView1 = findViewById<AdView>(R.id.adview1)
+val adView2 = findViewById<AdView>(R.id.adview2)
+
+adSession.bind(adView1, adView2)
+
+
+adView1.apply {
+      adStateListener = object: AdStateListener() {
+            override fun onLoadSuccess() {
+                adView2.show()
+            }
+            override fun onLoadFailure(adView: View?) {
+                adView2.show()
+            }
+      }
+}.show()
+```
+
+> ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
+
+
 
 
 ---

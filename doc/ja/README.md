@@ -61,6 +61,11 @@ Gradle build toolsは3.5.0以上をご利用ください。
 
 > ※ 既にご利用され重複する場合には[`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-)で除外してください。
 
+## 実装
+
+* **[バナー広告](./bannerads/README.md)**
+* **[App to App](./a2a/README.md)**
+
 
 ---
 [Public API](./api/README.md)
