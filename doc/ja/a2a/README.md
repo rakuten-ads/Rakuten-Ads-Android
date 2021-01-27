@@ -1,4 +1,4 @@
-[TOP](/README.md#top)　>　App to App
+[TOP](../#top)　>　App to App
 
 ---
 
@@ -16,9 +16,17 @@ A2Aモジュールは、その柔軟な広告フォーマットを通じて、�
 runaモジュールに加え、runa-a2aモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:X.X.X'
-  implementation 'com.rakuten.android.ads:runa-a2a:0.2.0'
+implementation 'com.rakuten.android.ads:runa:1.2.0'
+implementation 'com.rakuten.android.ads:runa-a2a:1.0.0'
 ```
+
+### モジュール間の対応バージョン
+
+|runa-extension|runa|
+|:---:|:---:|
+|〜 v0.2.0|〜v1.1.5|
+|v1.0.0〜|v1.2.0〜|
+
 
 ## 実装
 

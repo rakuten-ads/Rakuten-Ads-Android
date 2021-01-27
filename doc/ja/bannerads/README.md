@@ -209,6 +209,8 @@ adView1.apply {
 ---
 [TOP](../#top)
 
+[バナー広告拡張モジュール](/doc/ja/extension/README.md)
+
 ---
 LANGUAGE :
 > [![en](/doc/lang/en.png)](/doc/bannerads/README.md)
