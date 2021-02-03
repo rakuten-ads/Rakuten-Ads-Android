@@ -170,35 +170,45 @@ findViewById<AdView>(R.id.adview)
 
 ### 5. Avoid duplicates between multiple AdView
 
-Uses RunaAdSession to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
-Below is a sample to avoid duplication of content in AdView1 and AdView2.
+Uses `RunaAdSession` to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
+Sets multiple AdView to the `RunaAdSession$bind` method to avoid duplication of ads display in those AdViews.<br>
+And, when set multiple AdView in the `bind` method, allow an interval to execute those `show` method, because browse to the ads loaded of the previously bound AdView.<br>
+Below is just a sample to avoid duplication of content in AdView1 and AdView2. It's not necessarily required.
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdView
 import com.rakuten.android.ads.runa.AdStateListener
 ...
 
-val adSession = RunaAdSession()
+private val adSession = RunaAdSession()
 
-val adView1 = findViewById<AdView>(R.id.adview1)
-val adView2 = findViewById<AdView>(R.id.adview2)
+...
 
-adSession.bind(adView1, adView2)
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adView1 = findViewById<AdView>(R.id.adview1)
+        val adView2 = findViewById<AdView>(R.id.adview2)
+
+        adSession.bind(adView1, adView2)
 
 
-adView1.apply {
-      adStateListener = object: AdStateListener() {
-            override fun onLoadSuccess() {
-                adView2.show()
-            }
-            override fun onLoadFailure(adView: View?) {
-                adView2.show()
-            }
-      }
-}.show()
+        adView1.apply {
+              adStateListener = object: AdStateListener() {
+                    override fun onLoadSuccess() {
+                        adView2.show()
+                    }
+                    override fun onLoadFailure(adView: View?) {
+                        adView2.show()
+                    }
+              }
+        }.show()
+}
+...
 ```
 
 > ※ `show()` method of AdView2 must be call after load AdView1 completed.
+
+
 
 ---
 [TOP](/README.md#top)

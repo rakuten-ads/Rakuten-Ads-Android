@@ -174,31 +174,40 @@ findViewById<AdView>(R.id.adview)
 ### 5. 複数のAdView間での重複排除
 
 同一の画面にAdViewを複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
-以下は、AdView1とAdView2で表示コンテンツの重複を回避する実装例となります。<br>
+RunaAdSessionの`bind`メソッドに複数のAdViewを指定することで、それらのAdViewで表示される広告の重複を回避します。<br>
+また、`bind`メソッドに指定したAdViewの`show`メソッドを実行する際は、それらの時間的間隔を空けて実行してください。<br>
+(先にbindしたAdViewの広告データを、次にbindしたAdViewの読み込み時に参照しているためです。)<br>
+以下の実装方法は必ずしも必要ではありませんが、AdView1とAdView2で表示コンテンツの重複を回避する実装例となります。<br>
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdView
 import com.rakuten.android.ads.runa.AdStateListener
 ...
 
-val adSession = RunaAdSession()
+private val adSession = RunaAdSession()
 
-val adView1 = findViewById<AdView>(R.id.adview1)
-val adView2 = findViewById<AdView>(R.id.adview2)
+...
 
-adSession.bind(adView1, adView2)
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adView1 = findViewById<AdView>(R.id.adview1)
+        val adView2 = findViewById<AdView>(R.id.adview2)
+
+        adSession.bind(adView1, adView2)
 
 
-adView1.apply {
-      adStateListener = object: AdStateListener() {
-            override fun onLoadSuccess() {
-                adView2.show()
-            }
-            override fun onLoadFailure(adView: View?) {
-                adView2.show()
-            }
-      }
-}.show()
+        adView1.apply {
+              adStateListener = object: AdStateListener() {
+                    override fun onLoadSuccess() {
+                        adView2.show()
+                    }
+                    override fun onLoadFailure(adView: View?) {
+                        adView2.show()
+                    }
+              }
+        }.show()
+}
+...
 ```
 
 > ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
