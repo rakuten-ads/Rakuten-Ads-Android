@@ -168,6 +168,8 @@ findViewById<AdView>(R.id.adview)
 .show()
 ```
 
+<div id="avoid_duplication"></div>
+
 ### 5. Avoid duplicates between multiple AdView
 
 Uses `RunaAdSession` to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>

@@ -171,6 +171,8 @@ findViewById<AdView>(R.id.adview)
 .show()
 ```
 
+<div id="avoid_duplication"></div>
+
 ### 5. 複数のAdView間での重複排除
 
 同一の画面にAdViewを複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
