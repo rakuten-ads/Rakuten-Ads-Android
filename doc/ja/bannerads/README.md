@@ -213,7 +213,8 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 ```
 
 > ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
-
+>
+> ※ [その他実装サンプル](./sample_ad_session.md)
 
 
 
