@@ -209,7 +209,8 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 ```
 
 > ※ `show()` method of AdView2 must be call after load AdView1 completed.
-> [Other implementation sample](./sample_ad_session.md)
+>
+> ※ [Other implementation sample](./sample_ad_session.md)
 
 
 ---

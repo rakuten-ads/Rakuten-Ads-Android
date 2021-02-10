@@ -2,16 +2,16 @@
 
 ---
 
-# RunaAdSession Sample
+# RunaAdSession サンプル
 
-## 1. In case of `RecyclerView.Adapter`
+## 1. `RecyclerView.Adapter`内での使い方の例
 
 ```kotlin
 class RecyclerViewAdapter(
     private val data: Array<MultipleBannerViewingData>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-  private val adViewSession = RunaAdSession()      <------------- [ Definition ]
+  private val adViewSession = RunaAdSession()      // <------------- [ Definition ]
 
   override fun getItemCount(): Int = data.size
 
@@ -52,7 +52,7 @@ class RecyclerViewAdapter(
       fun bind(data: AdViewData?) {
           if (data == null) return
             binding?.let { binding ->
-                adViewSession.bind(binding.adview)      <------------- [ bind adView ]
+                adViewSession.bind(binding.adview)      // <------------- [ bind adView ]
                 binding.adview.show()
             }
       }
