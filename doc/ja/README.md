@@ -43,7 +43,7 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.1.5'
+  implementation 'com.rakuten.android.ads:runa:1.2.0'
 ```
 
 ## 依存関係
@@ -60,6 +60,11 @@ Gradle build toolsは3.5.0以上をご利用ください。
 * com.android.tools.build:gradle:3.5.0+
 
 > ※ 既にご利用され重複する場合には[`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-)で除外してください。
+
+## 実装
+
+* **[バナー広告](./bannerads/README.md)**
+* **[App to App](./a2a/README.md)**
 
 
 ---

@@ -4,27 +4,31 @@
 
 # Banner Ads
 
-* **[Specify Ad Size](#specify_adsize)**
-* **[Define AdView in layout xml](#define_adview_xml)**
-* **[Implement by Java](#implement_java)**
-* **[Implement by Kotlin](#implement_kotlin)**
+* **[1. Specify Ad Size](#specify_adsize)**
+* **[2. Define AdView in layout xml](#define_adview_xml)**
+* **[3. Implement by Java](#implement_java)**
+* **[4. Implement by Kotlin](#implement_kotlin)**
+* **[5. Avoid duplicates between multiple AdView](#avoid_duplication)**
 
 ---
 
 <div id="specify_adsize"></div>
 
-#### Specify ad size
+### 1. Specify ad size
 
 You need to specify `AdSize` to adjust the size of the `AdView`.<br>
 AdSize is enum class.
 
-**com.rakuten.android.ads.runa.AdSize**
+<details>
+<summary>com.rakuten.android.ads.runa.AdSize</summary>
 
 |Size Type|Desciption|
 |:---|:---|
 |DEFAULT|The ad size set in DashBoard.|
 |ASPECT_FIT|Fit in display width.|
 |CUSTOM|Can be specified to any size.<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
+
+</details>
 
 Set this AdSize to setAdViewSize of AdView.
 
@@ -36,7 +40,7 @@ adView.setAdViewSize(AdSize.ASPECT_FIT);
 
 <div id="define_adview_xml"></div>
 
-#### Define AdView in layout xml
+### 2. Define AdView in layout xml
 
 R.layout.activity_main
 ```xml
@@ -52,6 +56,8 @@ R.layout.activity_main
 > * ※ `layout_width`, `layout_height` : The both parameters always sets "`wrap_content`". AdView is sized automatically according to set adspot size on console.
 
 <div id="implement_java"></div>
+
+### 3. Implement by Java
 
 [![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
 
@@ -113,6 +119,8 @@ ad.show();
 ---
 <div id="implement_kotlin"></div>
 
+### 4. Implement by Kotlin
+
 [![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 MainActivity.kt
@@ -159,6 +167,49 @@ findViewById<AdView>(R.id.adview)
 }
 .show()
 ```
+
+<div id="avoid_duplication"></div>
+
+### 5. Avoid duplicates between multiple AdView
+
+Uses `RunaAdSession` to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
+Sets multiple AdView to the `RunaAdSession$bind` method to avoid duplication of ads display in those AdViews.<br>
+And, when set multiple AdView in the `bind` method, allow an interval to execute those `show` method, because browse to the ads loaded of the previously bound AdView.<br>
+Below is just a sample to avoid duplication of content in AdView1 and AdView2. It's not necessarily required.
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.AdStateListener
+...
+
+private val adSession = RunaAdSession()
+
+...
+
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adView1 = findViewById<AdView>(R.id.adview1)
+        val adView2 = findViewById<AdView>(R.id.adview2)
+
+        adSession.bind(adView1, adView2)
+
+
+        adView1.apply {
+              adStateListener = object: AdStateListener() {
+                    override fun onLoadSuccess() {
+                        adView2.show()
+                    }
+                    override fun onLoadFailure(adView: View?) {
+                        adView2.show()
+                    }
+              }
+        }.show()
+}
+...
+```
+
+> ※ `show()` method of AdView2 must be call after load AdView1 completed.
+
 
 
 ---

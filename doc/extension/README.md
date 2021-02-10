@@ -9,15 +9,24 @@ Before using these configurations, appropriate values need to be confirmed first
 
 ---
 
-## 1.Import the Extension Module
+## 1. Import the Extension Module
 
-**Example project-level build.gradle**
+#### Example project-level build.gradle
 
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa-extension:1.1.0'
+  implementation 'com.rakuten.android.ads:runa:1.2.0'
+  implementation 'com.rakuten.android.ads:runa-extension:1.2.0'
 ```
+
+#### Corresponding versions
+
+|runa-extension|runa|
+|:---:|:---:|
+|〜 v1.1.0|〜v1.1.5|
+|v1.2.0〜|v1.2.0〜|
+
 
 ## 2. ContentGenre class
 
@@ -45,9 +54,9 @@ e.g.
 val customTargeting = CustomTargeting.Builder().apply {
     put("K1", "V1", "V2", "V3")
 }.build()
-``` 
+```
 
-## 3. RzCookie
+## 4. RzCookie
 
 Sets the RzCookie
 
@@ -55,26 +64,34 @@ Sets the RzCookie
     AdView().setRz("RZ_COOKIE")
 ```
 
-## 4. implementation by Kotlin
+## 5. Sample Implementation
+
 ```kotlin
-import com.rakuten.android.ads.runa.AdStateListener;
-import com.rakuten.android.ads.runa.AdView;
-import com.rakuten.android.ads.runa.extension.ContentGenre; import com.rakuten.android.ads.runa.extension.CustomTargeting;
+import com.rakuten.android.ads.runa.AdStateListener
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.extension.ContentGenre
+import com.rakuten.android.ads.runa.extension.CustomTargeting
+import com.rakuten.android.ads.runa.extension.ExtensionProperty
 ...
 
     // Create ContentGenre class
     val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
     // Create CustomTargeting class
-    val targeting = CustomTargeting.Builder().apply {
+    val customTargeting = CustomTargeting.Builder().apply {
                           put(KEY, VALUE)
                           put(KEY2, VALUE2)
     }.buil()
-    val adView = findViewById<AdView>(R.id.adview).apply {
+
+    val extensionProperty = ExtensionProperty.Builder()
+                              .withContentGenre(genre)
+                              .withCustomTargeting(customTargeting)
+                              .withRz("RZ_COOKIE")
+                              .withLocation(location)
+                              .build()
+
+    findViewById<AdView>(R.id.adview).apply {
         adSpotId = "AD_SPOT_ID"
         adViewSize = AdSize.ASPECT_FIT
-        setContentGenre(genre)
-        setCustomTargeting(targeting)
-        setRz("RZ_COOKIE")
         adStateListener = object : AdStateListener() {
             override fun onLoadSuccess() {
                 visibility = View.VISIBLE
@@ -83,9 +100,15 @@ import com.rakuten.android.ads.runa.extension.ContentGenre; import com.rakuten.a
                 visibility = View.GONE
             }
         }
-    }
-    adView.show()
+        extensionProperty.apply(this)
+    }.show()
 ```
+
+<br><br><br><br><br>
 
 ---
 [TOP](/README.md#top)
+
+---
+LANGUAGE :
+> [![ja](/doc/lang/ja.png)](/doc/ja/extension/README.md)

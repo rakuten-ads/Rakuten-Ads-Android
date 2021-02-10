@@ -43,7 +43,7 @@ allprojects {
 Next, open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.1.5'
+  implementation 'com.rakuten.android.ads:runa:1.2.0'
 ```
 
 ## Dependencies
@@ -53,13 +53,18 @@ This SDK depends on the following libraries:
 * com.google.code.gson:gson:2.8.2
 * com.google.android.gms:play-services-ads-identifier:17.0.0
 
-## Build env
+## Build env requirement
 
 Please user version 3.5.0 or higher for Gradle build tools.
 
 * com.android.tools.build:gradle:3.5.0+
 
 > ※ Exclude it with [`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-) if it is already used and duplicated.
+
+## Implementation
+
+* **[Banner](./doc/bannerads/README.md)**
+* **[App to App](./doc/a2a/README.md)**
 
 ---
 
