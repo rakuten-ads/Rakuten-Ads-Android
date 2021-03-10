@@ -16,7 +16,7 @@ A2Aモジュールは、その柔軟な広告フォーマットを通じて、�
 runaモジュールに加え、runa-a2aモジュールを追加します。
 
 ```gradle
-implementation 'com.rakuten.android.ads:runa:1.2.0'
+implementation 'com.rakuten.android.ads:runa:1.2.2'
 implementation 'com.rakuten.android.ads:runa-a2a:1.0.0'
 ```
 
