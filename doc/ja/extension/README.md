@@ -15,8 +15,8 @@
 runaモジュールに加え、runa-aextensionモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.2.0'
-  implementation 'com.rakuten.android.ads:runa-extension:1.2.0'
+  implementation 'com.rakuten.android.ads:runa:1.2.2'
+  implementation 'com.rakuten.android.ads:runa-extension:1.2.1'
 ```
 
 ### モジュール間の対応バージョン
