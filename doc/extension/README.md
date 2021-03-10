@@ -16,8 +16,8 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.2.0'
-  implementation 'com.rakuten.android.ads:runa-extension:1.2.0'
+  implementation 'com.rakuten.android.ads:runa:1.2.2'
+  implementation 'com.rakuten.android.ads:runa-extension:1.2.1'
 ```
 
 #### Corresponding versions
