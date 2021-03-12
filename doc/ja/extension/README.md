@@ -54,8 +54,16 @@ val targeting = CustomTargeting.Builder().apply {
 
 RzCookeiを設定します。
 
+(〜 v1.2.0)
+
 ```kotlin
     AdView().setRz("RZ_COOKIE")
+```
+
+(v1.2.1 〜)
+
+```kotlin
+    AdView().setRzCookie("RZ_COOKIE")
 ```
 
 ## 5. Sample Implementation
