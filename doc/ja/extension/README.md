@@ -68,6 +68,42 @@ RzCookeiを設定します。
 
 ## 5. Sample Implementation
 
+### 5.1 拡張プロパティの実装例 (共通)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdStateListener;
+import com.rakuten.android.ads.runa.AdView;
+import com.rakuten.android.ads.runa.extension.ContentGenre;
+import com.rakuten.android.ads.runa.extension.CustomTargeting;
+...
+
+    // Create ContentGenre class
+    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
+    // Create CustomTargeting class
+    val targeting = CustomTargeting.Builder().apply {
+                          put(KEY, VALUE)
+                          put(KEY2, VALUE2)
+    }.buil()
+    val adView = findViewById<AdView>(R.id.adview).apply {
+        adSpotId = "AD_SPOT_ID"
+        adViewSize = AdSize.ASPECT_FIT
+        setContentGenre(genre)
+        setCustomTargeting(targeting)
+        setRzCookie("RZ_COOKIE")
+        adStateListener = object : AdStateListener() {
+            override fun onLoadSuccess() {
+                visibility = View.VISIBLE
+            }
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+                visibility = View.GONE
+            }
+        }
+    }
+    adView.show()
+```
+
+### 5.2 拡張プロパティの実装例 (v1.2.0)
+
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener
 import com.rakuten.android.ads.runa.AdView
@@ -106,6 +142,49 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
     }.show()
 ```
 
+> `ExtensionProperty`はExtensionモジュール v1.2.0 から追加されました。
+
+### 5.3 T拡張プロパティの実装例 (v1.2.1 〜)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdStateListener
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.extension.ContentGenre
+import com.rakuten.android.ads.runa.extension.CustomTargeting
+import com.rakuten.android.ads.runa.extension.AdViewHelper
+...
+
+    // Create ContentGenre class
+    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
+    // Create CustomTargeting class
+    val customTargeting = CustomTargeting.Builder().apply {
+                          put(KEY, VALUE)
+                          put(KEY2, VALUE2)
+    }.buil()
+
+    val adViewHelper = AdViewHelper.Builder()
+                              .with(genre)
+                              .with(customTargeting)
+                              .with(location)
+                              .withRzCookie("RZ_COOKIE")
+                              .build()
+
+    findViewById<AdView>(R.id.adview).apply {
+        adSpotId = "AD_SPOT_ID"
+        adViewSize = AdSize.ASPECT_FIT
+        adStateListener = object : AdStateListener() {
+            override fun onLoadSuccess() {
+                visibility = View.VISIBLE
+            }
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+                visibility = View.GONE
+            }
+        }
+        adViewHelper.apply(this)
+    }.show()
+```
+
+> `AdViewHelper`はExtensionモジュール v1.2.1 から追加され、`ExtensionProperty`は当バージョンから非推奨となりました。
 
 <br><br><br><br><br>
 
