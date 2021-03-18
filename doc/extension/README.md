@@ -75,6 +75,42 @@ Sets the RzCookie
 
 ## 5. Sample Implementation
 
+### 5.1 The case of extension Properties common implementation
+
+```kotlin
+import com.rakuten.android.ads.runa.AdStateListener;
+import com.rakuten.android.ads.runa.AdView;
+import com.rakuten.android.ads.runa.extension.ContentGenre;
+import com.rakuten.android.ads.runa.extension.CustomTargeting;
+...
+
+    // Create ContentGenre class
+    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
+    // Create CustomTargeting class
+    val targeting = CustomTargeting.Builder().apply {
+                          put(KEY, VALUE)
+                          put(KEY2, VALUE2)
+    }.buil()
+    val adView = findViewById<AdView>(R.id.adview).apply {
+        adSpotId = "AD_SPOT_ID"
+        adViewSize = AdSize.ASPECT_FIT
+        setContentGenre(genre)
+        setCustomTargeting(targeting)
+        setRzCookie("RZ_COOKIE")
+        adStateListener = object : AdStateListener() {
+            override fun onLoadSuccess() {
+                visibility = View.VISIBLE
+            }
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+                visibility = View.GONE
+            }
+        }
+    }
+    adView.show()
+```
+
+### 5.2 The case of ExtensionProperty using (v1.2.0)
+
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener
 import com.rakuten.android.ads.runa.AdView
@@ -112,6 +148,50 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
         extensionProperty.apply(this)
     }.show()
 ```
+
+> `ExtensionProperty` is added from extension module v1.2.0 .
+
+### 5.3 The case of ExtensionProperty using (v1.2.1 〜)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdStateListener
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.extension.ContentGenre
+import com.rakuten.android.ads.runa.extension.CustomTargeting
+import com.rakuten.android.ads.runa.extension.AdViewHelper
+...
+
+    // Create ContentGenre class
+    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
+    // Create CustomTargeting class
+    val customTargeting = CustomTargeting.Builder().apply {
+                          put(KEY, VALUE)
+                          put(KEY2, VALUE2)
+    }.buil()
+
+    val adViewHelper = AdViewHelper.Builder()
+                              .with(genre)
+                              .with(customTargeting)
+                              .with(location)
+                              .withRzCookie("RZ_COOKIE")
+                              .build()
+
+    findViewById<AdView>(R.id.adview).apply {
+        adSpotId = "AD_SPOT_ID"
+        adViewSize = AdSize.ASPECT_FIT
+        adStateListener = object : AdStateListener() {
+            override fun onLoadSuccess() {
+                visibility = View.VISIBLE
+            }
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+                visibility = View.GONE
+            }
+        }
+        adViewHelper.apply(this)
+    }.show()
+```
+
+> `AdViewHelper` is added from extension module v1.2.1, but `ExtensionProperty` has been deprecated in this version.
 
 <br><br><br><br><br>
 
