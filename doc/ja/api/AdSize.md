@@ -4,6 +4,8 @@
 
 # AdSize
 
+[![support version](http://img.shields.io/badge/runa-1.0.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
 [java.lang.Object](https://developer.android.com/reference/java/lang/Object.html)<br>
 &nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdSize
 
@@ -13,7 +15,7 @@ public enum class **AdSize** extends [Object](https://developer.android.com/refe
 
 ### Public Parameters
 
-|Parameter|Description|
+|パラメータ名|詳細|
 |:---|:---|
 |DEFAULT|ダッシュボードで設定した広告サイズ|
 |ASPECT_FIT|デフォルトの広告サイズの比率で画面横幅に合わせたサイズ|
@@ -21,7 +23,10 @@ public enum class **AdSize** extends [Object](https://developer.android.com/refe
 
 
 ---
-[TOP](/README.md#top)
+
+* [API一覧](./README.md)
+
+* [TOP](../#top)
 
 ---
 LANGUAGE :

@@ -3,6 +3,9 @@
 ---
 
 # AdView
+
+[![support version](http://img.shields.io/badge/runa-1.0.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
 [android.view.ViewGroup](https://developer.android.com/reference/android/view/ViewGroup)<br>
 &nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdView
 
@@ -16,9 +19,11 @@
 |AdView([Context](https://developer.android.com/reference/android/content/Context.html) context, [AttributeSet](https://developer.android.com/reference/android/util/AttributeSet.html) attrs)<br>　XMLレイアウトで定義するためのコンストラクタ|
 |AdView([Context](https://developer.android.com/reference/android/content/Context.html) context, [AttributeSet](https://developer.android.com/reference/android/util/AttributeSet.html) attrs, int defStyleAttr)<br>　XMLレイアウトで定義するためのコンストラクタ|
 
+<div id="public_methods"></div>
+
 ### 公開メソッド
 
-|Return|Method|Details|
+|戻り値|メソッド名|説明|
 |:---:|:---|:---|
 |String|getAdSpotId()|広告枠IDを返します。|
 |void|setAdSpotId(String adSpotId)|広告枠IDをセットします。|
@@ -27,7 +32,7 @@
 
 ### Protectedメソッド
 
-|Return|Method|
+|戻り値|メソッド名|
 |:---:|:---|
 |void|onLayout(boolean changed, int left, int top, int right, int bottom)|
 |void|onMeasure(int widthMeasureSpec, int heightMeasureSpec)|
@@ -84,7 +89,10 @@ Activity :
 ```
 
 ---
-[TOP](../#top)
+
+* [API一覧](./README.md)
+
+* [TOP](../#top)
 
 ---
 LANGUAGE :
