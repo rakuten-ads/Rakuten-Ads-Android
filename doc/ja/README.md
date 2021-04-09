@@ -59,11 +59,13 @@ allprojects {
 既に同ライブラリを利用している場合、以下の記述で除外し競合を回避することが出来ます。<br>
 
 ```
-implementation("com.rakuten.android.ads:runa:1.2.3") {
+implementation("com.rakuten.android.ads:runa:X.X.X") {
     exclude group: "com.google.android.gms", module: "play-services-ads-identifier"
     exclude group: "com.google.code.gson", module: "gson"
 }
 ```
+
+> X.X.X : お使いのバージョン
 
 </details>
 
