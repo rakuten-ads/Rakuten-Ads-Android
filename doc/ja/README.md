@@ -53,6 +53,20 @@ allprojects {
 * com.google.code.gson:gson:2.8.2
 * com.google.android.gms:play-services-ads-identifier:17.0.0
 
+<details>
+<summary>これらのライブラリを除外する場合</summary>
+
+既に同ライブラリを利用している場合、以下の記述で除外し競合を回避することが出来ます。<br>
+
+```
+implementation("com.rakuten.android.ads:runa:1.2.3") {
+    exclude group: "com.google.android.gms", module: "play-services-ads-identifier"
+    exclude group: "com.google.code.gson", module: "gson"
+}
+```
+
+</details>
+
 ## ビルド環境
 
 Gradle build toolsは3.5.0以上をご利用ください。
