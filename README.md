@@ -53,6 +53,20 @@ This SDK depends on the following libraries:
 * com.google.code.gson:gson:2.8.2
 * com.google.android.gms:play-services-ads-identifier:17.0.0
 
+<details>
+<summary>In case of exclude these libraries.</summary>
+
+If you are already using these libraries, you can exclude them in the following ways to avoid conflicts:
+
+```
+implementation("com.rakuten.android.ads:runa:1.2.3") {
+    exclude group: "com.google.android.gms", module: "play-services-ads-identifier"
+    exclude group: "com.google.code.gson", module: "gson"
+}
+```
+
+</details>
+
 ## Build env requirement
 
 Please user version 3.5.0 or higher for Gradle build tools.
