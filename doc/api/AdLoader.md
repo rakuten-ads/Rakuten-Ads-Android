@@ -17,8 +17,8 @@ The object for load multiple ads at once. Generates AdLoader with `Builder` and 
 |Return|Method|Details|
 :---:|:---|:---
 void | execute() | Execute loading of ads.
-List&lt;AdView&gt; | getAdViews() | Returns list of AdView that added to the Builder.
-List&lt;AdView&gt; | getValidAdViews() | (Nullable) Returns list of AdView that load ads succeed. Returns null if load ads is not finished.
+List&lt;AdView&gt; | getAdViews() | Returns list of [AdView](./AdView.md) that added to the Builder.
+List&lt;AdView&gt; | getValidAdViews() | (Nullable) Returns list of [AdView](./AdView.md) that load ads succeed. Returns null if load ads is not finished.
 boolean | isLoading() | Returns a Boolean value about whether the ad is loading.
 
 <div id="adLoader_builder"></div>
@@ -75,7 +75,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
                         }
                       }
                 }
-                override fun onLoadAllComplete() {
+                override fun onLoadAllComplete(adLoader: AdLoader, loadedAdViews: List<AdView>?) {
                       // Do something
                 }
             })

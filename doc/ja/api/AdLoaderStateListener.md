@@ -24,7 +24,7 @@ Abstract class
 
 |戻り値|メソッド名|説明|
 |:---:|:---|:---|
-|void|onAllLoadsFinished(loadedAdViews: List&lt;AdView&gt;?)|[AdLoader](./AdLoader.md)に追加したAdViewのロードが全て終了した時に呼ばれます。引数の`loadedAdViews`はロードが成功したAdViewが含まれます。全てロードが失敗したりUnfilledの場合はnullが渡されます。|
+|void|onAllLoadsFinished(adLoader: AdLoader, loadedAdViews: List&lt;AdView&gt;?)|[AdLoader](./AdLoader.md)に追加したAdViewのロードが全て終了した時に呼ばれます。引数の`loadedAdViews`はロードが成功したAdViewが含まれます。全てロードが失敗したりUnfilledの場合はnullが渡されます。|
 
 ### 継承されているメソッド
 

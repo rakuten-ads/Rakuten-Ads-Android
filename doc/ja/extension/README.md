@@ -15,17 +15,18 @@
 runaモジュールに加え、runa-aextensionモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.2.6'
-  implementation 'com.rakuten.android.ads:runa-extension:1.2.1'
+  implementation 'com.rakuten.android.ads:runa:1.3.0'
+  implementation 'com.rakuten.android.ads:runa-extension:1.3.0'
 ```
 
 ### モジュール間の対応バージョン
 
 |runa-extension|runa|
 |:---:|:---:|
-|〜 v1.1.0|〜v1.1.5|
+|〜 v1.1.0|〜 v1.1.5|
 |v1.2.0〜|v1.2.0, v1.2.1|
-|v1.2.1|v1.2.2〜|
+|v1.2.1|v1.2.2 〜 v1.2.6|
+|v1.3.0|v1.3.0|
 
 ## 2. ContentGenreクラス
 

@@ -24,7 +24,7 @@ A Listener to notify the the ad loading status by AdLoader.
 
 |Return|Method|Details|
 |:---:|:---|:---|
-|void|onAllLoadsFinished(loadedAdViews: List<AdView>?)|Called when AdViews added to [AdLoader](./AdLoader.md) have been ​all loaded. The argument loadedAdViews is a list of AdViews to return if the load is successful. Returns null if all loads failed or received UNFILLED.|
+|void|onAllLoadsFinished(adLoader: AdLoader, loadedAdViews: List<AdView>?)|Called when AdViews added to [AdLoader](./AdLoader.md) have been ​all loaded. The argument loadedAdViews is a list of AdViews to return if the load is successful. Returns null if all loads failed or received UNFILLED.|
 
 ### Inherited Method Summary
 

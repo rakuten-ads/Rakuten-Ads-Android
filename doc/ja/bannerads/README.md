@@ -251,7 +251,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
                         }
                       }
                 }
-                override fun onAllLoadsFinished(loadedAdViews: List<AdView>?) {
+                override fun onAllLoadsFinished(adLoader: AdLoader, loadedAdViews: List<AdView>?) {
                       // Do something
                 }
             })

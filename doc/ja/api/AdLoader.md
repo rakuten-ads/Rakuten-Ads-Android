@@ -16,8 +16,8 @@
 |戻り値|メソッド名|説明|
 :---:|:---|:---
 void | execute() | 広告のロードを実行する。
-List<AdView> | getAdViews() | 一括ロードに追加したAdViewを返します。
-List<AdView> | getValidAdViews() | (Nullable) 正常に広告をロードできたAdViewのリストを返します。ロードが未完了の場合、nullを返します。
+List<AdView> | getAdViews() | 一括ロードに追加した[AdView](./AdView.md)を返します。
+List<AdView> | getValidAdViews() | (Nullable) 正常に広告をロードできた[AdView](./AdView.md)のリストを返します。ロードが未完了の場合、nullを返します。
 boolean | isLoading() | 広告がロード中かをbooleanで返します。
 
 <div id="adLoader_builder"></div>
@@ -74,7 +74,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
                         }
                       }
                 }
-                override fun onLoadAllComplete() {
+                override fun onLoadAllComplete(adLoader: AdLoader, loadedAdViews: List<AdView>?) {
                       // Do something
                 }
             })
