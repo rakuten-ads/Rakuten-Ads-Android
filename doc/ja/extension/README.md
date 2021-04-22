@@ -15,19 +15,22 @@
 runaモジュールに加え、runa-aextensionモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.2.6'
-  implementation 'com.rakuten.android.ads:runa-extension:1.2.1'
+  implementation 'com.rakuten.android.ads:runa:1.3.0'
+  implementation 'com.rakuten.android.ads:runa-extension:1.3.0'
 ```
 
 ### モジュール間の対応バージョン
 
 |runa-extension|runa|
 |:---:|:---:|
-|〜 v1.1.0|〜v1.1.5|
+|〜 v1.1.0|〜 v1.1.5|
 |v1.2.0〜|v1.2.0, v1.2.1|
-|v1.2.1|v1.2.2〜|
+|v1.2.1|v1.2.2 〜 v1.2.6|
+|v1.3.0|v1.3.0|
 
 ## 2. ContentGenreクラス
+
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
 ContentGenre(int masterId, String code, Type type)
 
@@ -38,6 +41,8 @@ ContentGenre(int masterId, String code, Type type)
 > **type** : (enum) タイプを選択 `Type.Children` または `Type.L1`
 
 ## 3. CustomTargetingクラス
+
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
 CustomTargetingはBuilderパターンのクラスであるため、Builder()を使用しターゲティング設定を行います。
 
@@ -54,13 +59,13 @@ val targeting = CustomTargeting.Builder().apply {
 
 RzCookeiを設定します。
 
-(〜 v1.2.0)
+[![support version](http://img.shields.io/badge/extension-_1.1.5_〜_1.2.0-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
     AdView().setRz("RZ_COOKIE")
 ```
 
-(v1.2.1 〜)
+[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
     AdView().setRzCookie("RZ_COOKIE")
@@ -69,6 +74,8 @@ RzCookeiを設定します。
 ## 5. Sample Implementation
 
 ### 5.1 拡張プロパティの実装例 (共通)
+
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener;
@@ -102,7 +109,9 @@ import com.rakuten.android.ads.runa.extension.CustomTargeting;
     adView.show()
 ```
 
-### 5.2 拡張プロパティの実装例 (v1.2.0)
+### 5.2 拡張プロパティの実装例
+
+[![support version](http://img.shields.io/badge/extension-1.2.0-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener
@@ -144,7 +153,9 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
 
 > `ExtensionProperty`はExtensionモジュール v1.2.0 から追加されました。
 
-### 5.3 T拡張プロパティの実装例 (v1.2.1 〜)
+### 5.3 T拡張プロパティの実装例
+
+[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener

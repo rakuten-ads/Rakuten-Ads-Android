@@ -3,6 +3,9 @@
 ---
 
 # AdView
+
+[![support version](http://img.shields.io/badge/runa-1.0.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
 [android.view.ViewGroup](https://developer.android.com/reference/android/view/ViewGroup)<br>
 &nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdView
 

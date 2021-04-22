@@ -16,20 +16,23 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.2.6'
-  implementation 'com.rakuten.android.ads:runa-extension:1.2.1'
+  implementation 'com.rakuten.android.ads:runa:1.3.0'
+  implementation 'com.rakuten.android.ads:runa-extension:1.3.0'
 ```
 
 #### Corresponding versions
 
 |runa-extension|runa|
 |:---:|:---:|
-|〜 v1.1.0|〜v1.1.5|
+|〜 v1.1.0|〜 v1.1.5|
 |v1.2.0|v1.2.0, v1.2.1|
-|v1.2.1|v1.2.2〜|
+|v1.2.1|v1.2.2 〜 v1.2.6|
+|v1.3.0|v1.3.0|
 
 
 ## 2. ContentGenre class
+
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
 ContentGenre(int masterId, String code, Type type)
 
@@ -40,6 +43,8 @@ ContentGenre(int masterId, String code, Type type)
 > **type** : (enum) Choice a type `Type.Children` or `Type.L1`
 
 ## 3. CustomTargeting class
+
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
 CustomTargeting is builder pattern. Use a Builder class.
 
@@ -61,13 +66,13 @@ val customTargeting = CustomTargeting.Builder().apply {
 
 Sets the RzCookie
 
-(〜 v1.2.0)
+[![support version](http://img.shields.io/badge/extension-_1.1.5_〜_1.2.0-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
     AdView().setRz("RZ_COOKIE")
 ```
 
-(v1.2.1 〜)
+[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
     AdView().setRzCookie("RZ_COOKIE")
@@ -76,6 +81,8 @@ Sets the RzCookie
 ## 5. Sample Implementation
 
 ### 5.1 The case of extension Properties common implementation
+
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener;
@@ -109,7 +116,9 @@ import com.rakuten.android.ads.runa.extension.CustomTargeting;
     adView.show()
 ```
 
-### 5.2 The case of ExtensionProperty using (v1.2.0)
+### 5.2 The case of ExtensionProperty using
+
+[![support version](http://img.shields.io/badge/extension-1.2.0-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener
@@ -151,7 +160,9 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
 
 > `ExtensionProperty` is added from extension module v1.2.0 .
 
-### 5.3 The case of ExtensionProperty using (v1.2.1 〜)
+### 5.3 The case of ExtensionProperty using
+
+[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://developer.android.com)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener

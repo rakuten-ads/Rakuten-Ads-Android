@@ -175,7 +175,9 @@ findViewById<AdView>(R.id.adview)
 
 ### 5. 複数のAdView間での重複排除
 
-同一の画面にAdViewを複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
+[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
+　同一の画面にAdViewを複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
 RunaAdSessionの`bind`メソッドに複数のAdViewを指定することで、それらのAdViewで表示される広告の重複を回避します。<br>
 また、`bind`メソッドに指定したAdViewの`show`メソッドを実行する際は、それらの時間的間隔を空けて実行してください。<br>
 (先にbindしたAdViewの広告データを、次にbindしたAdViewの読み込み時に参照しているためです。)<br>
@@ -216,6 +218,50 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 >
 > ※ [その他実装サンプル](./sample_ad_session.md)
 
+### 7. 複数の広告を一度にロードする
+
+[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
+　カルーセル広告などを表示するなど、一度のロードで複数の広告を表示する場合に[`AdLoader`](../api/AdLoader.md)を利用します。<br>
+AdLoaderはBuilderパターンで構成されており、[`AdLoader$Builder`](../api/AdLoader.md#adLoader_builder)クラスを定義して広告のロードに必要なパラメータを追加する必要があります。<br>
+Builderには描画させたいAdViewを追加し、AdLoaderの読み込み状況を検知するための[`AdLoaderStateListener`](../api/AdLoaderStateListener.md)を必要に応じてセットしていきます。<br>
+Builderへのパラメータの追加後は`build`メソッドでAdLoaderを生成し、AdLoaderは`execute`メソッドを実行することでロードを開始します。<br>
+ロードが開始すると、読み込みが完了したAdViewから描画がされていきます。この時、描画の順序を制御することはできません。<br>
+また、AdLoaderで広告を読み込む場合、排他排除機能を含むため前項(5. 複数のAdView間での重複排除)の`RunaAdSession`を用いた重複排除の実装は不要となります。
+
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adView1 = findViewById<AdView>(R.id.adview1).apply {
+              tag = "adview1"
+        }
+        val adView2 = findViewById<AdView>(R.id.adview2)
+        val adView3 = findViewById<AdView>(R.id.adview3)
+
+        val adLoader = AdLoader.Builder(view.context)
+            .add(adView1, adView2, adView3)
+            .with(object: AdLoaderStateListener() {
+                override fun onLoadSuccess(view: View?) {
+
+                }
+                override fun onLoadFailure(adView: View?, errorState: ErrorState) {
+                      adView?.let { v ->
+                        if (v.tag == "adview1") {
+                           // Do something..
+                        }
+                      }
+                }
+                override fun onAllLoadsFinished(adLoader: AdLoader, loadedAdViews: List<AdView>?) {
+                      // Do something
+                }
+            })
+            .build()
+        adLoader.execute()
+}
+...
+```
+> ※ AdViewへのadSpotIdの設定はxml上で行われているものとしています。
+>
 
 
 ---

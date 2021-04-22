@@ -4,18 +4,26 @@
 
 # RUNA Public API
 
-* ### [AdStateListener](./AdStateListener.md)
-> 広告のライフサイクルを通知するリスナー
+* ### [AdLoader](./AdLoader.md)
+> 一度に複数の広告をロードするためのオブジェクト
 
-* ### [AdView](./AdView.md)
-> バナー広告を表示するためのViewオブジェクト
+* ### [AdLoaderStateListener](./AdLoaderStateListener.md)
+> AdLoaderのロード状況を通知するListener
 
 * ### [AdSize](./AdSize.md)
 > AdViewのサイズを定義するためのenumクラス
 
+* ### [AdStateListener](./AdStateListener.md)
+> 広告のライフサイクルを通知するListener
+
+* ### [AdView](./AdView.md)
+> バナー広告を表示するためのViewオブジェクト
+
 * ### [ErrorState](./ErrorState.md)
 > 広告リクエストで何らかのエラーが発生した際のステータス
 
+* ### [RunaAdSession](./RunaAdSession.md)
+> 複数のAdView間での重複を回避するためのオブジェクト
 
 ---
 

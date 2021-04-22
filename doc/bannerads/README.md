@@ -172,7 +172,9 @@ findViewById<AdView>(R.id.adview)
 
 ### 5. Avoid duplicates between multiple AdView
 
-Uses `RunaAdSession` to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
+[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
+　Uses [`RunaAdSession`](../api/RunaAdSession.md) to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
 Sets multiple AdView to the `RunaAdSession$bind` method to avoid duplication of ads display in those AdViews.<br>
 And, when set multiple AdView in the `bind` method, allow an interval to execute those `show` method, because browse to the ads loaded of the previously bound AdView.<br>
 Below is just a sample to avoid duplication of content in AdView1 and AdView2. It's not necessarily required.
@@ -199,7 +201,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
                     override fun onLoadSuccess() {
                         adView2.show()
                     }
-                    override fun onLoadFailure(adView: View?) {
+                    override fun onLoadFailure(adView: View?, errorState: ErrorState) {
                         adView2.show()
                     }
               }
@@ -212,6 +214,48 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 >
 > ※ [Other implementation sample](./sample_ad_session.md)
 
+### 6. Load multiple ads at once
+
+[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
+ Use [`AdLoader`](../api/AdLoader.md) to display multiple ads with one load, such as displaying carousel ads.<br>
+AdLoader consists of a Builder pattern, so need to declare the [`AdLoader$Builder`](../api/AdLoader.md#adLoader_builder) class and add some parameters to load ads.<br>
+Add AdView to draw with the Builder, and sets [`AdLoaderStateListener`](../api/AdLoaderStateListener.md) to detect the loading status of AdLoader as needed. Generates AdLoader with `build` method after added parameters to the Builder, AdLoader starts loading ads that uses `execute` method.
+ When loading starts, the loaded AdView will be drawn in sequence. At this time, the drawing order cannot be controlled.
+Also, when loading ads with AdLoader, you don't need to implement deduplication with the previous item [`RunaAdSession`](#avoid_duplication), because this includes deduplication functionality.
+
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adView1 = findViewById<AdView>(R.id.adview1).apply {
+              tag = "adview1"
+        }
+        val adView2 = findViewById<AdView>(R.id.adview2)
+        val adView3 = findViewById<AdView>(R.id.adview3)
+
+        val adLoader = AdLoader.Builder(view.context)
+            .add(adView1, adView2, adView3)
+            .with(object: AdLoaderStateListener() {
+                override fun onLoadSuccess(view: View?) {
+
+                }
+                override fun onLoadFailure(adView: View?, errorState: ErrorState) {
+                      adView?.let { v ->
+                        if (v.tag == "adview1") {
+                           // Do something..
+                        }
+                      }
+                }
+                override fun onAllLoadsFinished(adLoader: AdLoader, loadedAdViews: List<AdView>?) {
+                      // Do something
+                }
+            })
+            .build()
+        adLoader.execute()
+}
+...
+```
+> ※ This sample is assumed that the adSpotId setting for AdView is done on layout xml.
 
 ---
 [TOP](/README.md#top)

@@ -4,10 +4,12 @@
 
 # AdStateListener
 
+[![support version](http://img.shields.io/badge/runa-1.0.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+
 [java.lang.Object](https://developer.android.com/reference/java/lang/Object.html)<br>
 &nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdStateListener
 
-広告のライフサイクルイベントを通知するリスナー
+広告のライフサイクルイベントを通知するコールバック
 
 ### コンストラクタ
 
@@ -25,7 +27,10 @@
 |void|onLeftApplication()|アプリケーションから離れる時に呼ばれます。|
 
 ---
-[TOP](../#top)
+
+* [API一覧](./README.md)
+
+* [TOP](../#top)
 
 ---
 LANGUAGE :
