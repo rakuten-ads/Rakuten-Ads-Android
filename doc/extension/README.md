@@ -16,7 +16,7 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.3.0'
+  implementation 'com.rakuten.android.ads:runa:1.3.1'
   implementation 'com.rakuten.android.ads:runa-extension:1.3.0'
 ```
 
@@ -27,7 +27,7 @@ Open the app-level `build.gradle` file for your app, and look for a "dependencie
 |〜 v1.1.0|〜 v1.1.5|
 |v1.2.0|v1.2.0, v1.2.1|
 |v1.2.1|v1.2.2 〜 v1.2.7|
-|v1.3.0|v1.3.0|
+|v1.3.0|v1.3.0 〜 v1.3.1|
 
 
 ## 2. ContentGenre class
