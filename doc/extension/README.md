@@ -26,7 +26,7 @@ Open the app-level `build.gradle` file for your app, and look for a "dependencie
 |:---:|:---:|
 |〜 v1.1.0|〜 v1.1.5|
 |v1.2.0|v1.2.0, v1.2.1|
-|v1.2.1|v1.2.2 〜 v1.2.6|
+|v1.2.1|v1.2.2 〜 v1.2.7|
 |v1.3.0|v1.3.0|
 
 
