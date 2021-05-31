@@ -43,7 +43,7 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.3.1'
+  implementation 'com.rakuten.android.ads:runa:1.3.2'
 ```
 
 ## 依存関係
