@@ -43,7 +43,7 @@ allprojects {
 Next, open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.3.3'
+  implementation 'com.rakuten.android.ads:runa:1.4.0'
 ```
 
 ## Dependencies
@@ -79,8 +79,9 @@ Please user version 3.5.0 or higher for Gradle build tools.
 
 ## Implementation
 
-* **[Banner](./doc/bannerads/README.md)**
-* **[App to App](./doc/a2a/README.md)**
+* **[Banner ads](./doc/bannerads/README.md)**
+* **[Viewability measurement](./doc/viewability/README.md)**
+* **[~~App to App~~](./doc/a2a/README.md)**
 
 ---
 

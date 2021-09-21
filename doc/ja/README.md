@@ -8,7 +8,7 @@
 ### 広告フォーマット
 
 * **[バナー広告](./bannerads/README.md)**
-* **[App to App](./a2a/README.md)**
+* **[~~App to App~~](./a2a/README.md)**
 
 ---
 # はじめに
@@ -43,7 +43,7 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.3.3'
+  implementation 'com.rakuten.android.ads:runa:1.4.0'
 ```
 
 ## 依存関係
@@ -80,7 +80,8 @@ Gradle build toolsは3.5.0以上をご利用ください。
 ## 実装
 
 * **[バナー広告](./bannerads/README.md)**
-* **[App to App](./a2a/README.md)**
+* **[ビューアブルインプレッションの計測](./viewability/README.md)**
+* **[~~App to App~~](./a2a/README.md)**
 
 
 ---
