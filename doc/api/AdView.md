@@ -4,7 +4,7 @@
 
 # AdView
 
-[![support version](http://img.shields.io/badge/runa-1.0.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+![support version](http://img.shields.io/badge/runa-1.0.0+-blueviolet.svg?style=flat)
 
 [android.view.ViewGroup](https://developer.android.com/reference/android/view/ViewGroup)<br>
 &nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdView
@@ -88,7 +88,9 @@ Activity :
 ```
 
 ---
-[TOP](/README.md#top)
+* [API](./README.md)
+
+* [TOP](/README.md#top)
 
 ---
 LANGUAGE :

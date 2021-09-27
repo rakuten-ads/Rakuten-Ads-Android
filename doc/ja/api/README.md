@@ -5,24 +5,43 @@
 # RUNA Public API
 
 * ### [AdLoader](./AdLoader.md)
+> v1.3.0+
+>
 > 一度に複数の広告をロードするためのオブジェクト
 
 * ### [AdLoaderStateListener](./AdLoaderStateListener.md)
+> v1.3.0+
+>
 > AdLoaderのロード状況を通知するListener
 
 * ### [AdSize](./AdSize.md)
+> v1.0.0+
+>
 > AdViewのサイズを定義するためのenumクラス
 
 * ### [AdStateListener](./AdStateListener.md)
+> v1.0.0+
+>
 > 広告のライフサイクルを通知するListener
 
 * ### [AdView](./AdView.md)
+> v1.0.0+
+>
 > バナー広告を表示するためのViewオブジェクト
 
 * ### [ErrorState](./ErrorState.md)
+> v1.0.0+
+>
 > 広告リクエストで何らかのエラーが発生した際のステータス
 
+* ### [Runa](./Runa.md)
+> v1.4.0+
+>
+> Runa SDKを起動するためのオブジェクト
+
 * ### [RunaAdSession](./RunaAdSession.md)
+> v1.2.0+
+>
 > 複数のAdView間での重複を回避するためのオブジェクト
 
 ---

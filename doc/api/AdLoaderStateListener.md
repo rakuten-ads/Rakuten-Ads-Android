@@ -1,10 +1,10 @@
-[TOP](../#top)　>　[API](./README.md)　>AdLoaderStateListener
+[TOP](/README.md#top)　>　[API](./README.md)　>AdLoaderStateListener
 
 ---
 
 # AdLoaderStateListener
 
-[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
 Abstract class
 
@@ -35,8 +35,8 @@ A Listener to notify the the ad loading status by AdLoader.
 
 * [API](./README.md)
 
-* [TOP](../#top)
+* [TOP](/README.md#top)
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/api/AdLoaderStateListener.md)
+> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdLoaderStateListener.md)
