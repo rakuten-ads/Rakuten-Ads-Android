@@ -17,9 +17,9 @@
 
 ## Prerequisites
 
-* Use Android Studio 1.0 or higher
-* Target Android API level 15 or higher
-
+* Uses Android Studio 1.0 or higher
+* Target Android API level 21 or higher
+* Uses version 3.5.0 or higher for Gradle build tools.<br>`com.android.tools.build:gradle:{3.5.0+}`
 
 <div id="import_sdk"></div>
 
@@ -46,6 +46,8 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
   implementation 'com.rakuten.android.ads:runa:1.4.0'
 ```
 
+ * [Migration to v1.4.0](./doc/migration/README.md)
+
 ## Dependencies
 
 This SDK depends on the following libraries:
@@ -66,16 +68,18 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 ```
 
 > X.X.X : Using version.
+>
+> ※ Exclude it with [`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-) if it is already used and duplicated.
 
 </details>
 
 ## Build env requirement
 
-Please user version 3.5.0 or higher for Gradle build tools.
+Thid SDK is built by below tools.
 
-* com.android.tools.build:gradle:3.5.0+
+* Kotlin version 1.3.72
+* OpenJDK version 11.0.8
 
-> ※ Exclude it with [`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-) if it is already used and duplicated.
 
 ## Implementation
 

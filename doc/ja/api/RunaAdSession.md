@@ -4,7 +4,7 @@
 
 # RunaAdSession
 
-[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.2.0)
 
 [java.lang.Object](https://developer.android.com/reference/java/lang/Object.html)<br>
 &nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.RunaAdSession

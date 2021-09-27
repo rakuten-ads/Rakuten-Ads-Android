@@ -1,10 +1,10 @@
-[TOP](../#top)　>　[API](./README.md)　>　AdLoader
+[TOP](/README.md#top)　>　[API](./README.md)　>　AdLoader
 
 ---
 
 # AdLoader
 
-[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
 [java.lang.Object](https://developer.android.com/reference/java/lang/Object.html)<br>
 &nbsp;&nbsp;&nbsp;↳&nbsp;com.rakuten.android.ads.runa.AdLoader
@@ -90,8 +90,8 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 * [API](./README.md)
 
-* [TOP](../#top)
+* [TOP](/README.md#top)
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/api/AdLoader.md)
+> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdLoader.md)

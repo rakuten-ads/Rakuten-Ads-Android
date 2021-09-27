@@ -18,7 +18,8 @@
 ## 前提
 
 * Android Studio 1.0 以上
-* Android API level 15 以上
+* Android API level 21 以上
+* Gradle build tools 3.5.0 以上<br>-> `com.android.tools.build:gradle:{3.5.0以上}`
 
 
 <div id="import_sdk"></div>
@@ -46,6 +47,8 @@ allprojects {
   implementation 'com.rakuten.android.ads:runa:1.4.0'
 ```
 
+> * [v1.4.0未満からのマイグレーション](./migration/README.md)
+
 ## 依存関係
 
 本SDKでは以下のライブラリを使用しています。
@@ -64,18 +67,18 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
     exclude group: "com.google.code.gson", module: "gson"
 }
 ```
-
-> X.X.X : お使いのバージョン
+> * X.X.X : お使いのバージョン
+>
+> * ※ 既にご利用され重複する場合には[`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-)で除外してください。
 
 </details>
 
 ## ビルド環境
 
-Gradle build toolsは3.5.0以上をご利用ください。
+本SDKは以下の条件でビルドしています。
 
-* com.android.tools.build:gradle:3.5.0+
-
-> ※ 既にご利用され重複する場合には[`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-)で除外してください。
+* Kotlin version 1.3.72
+* OpenJDK version 11.0.8
 
 ## 実装
 
