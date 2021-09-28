@@ -15,7 +15,7 @@
 
 <div id="prerequisites"></div>
 
-## 前提
+## 1. 前提
 
 * Android Studio 1.0 以上
 * Android API level 21 以上
@@ -24,11 +24,11 @@
 
 <div id="import_sdk"></div>
 
-## RUNA SDKのインポート
+## 2. RUNA SDKのインポート
 
 Gradleの依存設定でアプリにインポートすることが出来ます。プロジェクト直下の`build.gradle`のrepositoriesに以下のように参照先を追加する必要があります。
 
-**プロジェクト全体のbuild.gradle サンプル**
+### 2.1 プロジェクト全体のbuild.gradle サンプル
 
 ```groovy
 allprojects {
@@ -49,7 +49,15 @@ allprojects {
 
 > * [v1.4.0未満からのマイグレーション](./migration/README.md)
 
-## 依存関係
+### 2.2 SDKの起動
+
+Application継承クラスのonCreate内で以下の処理を実行してください。
+
+```kotlin
+Runa.init(this)
+```
+
+## 3. 依存関係
 
 本SDKでは以下のライブラリを使用しています。
 
@@ -73,14 +81,14 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 </details>
 
-## ビルド環境
+## 4. ビルド環境
 
 本SDKは以下の条件でビルドしています。
 
 * Kotlin version 1.3.72
 * OpenJDK version 11.0.8
 
-## 実装
+## 5. 実装
 
 * **[バナー広告](./bannerads/README.md)**
 * **[ビューアブルインプレッションの計測](./viewability/README.md)**
