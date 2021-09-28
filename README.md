@@ -15,7 +15,7 @@
 
 <div id="prerequisites"></div>
 
-## Prerequisites
+## 1. Prerequisites
 
 * Uses Android Studio 1.0 or higher
 * Target Android API level 21 or higher
@@ -23,11 +23,11 @@
 
 <div id="import_sdk"></div>
 
-## Import the RUNA SDK
+## 2. Import the RUNA SDK
 
 Apps can import the RDN Mobile Ads SDK with a Gradle dependency.In order to use that repository, you need to reference it in the app's project-level `build.gradle` file. Open yours and look for an allprojects section:
 
-**Example project-level build.gradle**
+### 2.1 Example project-level build.gradle
 
 ```groovy
 allprojects {
@@ -48,7 +48,15 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
 
  * [Migration to v1.4.0](./doc/migration/README.md)
 
-## Dependencies
+### 2.2 Launch SDK
+
+In the onCreate method of the class that inherits Application, execute as follows and launch the SDK.
+
+```kotlin
+Runa.init(this)
+```
+
+## 3. Dependencies
 
 This SDK depends on the following libraries:
 
@@ -73,7 +81,7 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 </details>
 
-## Build env requirement
+## 4. Build env requirement
 
 Thid SDK is built by below tools.
 
@@ -81,7 +89,7 @@ Thid SDK is built by below tools.
 * OpenJDK version 11.0.8
 
 
-## Implementation
+## 5. Implementation
 
 * **[Banner ads](./doc/bannerads/README.md)**
 * **[Viewability measurement](./doc/viewability/README.md)**
