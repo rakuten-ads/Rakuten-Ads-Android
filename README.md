@@ -8,7 +8,6 @@
 ### Ad Formats
 
 * **[Banner](./doc/bannerads/README.md)**
-* **[App to App](./doc/a2a/README.md)**
 
 ---
 # Get Started
@@ -93,7 +92,6 @@ Thid SDK is built by below tools.
 
 * **[Banner ads](./doc/bannerads/README.md)**
 * **[Viewability measurement](./doc/viewability/README.md)**
-* **[~~App to App~~](./doc/a2a/README.md)**
 
 ---
 

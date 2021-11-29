@@ -8,7 +8,6 @@
 ### 広告フォーマット
 
 * **[バナー広告](./bannerads/README.md)**
-* **[~~App to App~~](./a2a/README.md)**
 
 ---
 # はじめに
@@ -92,8 +91,6 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 * **[バナー広告](./bannerads/README.md)**
 * **[ビューアブルインプレッションの計測](./viewability/README.md)**
-* **[~~App to App~~](./a2a/README.md)**
-
 
 ---
 [Public API](./api/README.md)
