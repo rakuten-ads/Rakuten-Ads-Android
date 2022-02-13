@@ -51,6 +51,8 @@ XMLレイアウトから以下のパラメータの設定が可能です。
 
 ### サンプルコード
 
+#### 従来のプロジェクト
+
 main_layout.xml :
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -86,6 +88,32 @@ Activity :
       });
       adView.show();
   }
+```
+
+#### [Jetpack Compose](https://developer.android.com/jetpack/compose?hl=ja)
+
+```kotlin
+AndroidView(
+    factory = {
+        AdView(it)
+    },
+    update = {
+        it.adSpotId = "{ADSPOT_ID}"
+        it.adStateListener = object: AdStateListener() {
+            override fun onLoadSuccess(view: View?) {
+
+            }
+
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+
+            }
+        }
+        it.show()
+    },
+    modifier = Modifier
+            .wrapContentWidth()
+            .wrapContentHeight()
+)
 ```
 
 ---
