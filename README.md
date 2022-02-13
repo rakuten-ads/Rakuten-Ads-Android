@@ -95,6 +95,8 @@ Thid SDK is built by below tools.
 
 ---
 
+[Sample App Project](https://github.com/rakuten-ads/Rakuten-Ads-Android-Sample)
+
 [Public API](./doc/api/README.md)
 
 [Javadoc](https://rakuten-ads.github.io/products/runa/android/javadoc/index.html)

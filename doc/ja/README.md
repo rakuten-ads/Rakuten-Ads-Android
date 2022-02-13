@@ -93,6 +93,9 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 * **[ビューアブルインプレッションの計測](./viewability/README.md)**
 
 ---
+
+[Sample App Project](https://github.com/rakuten-ads/Rakuten-Ads-Android-Sample)
+
 [Public API](./api/README.md)
 
 [Javadoc](https://rakuten-ads.github.io/products/runa/android/javadoc/index.html)
