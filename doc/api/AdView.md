@@ -49,6 +49,8 @@ Related method : setAdSpotId(String adSpotId)
 
 ### Sample Code
 
+#### Normal Project
+
 main_layout.xml :
 
 ```xml
@@ -85,6 +87,32 @@ Activity :
       });
       adView.show();
   }
+```
+
+#### [Jetpack Compose](https://developer.android.com/jetpack/compose)
+
+```kotlin
+AndroidView(
+    factory = {
+        AdView(it)
+    },
+    update = {
+        it.adSpotId = "{ADSPOT_ID}"
+        it.adStateListener = object: AdStateListener() {
+            override fun onLoadSuccess(view: View?) {
+
+            }
+
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+
+            }
+        }
+        it.show()
+    },
+    modifier = Modifier
+            .wrapContentWidth()
+            .wrapContentHeight()
+)
 ```
 
 ---
