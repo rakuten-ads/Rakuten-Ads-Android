@@ -43,7 +43,7 @@ allprojects {
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.4.1'
+  implementation 'com.rakuten.android.ads:runa:1.4.2'
 ```
 
 > * [v1.4.0未満からのマイグレーション](./migration/README.md)
