@@ -99,7 +99,10 @@ import com.rakuten.android.ads.runa.extension.setRp
 
 ## 6. Sample Implementation
 
-### 6.1 The case of extension Properties common implementation
+**The case of ExtensionProperty using**
+
+<details>
+<summary>1.0.0+ (common)</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -135,7 +138,10 @@ import com.rakuten.android.ads.runa.extension.CustomTargeting;
     adView.show()
 ```
 
-### 6.2 The case of ExtensionProperty using
+</details>
+<br>
+<details>
+<summary>1.2.0+</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.2.0-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -179,7 +185,10 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
 
 > `ExtensionProperty` is added from extension module v1.2.0 .
 
-### 6.3 The case of ExtensionProperty using
+</details>
+<br>
+<details>
+<summary>1.2.1+</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -223,48 +232,11 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
 
 > `AdViewHelper` is added from extension module v1.2.1, but `ExtensionProperty` has been deprecated in this version.
 
-### 6.4 The case of ExtensionProperty using
-
-[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
-
-```kotlin
-import com.rakuten.android.ads.runa.AdStateListener
-import com.rakuten.android.ads.runa.AdView
-import com.rakuten.android.ads.runa.extension.ContentGenre
-import com.rakuten.android.ads.runa.extension.CustomTargeting
-import com.rakuten.android.ads.runa.extension.AdViewHelper
-...
-
-    // Create ContentGenre class
-    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
-    // Create CustomTargeting class
-    val customTargeting = CustomTargeting.Builder().apply {
-                          put(KEY, VALUE)
-                          put(KEY2, VALUE2)
-    }.buil()
-
-    val adViewHelper = AdViewHelper.Builder()
-                              .with(genre)
-                              .with(customTargeting)
-                              .withRzCookie("RZ_COOKIE")
-                              .build()
-
-    findViewById<AdView>(R.id.adview).apply {
-        adSpotId = "AD_SPOT_ID"
-        adViewSize = AdSize.ASPECT_FIT
-        adStateListener = object : AdStateListener() {
-            override fun onLoadSuccess() {
-                visibility = View.VISIBLE
-            }
-            override fun onLoadFailure(view: View?, errorState: ErrorState) {
-                visibility = View.GONE
-            }
-        }
-        adViewHelper.apply(this)
-    }.show()
-```
-
-### 6.5 The case of ExtensionProperty using
+</details>
+</details>
+<br>
+<details>
+<summary>1.4.1+</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.4.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -305,6 +277,8 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
         adViewHelper.apply(this)
     }.show()
 ```
+
+</details>
 
 <br><br><br><br><br>
 

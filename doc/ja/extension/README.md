@@ -93,7 +93,10 @@ import com.rakuten.android.ads.runa.extension.setRp
 
 ## 6. Sample Implementation
 
-### 6.1 拡張プロパティの実装例 (共通)
+**拡張プロパティの実装例**
+
+<details>
+<summary>v1.0.0+ (共通)</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -129,7 +132,10 @@ import com.rakuten.android.ads.runa.extension.CustomTargeting;
     adView.show()
 ```
 
-### 6.2 拡張プロパティの実装例
+</details>
+<br>
+<details>
+<summary>v1.2.0+</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.2.0-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -173,49 +179,10 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
 
 > `ExtensionProperty`はExtensionモジュール v1.2.0 から追加されました。
 
-### 6.3 拡張プロパティの実装例
-
-[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
-
-```kotlin
-import com.rakuten.android.ads.runa.AdStateListener
-import com.rakuten.android.ads.runa.AdView
-import com.rakuten.android.ads.runa.extension.ContentGenre
-import com.rakuten.android.ads.runa.extension.CustomTargeting
-import com.rakuten.android.ads.runa.extension.AdViewHelper
-...
-
-    // Create ContentGenre class
-    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
-    // Create CustomTargeting class
-    val customTargeting = CustomTargeting.Builder().apply {
-                          put(KEY, VALUE)
-                          put(KEY2, VALUE2)
-    }.buil()
-
-    val adViewHelper = AdViewHelper.Builder()
-                              .with(genre)
-                              .with(customTargeting)
-                              .with(location)
-                              .withRzCookie("RZ_COOKIE")
-                              .build()
-
-    findViewById<AdView>(R.id.adview).apply {
-        adSpotId = "AD_SPOT_ID"
-        adViewSize = AdSize.ASPECT_FIT
-        adStateListener = object : AdStateListener() {
-            override fun onLoadSuccess() {
-                visibility = View.VISIBLE
-            }
-            override fun onLoadFailure(view: View?, errorState: ErrorState) {
-                visibility = View.GONE
-            }
-        }
-        adViewHelper.apply(this)
-    }.show()
-```
-
-### 6.4 拡張プロパティの実装例
+</details>
+<br>
+<details>
+<summary>v1.2.1+</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -258,7 +225,10 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
 
 > `AdViewHelper`はExtensionモジュール v1.2.1 から追加され、`ExtensionProperty`は当バージョンから非推奨となりました。
 
-### 6.5 拡張プロパティの実装例
+</details>
+<br>
+<details>
+<summary>v1.4.1+</summary>
 
 [![support version](http://img.shields.io/badge/extension-1.4.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -299,6 +269,8 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
         adViewHelper.apply(this)
     }.show()
 ```
+
+</details>
 
 <br><br><br><br><br>
 
