@@ -14,7 +14,7 @@
     <dependency>
       <groupId>com.google.android.gms</groupId>
       <artifactId>play-services-ads-identifier</artifactId>
-      <version>17.0.0</version>
+      <version>17.1.0</version>
     </dependency>
   </dependencies>
 </project>

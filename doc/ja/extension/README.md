@@ -15,8 +15,8 @@
 runaモジュールに加え、runa-aextensionモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.4.2'
-  implementation 'com.rakuten.android.ads:runa-extension:1.4.1'
+  implementation 'com.rakuten.android.ads:runa:1.5.0'
+  implementation 'com.rakuten.android.ads:runa-extension:1.5.0'
 ```
 
 ### モジュール間の対応バージョン
@@ -28,7 +28,8 @@ runaモジュールに加え、runa-aextensionモジュールを追加します�
 |v1.2.1|v1.2.2 〜 v1.2.7|
 |v1.3.0|v1.3.0 〜 v1.3.5|
 |v1.4.0|v1.4.0 〜 v1.4.1|
-|v1.4.1|v1.4.2|
+|v1.4.1|v1.4.2 〜 v1.5.0|
+|v1.5.0|v1.5.0|
 
 ## 2. ContentGenreクラス
 
@@ -44,7 +45,7 @@ ContentGenre(int masterId, String code, Type type)
 
 ## 3. CustomTargetingクラス
 
-[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
 CustomTargetingはBuilderパターンのクラスであるため、Builder()を使用しターゲティング設定を行います。
 
@@ -59,25 +60,42 @@ val targeting = CustomTargeting.Builder().apply {
 
 ## 4. RzCookie
 
-RzCookeiを設定します。
+RzCookieを設定します。
 
-[![support version](http://img.shields.io/badge/extension-_1.1.5_〜_1.2.0-informational.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/extension-_1.1.5_〜_1.2.0-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
 ```kotlin
+import com.rakuten.android.ads.runa.extension.setRz
+
+...
     AdView().setRz("RZ_COOKIE")
 ```
 
-[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
 ```kotlin
+import com.rakuten.android.ads.runa.extension.setRzCookie
+...
+
     AdView().setRzCookie("RZ_COOKIE")
 ```
 
-## 5. Sample Implementation
+## 5. RpCookie
 
-### 5.1 拡張プロパティの実装例 (共通)
+[![support version](http://img.shields.io/badge/extension-_1.4.1-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.4.2)
 
-[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
+```kotlin
+import com.rakuten.android.ads.runa.extension.setRp
+
+...
+    AdView().setRp("RP_COOKIE")
+```
+
+## 6. Sample Implementation
+
+### 6.1 拡張プロパティの実装例 (共通)
+
+[![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener;
@@ -111,9 +129,9 @@ import com.rakuten.android.ads.runa.extension.CustomTargeting;
     adView.show()
 ```
 
-### 5.2 拡張プロパティの実装例
+### 6.2 拡張プロパティの実装例
 
-[![support version](http://img.shields.io/badge/extension-1.2.0-informational.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/extension-1.2.0-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener
@@ -155,9 +173,9 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
 
 > `ExtensionProperty`はExtensionモジュール v1.2.0 から追加されました。
 
-### 5.3 T拡張プロパティの実装例
+### 6.3 拡張プロパティの実装例
 
-[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdStateListener
@@ -197,7 +215,90 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
     }.show()
 ```
 
+### 6.4 拡張プロパティの実装例
+
+[![support version](http://img.shields.io/badge/extension-1.2.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdStateListener
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.extension.ContentGenre
+import com.rakuten.android.ads.runa.extension.CustomTargeting
+import com.rakuten.android.ads.runa.extension.AdViewHelper
+...
+
+    // Create ContentGenre class
+    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
+    // Create CustomTargeting class
+    val customTargeting = CustomTargeting.Builder().apply {
+                          put(KEY, VALUE)
+                          put(KEY2, VALUE2)
+    }.buil()
+
+    val adViewHelper = AdViewHelper.Builder()
+                              .with(genre)
+                              .with(customTargeting)
+                              .withRzCookie("RZ_COOKIE")
+                              .build()
+
+    findViewById<AdView>(R.id.adview).apply {
+        adSpotId = "AD_SPOT_ID"
+        adViewSize = AdSize.ASPECT_FIT
+        adStateListener = object : AdStateListener() {
+            override fun onLoadSuccess() {
+                visibility = View.VISIBLE
+            }
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+                visibility = View.GONE
+            }
+        }
+        adViewHelper.apply(this)
+    }.show()
+```
+
 > `AdViewHelper`はExtensionモジュール v1.2.1 から追加され、`ExtensionProperty`は当バージョンから非推奨となりました。
+
+### 6.5 拡張プロパティの実装例
+
+[![support version](http://img.shields.io/badge/extension-1.4.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdStateListener
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.extension.ContentGenre
+import com.rakuten.android.ads.runa.extension.CustomTargeting
+import com.rakuten.android.ads.runa.extension.AdViewHelper
+...
+
+    // Create ContentGenre class
+    val genre = ContentGenre(GENRE_MASTER_ID, GENRE_CODE, GENRE_TYPE)
+    // Create CustomTargeting class
+    val customTargeting = CustomTargeting.Builder().apply {
+                          put(KEY, VALUE)
+                          put(KEY2, VALUE2)
+    }.buil()
+
+    val adViewHelper = AdViewHelper.Builder()
+                              .with(genre)
+                              .with(customTargeting)
+                              .withRzCookie("RZ_COOKIE")
+                              .withRpCookie("RP_COOKIE")
+                              .build()
+
+    findViewById<AdView>(R.id.adview).apply {
+        adSpotId = "AD_SPOT_ID"
+        adViewSize = AdSize.ASPECT_FIT
+        adStateListener = object : AdStateListener() {
+            override fun onLoadSuccess() {
+                visibility = View.VISIBLE
+            }
+            override fun onLoadFailure(view: View?, errorState: ErrorState) {
+                visibility = View.GONE
+            }
+        }
+        adViewHelper.apply(this)
+    }.show()
+```
 
 <br><br><br><br><br>
 

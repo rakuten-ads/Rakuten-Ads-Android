@@ -131,10 +131,10 @@ import com.rakuten.android.ads.runa.AdView
 
     ...
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        findViewById<AdView>(R.id.adview).show();
+        findViewById<AdView>(R.id.adview).show()
     }
     ...  
 ```
@@ -175,7 +175,7 @@ findViewById<AdView>(R.id.adview)
 
 ### 5. 複数のAdView間での重複排除
 
-[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.2.0)
 
 　同一の画面にAdViewを複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
 RunaAdSessionの`bind`メソッドに複数のAdViewを指定することで、それらのAdViewで表示される広告の重複を回避します。<br>
@@ -218,9 +218,9 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 >
 > ※ [その他実装サンプル](./sample_ad_session.md)
 
-### 7. 複数の広告を一度にロードする
+### 6. 複数の広告を一度にロードする
 
-[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
 　カルーセル広告などを表示するなど、一度のロードで複数の広告を表示する場合に[`AdLoader`](../api/AdLoader.md)を利用します。<br>
 AdLoaderはBuilderパターンで構成されており、[`AdLoader$Builder`](../api/AdLoader.md#adLoader_builder)クラスを定義して広告のロードに必要なパラメータを追加する必要があります。<br>
@@ -262,6 +262,25 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 ```
 > ※ AdViewへのadSpotIdの設定はxml上で行われているものとしています。
 >
+
+### 7. AdSpotCodeを利用する
+
+[![support version](http://img.shields.io/badge/runa-1.5.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.5.0)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+
+    ...
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        findViewById<AdView>(R.id.adview).apply {
+            adSpotCode = "{AD_SPOT_CODE}"
+        }.show()
+    }
+    ...  
+```
 
 
 ---
