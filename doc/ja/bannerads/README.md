@@ -6,9 +6,10 @@
 
 * **[1.広告サイズを指定する](#specify_adsize)**
 * **[2.レイアウトXMLにAdViewを定義する](#define_adview_xml)**
-* **[3.Javaによる実装](#implement_java)**
-* **[4.Kotlinによる実装](#implement_kotlin)**
-* **[5.複数のAdView間での重複排除](#avoid_duplication)**
+* **[3.広告の状態を検知する](#detect_state)**
+* **[4.複数のAdView間での重複排除](#avoid_duplication)**
+* **[5.複数の広告を一度にロードする](#load_multiple)**
+* **[6.AdSpotCodeを利用する](#use_adSpotCode)**
 
 ---
 
@@ -33,16 +34,36 @@ enum class<br>
 
 `AdSize`は以下のように指定することができます。
 
+<details>
+<summary><b>Javaによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
+
 ```java
 AdView adView = new AdView(context);
 adView.setAdSpotId(123);
 adView.setAdViewSize(AdSize.ASPECT_FIT);
 adView.show();
 ```
+</details>
+<details>
+<summary><b>Kotlinによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
+
+```kotlin
+AdView(context).apply {
+  adSpotId = "123"
+  adViewSize = AdSize.ASPECT_FIT
+}.show()
+```
+</details>
+
+---
 
 <div id="define_adview_xml"></div>
 
-### 2. レイアウトXMLにAdViewを定義する
+### 2. レイアウトXMLでAdViewを定義して表示する
 
 R.layout.activity_main
 ```xml
@@ -56,9 +77,8 @@ R.layout.activity_main
 >
 > * ※ `layout_width`と`layout_height`には`wrap_content`"をセットしてください。AdViewが管理画面で設定した広告枠サイズに応じてサイズを適応します。
 
-<div id="implement_java"></div>
-
-### 3. Javaによる実装
+<details>
+<summary><b>Javaによる実装</b></summary>
 
 [![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
 
@@ -76,52 +96,10 @@ import com.rakuten.android.ads.runa.AdView;
     }
     ...  
 ```
+</details>
 
-
-#### 広告の状態を検知する
-
-広告の動作に応じてカスタマイズするには,以下のコードのように[`AdView`](../api/AdView.md)の`setAdStateListener`に[`AdStateListener`](../api/AdStateListener.md)クラスをセットすることで、イベントをフックします。
-フックするイベントに応じて必要なメソッドを定義してください。
-
-```java
-import com.rakuten.android.ads.runa.AdStateListener;
-...
-
-AdView ad = ((AdView) findViewById(R.id.adview))
-                .setAdStateListener(new AdStateListener() {
-                      @Override
-                      public void onLoadSuccess() {
-                            // 広告が読み込みが成功した場合
-                      }
-
-                      @Override
-                      public void onLoadFailure(@Nullable View adView) {
-                            // 広告の読み込みが失敗した場合
-                            adView.setVisibility(View.GONE);
-                      }
-
-                      @Override
-                      public void onClick(@Nullable View adView) {
-                            // 広告がクリックされた場合
-                      }
-                });
-ad.show();
-```
-
-**AdStateListener**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;public abstract class
-* `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。<br><br>
-* `onLoadFailure` : 広告の読み込みが失敗した場合、このメソッドが呼ばれます。また、失敗した場合にAdViewは`View.INVISIBLE`となります。必要に応じてView.GONEにご設定ください。
-  * [`ErrorState`](../api/ErrorState.md) : 広告リクエストでエラーが発生した時のステータスを示します。<br><br>
-* `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。<br><br>
-* `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。<br><br>
-* `onAdClose()` : 広告の目的のページ（或いはアプリ）からアプリに戻ってきた際にこのメソッドが呼ばれます。
-
-
----
-<div id="implement_kotlin"></div>
-
-### 4. Kotlinによる実装
+<details>
+<summary><b>Kotlinによる実装</b></summary>
 
 [![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
@@ -139,41 +117,89 @@ import com.rakuten.android.ads.runa.AdView
     ...  
 ```
 
-#### 広告の状態を検知する
+</details>
+
+---
+
+<div id="detect_state"></div>
+
+### 3. 広告の状態を検知する
+
+広告の動作に応じてカスタマイズするには,以下のコードのように[`AdView`](../api/AdView.md)の`setAdStateListener`に[`AdStateListener`](../api/AdStateListener.md)クラスをセットすることで、イベントをフックします。
+フックするイベントに応じて必要なメソッドを定義してください。
+
+**AdStateListener**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;public abstract class
+* `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。<br><br>
+* `onLoadFailure` : 広告の読み込みが失敗した場合、このメソッドが呼ばれます。また、失敗した場合にAdViewは`View.INVISIBLE`となります。必要に応じてView.GONEにご設定ください。
+  * [`ErrorState`](../api/ErrorState.md) : 広告リクエストでエラーが発生した時のステータスを示します。<br><br>
+* `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。<br><br>
+* `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。<br><br>
+* `onAdClose()` : 広告の目的のページ（或いはアプリ）からアプリに戻ってきた際にこのメソッドが呼ばれます。
+
+<details>
+<summary><b>Javaによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
+
+```java
+import com.rakuten.android.ads.runa.AdStateListener;
+...
+
+AdView ad = (AdView) findViewById(R.id.adview);
+ad.setAdStateListener(new AdStateListener() {
+    @Override
+    public void onLoadSuccess() {
+        // 広告が読み込みが成功した場合
+    }
+
+    @Override
+    public void onLoadFailure(@Nullable View adView) {
+        // 広告の読み込みが失敗した場合
+        if (adView != null) adView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onClick(@Nullable View adView) {
+        // 広告がクリックされた場合
+    }
+});
+ad.show();
+```
+</details>
+<details>
+<summary><b>Kotlinによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 ```kotlin
-import com.rakuten.android.ads.runa.AdView
 import com.rakuten.android.ads.runa.AdStateListener
 ...
 
-findViewById<AdView>(R.id.adview)
-.apply {
-      adStateListener = object: AdStateListener() {
+findViewById<AdView>(R.id.adview).apply {
+    adStateListener = object : AdStateListener() {
 
-            override fun onLoadSuccess() {
-                // 広告の読み込みが成功した場合
+        override fun onLoadSuccess() {
+            // 広告が読み込みが成功した場合
+        }
 
-            }
+        override fun onLoadFailure(adView: View?) {
+            // 広告の読み込みが失敗した場合
+            visibility = View.GONE
+        }
 
-            override fun onLoadFailure(adView: View?) {
-                // 広告の読み込みが失敗した場合
-                adView?.let {
-                    it.visibility = View.GONE
-                }
-            }
-
-            override fun onClick(adView: View?) {
-                // 広告がクリックされた場合
-
-            }
-      }
-}
-.show()
+        override fun onClick(adView: View?) {
+            // 広告がクリックされた場合
+        }
+}.show()
 ```
+</details>
+
+---
 
 <div id="avoid_duplication"></div>
 
-### 5. 複数のAdView間での重複排除
+### 4. 複数のAdView間での重複排除
 
 [![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.2.0)
 
@@ -182,6 +208,50 @@ RunaAdSessionの`bind`メソッドに複数のAdViewを指定することで、�
 また、`bind`メソッドに指定したAdViewの`show`メソッドを実行する際は、それらの時間的間隔を空けて実行してください。<br>
 (先にbindしたAdViewの広告データを、次にbindしたAdViewの読み込み時に参照しているためです。)<br>
 以下の実装方法は必ずしも必要ではありませんが、AdView1とAdView2で表示コンテンツの重複を回避する実装例となります。<br>
+
+<details>
+<summary><b>Javaによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
+
+```java
+import com.rakuten.android.ads.runa.AdView;
+import com.rakuten.android.ads.runa.AdStateListener;
+...
+
+private final RunaAdSession adSession = RunaAdSession();
+
+...
+
+@Override
+fun onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        AdView adView1 = (AdView) findViewById(R.id.adview1);
+        AdView adView2 = (AdView) findViewById(R.id.adview2);
+
+        adSession.bind(adView1, adView2);
+
+        adView1.setAdStateListener(new AdStateListener() {
+                    override fun onLoadSuccess() {
+                        adView2.show();
+                    }
+                    override fun onLoadFailure(View adView) {
+                        adView2.show();
+                    }
+              });
+        }
+        adView1.show();
+}
+...
+```
+> ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
+
+</details>
+
+<details>
+<summary><b>Kotlinによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdView
@@ -213,12 +283,17 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 }
 ...
 ```
-
 > ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
->
+
+</details>
+
 > ※ [その他実装サンプル](./sample_ad_session.md)
 
-### 6. 複数の広告を一度にロードする
+---
+
+<div id="load_multiple"></div>
+
+### 5. 複数の広告を一度にロードする
 
 [![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
@@ -228,6 +303,54 @@ Builderには描画させたいAdViewを追加し、AdLoaderの読み込み状�
 Builderへのパラメータの追加後は`build`メソッドでAdLoaderを生成し、AdLoaderは`execute`メソッドを実行することでロードを開始します。<br>
 ロードが開始すると、読み込みが完了したAdViewから描画がされていきます。この時、描画の順序を制御することはできません。<br>
 また、AdLoaderで広告を読み込む場合、排他排除機能を含むため前項(5. 複数のAdView間での重複排除)の`RunaAdSession`を用いた重複排除の実装は不要となります。
+
+<details>
+<summary><b>Javaによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
+
+```java
+@Override
+fun onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState)
+        AdView adView1 = (AdView) findViewById(R.id.adview1);
+        adView1.setTag("adview1");
+
+        AdView adView2 = (AdView) findViewById(R.id.adview2);
+        AdView adView3 = (AdView) findViewById(R.id.adview3);
+
+        AdLoader adLoader = new AdLoader.Builder(view.context)
+            .add(adView1, adView2, adView3)
+            .with(new AdLoaderStateListener() {
+                @Override
+                public void onLoadSuccess(view: View?) {
+
+                }
+                @Override
+                public void onLoadFailure(adView: View?, errorState: ErrorState) {
+                      adView?.let { v ->
+                        if (v.tag == "adview1") {
+                           // Do something..
+                        }
+                      }
+                }
+                @Override
+                public void onAllLoadsFinished(adLoader: AdLoader, loadedAdViews: List<AdView>?) {
+                      // Do something
+                }
+            })
+            .build();
+      adLoader.execute();
+}
+...
+```
+> ※ AdViewへのadSpotIdの設定はxml上で行われているものとしています。
+
+</details>
+<details>
+<summary><b>Kotlinによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 ```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -261,11 +384,41 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 ...
 ```
 > ※ AdViewへのadSpotIdの設定はxml上で行われているものとしています。
->
+</details>
 
-### 7. AdSpotCodeを利用する
+---
+
+<div id="use_adSpotCode"></div>
+
+### 6. AdSpotCodeを利用する
 
 [![support version](http://img.shields.io/badge/runa-1.5.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.5.0)
+
+<details>
+<summary><b>Javaによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
+
+```java
+import com.rakuten.android.ads.runa.AdView;
+
+    ...
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        AdView adView = (AdView) findViewById(R.id.adview);
+        adView.setAdSpotCode("{AD_SPOT_CODE}");
+        adView.show();
+    }
+    ...  
+```
+</details>
+<details>
+<summary><b>Kotlinによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 ```kotlin
 import com.rakuten.android.ads.runa.AdView
@@ -281,7 +434,7 @@ import com.rakuten.android.ads.runa.AdView
     }
     ...  
 ```
-
+</details>
 
 ---
 [TOP](../#top)
