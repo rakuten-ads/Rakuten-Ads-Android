@@ -172,7 +172,7 @@ findViewById<AdView>(R.id.adview)
 
 ### 5. Avoid duplicates between multiple AdView
 
-[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.2.0)
 
 　Uses [`RunaAdSession`](../api/RunaAdSession.md) to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
 Sets multiple AdView to the `RunaAdSession$bind` method to avoid duplication of ads display in those AdViews.<br>
@@ -216,7 +216,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 ### 6. Load multiple ads at once
 
-[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://developer.android.com)
+[![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
  Use [`AdLoader`](../api/AdLoader.md) to display multiple ads with one load, such as displaying carousel ads.<br>
 AdLoader consists of a Builder pattern, so need to declare the [`AdLoader$Builder`](../api/AdLoader.md#adLoader_builder) class and add some parameters to load ads.<br>
@@ -256,6 +256,25 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 ...
 ```
 > ※ This sample is assumed that the adSpotId setting for AdView is done on layout xml.
+
+### Use AdSpotCode
+
+[![support version](http://img.shields.io/badge/runa-1.5.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.5.0)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+
+    ...
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        findViewById<AdView>(R.id.adview).apply {
+            adSpotCode = "{AD_SPOT_CODE}"
+        }.show()
+    }
+    ...  
+```
 
 ---
 [TOP](/README.md#top)
