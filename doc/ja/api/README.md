@@ -29,6 +29,16 @@
 >
 > バナー広告を表示するためのViewオブジェクト
 
+* ### [CarouselAdStateListener](./CarouselAdStateListener.md)
+> v1.6.0+
+>
+> CarouselAdViewによる広告の読み込み状況を通知するためのListener
+
+* ### [CarouselAdView](./CarouselAdView.md)
+> v1.6.0+
+>
+> 複数のAdViewをカルーセルで表示するためのViewオブジェクト
+
 * ### [ErrorState](./ErrorState.md)
 > v1.0.0+
 >
