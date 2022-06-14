@@ -42,7 +42,30 @@ Boolean | isLoading() | Returns whether the ad is loading.
 void | show() | Start drawing the ad.
 
 
-### Sample
+### XML Attributes
+
+- #### adSpotIds
+> Related Methods : `addAdSpotId(vararg String)`
+- #### pagerSnapEnabled
+> Related Methods : `isPagerSnapEnabled(Boolean)`
+- #### nestedAdsSize
+> Related Methods : `setNestedAdsSize(AdSize)`
+- #### nestedAdsCustomWidth
+> Related Methods : `setNestedAdsCustomWidth(Int)`
+- #### nestedAdsCustomHeight
+> Related Methods : `setNestedAdsCustomHeight(Int)`
+- #### adsOverhangWidth
+> Related Methods : `setAdsOverhangWidth(Int)`
+- #### adsSeparatorWidth
+> Related Methods : `setAdsSeparatorWidth(Int)`
+- #### indicatorEnabled
+> Related Methods : `isIndicatorEnabled(Boolean)`
+- #### indicatorBackground
+> Related Methods : `setIndicatorBackground(Drawable)`
+
+
+
+### Sample Code
 
 The following is a sample defined in xml and called from Kotlin.
 

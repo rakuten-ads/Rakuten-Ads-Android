@@ -23,7 +23,7 @@ An object to launch Runa SDK.
 |Boolean|getDebug|Whether debug mode is enabled.|
 
 
-### Implementation Sample
+### Sample Code
 
 In the onCreate method of the class that inherits [`Application`](https://developer.android.com/reference/android/app/Application), implement as follows and launch the SDK.
 

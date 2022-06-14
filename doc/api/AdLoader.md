@@ -51,7 +51,7 @@ Builder | putProperty(String key, JSONObject value) | Adds key/value pair of pro
 AdLoader | build() | Generates AdLoader instance.
 
 
-### Implementation Sample
+### Sample Code
 
 ```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
