@@ -42,10 +42,16 @@ The View to display the Banner ad. An ad spot ID must be set via xml layout or p
 * class [android.view.View](https://developer.android.com/reference/android/view/View)
 * class [java.lang.Object](https://developer.android.com/reference/java/lang/Object.html)
 
-### XML Attribute
 
-* **adSpotId**<br>
-Related method : setAdSpotId(String adSpotId)
+### XML Attributes
+
+- #### adSpotId
+> Related Methods : `setAdSpotId(String)`
+- #### adSpotCode
+> Related Methods : `setAdSpotCode(String)`
+- #### adSpotSize
+> Related Methods : `setAdSize(AdSize)`
+
 
 ### Sample Code
 

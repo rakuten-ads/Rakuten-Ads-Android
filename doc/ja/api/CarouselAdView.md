@@ -41,6 +41,28 @@ void | setProperty(Bundle) | プロパティをBundleで設定します。
 Boolean | isLoading() | 広告の読み込み中かを返します。
 void | show() | 広告の描画を開始します。
 
+### XML属性
+
+XMLレイアウトから以下のパラメータの設定が可能です。
+
+- #### adSpotIds
+> Related Methods : `addAdSpotId(vararg String)`
+- #### pagerSnapEnabled
+> Related Methods : `isPagerSnapEnabled(Boolean)`
+- #### nestedAdsSize
+> Related Methods : `setNestedAdsSize(AdSize)`
+- #### nestedAdsCustomWidth
+> Related Methods : `setNestedAdsCustomWidth(Int)`
+- #### nestedAdsCustomHeight
+> Related Methods : `setNestedAdsCustomHeight(Int)`
+- #### adsOverhangWidth
+> Related Methods : `setAdsOverhangWidth(Int)`
+- #### adsSeparatorWidth
+> Related Methods : `setAdsSeparatorWidth(Int)`
+- #### indicatorEnabled
+> Related Methods : `isIndicatorEnabled(Boolean)`
+- #### indicatorBackground
+> Related Methods : `setIndicatorBackground(Drawable)`
 
 
 ### サンプル

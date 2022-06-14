@@ -46,8 +46,13 @@
 
 ### XML属性
 XMLレイアウトから以下のパラメータの設定が可能です。
-* **adSpotId**<br>
-関連するメソッド : setAdSpotId(String adSpotId)
+
+- #### adSpotId
+> Related Methods : `setAdSpotId(String)`
+- #### adSpotCode
+> Related Methods : `setAdSpotCode(String)`
+- #### adSpotSize
+> Related Methods : `setAdSize(AdSize)`
 
 ### サンプルコード
 
