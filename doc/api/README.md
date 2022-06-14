@@ -29,6 +29,16 @@
 >
 > The View to display the Banner ad.
 
+* ### [CarouselAdStateListener](./CarouselAdStateListener.md)
+> v1.6.0+
+>
+> A listener for receiving notifications during the lifecycle of CarouselAdView.
+
+* ### [CarouselAdView](./CarouselAdView.md)
+> v1.6.0+
+>
+> View for carousel ads.
+
 * ### [ErrorState](./ErrorState.md)
 > v1.0.0+
 >
