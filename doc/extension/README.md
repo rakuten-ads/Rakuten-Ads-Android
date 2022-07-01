@@ -31,7 +31,7 @@ Open the app-level `build.gradle` file for your app, and look for a "dependencie
 |v1.4.0|v1.4.0 〜 v1.4.1|
 |v1.4.1|v1.4.2 〜 v1.5.0|
 |v1.5.0|v1.5.0|
-|v1.6.0|v1.6.0|
+|v1.6.0|v1.6.0 〜 v1.6.1|
 
 ## 2. ContentGenre class
 
