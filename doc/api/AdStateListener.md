@@ -33,4 +33,4 @@ A listener for receiving notifications during the lifecycle of an ad.
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdStateListener.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/api/AdStateListener.md)

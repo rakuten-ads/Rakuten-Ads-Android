@@ -32,4 +32,4 @@ Before update | After update
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/troubleshoot/README.md)
+> [![en](/doc/img/lang/en.png)](/doc/troubleshoot/README.md)

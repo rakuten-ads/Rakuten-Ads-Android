@@ -27,4 +27,4 @@ Indicates the status when an error occurred in AdRequest.
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/ErrorState.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/api/ErrorState.md)

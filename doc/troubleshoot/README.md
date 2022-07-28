@@ -32,4 +32,4 @@ Before update | After update
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/troubleshoot/README.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/troubleshoot/README.md)

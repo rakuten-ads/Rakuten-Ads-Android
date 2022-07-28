@@ -62,4 +62,4 @@ class SampleApplication : Application() {
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/migration/README.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/migration/README.md)

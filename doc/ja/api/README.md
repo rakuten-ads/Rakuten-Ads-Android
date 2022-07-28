@@ -62,4 +62,4 @@
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/api/README.md)
+> [![en](/doc/img/lang/en.png)](/doc/api/README.md)

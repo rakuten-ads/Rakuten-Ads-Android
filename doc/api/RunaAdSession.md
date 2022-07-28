@@ -59,4 +59,4 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/RunaAdSession.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/api/RunaAdSession.md)

@@ -105,4 +105,4 @@ Thid SDK is built by below tools.
 
 ---
 LANGUAGE :
-> [![jp](./doc/lang/ja.png)](./doc/ja)
+> [![jp](./doc/img/lang/ja.png)](./doc/ja)

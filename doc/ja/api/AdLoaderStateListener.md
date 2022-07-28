@@ -39,4 +39,4 @@ Abstract class
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/api/AdLoaderStateListener.md)
+> [![en](/doc/img/lang/en.png)](/doc/api/AdLoaderStateListener.md)

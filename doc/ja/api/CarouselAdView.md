@@ -123,4 +123,4 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/api/CarouselAdView.md)
+> [![en](/doc/img/lang/en.png)](/doc/api/CarouselAdView.md)
