@@ -104,4 +104,4 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 ---
 LANGUAGE :
-> [![en](../lang/en.png)](/README.md#top)
+> [![en](/doc/img/lang/en.png)](/README.md#top)
