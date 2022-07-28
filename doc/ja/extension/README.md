@@ -280,4 +280,4 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/extension/README.md)
+> [![en](/doc/img/lang/en.png)](/doc/extension/README.md)

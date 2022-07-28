@@ -39,4 +39,4 @@ A Listener to notify the the ad loading status by AdLoader.
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdLoaderStateListener.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/api/AdLoaderStateListener.md)

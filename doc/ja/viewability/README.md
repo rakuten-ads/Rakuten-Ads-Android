@@ -74,4 +74,4 @@ ViewabilityProvider.unregister(sampleTargetView)
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/viewability/README.md)
+> [![en](/doc/img/lang/en.png)](/doc/viewability/README.md)

@@ -444,4 +444,4 @@ import com.rakuten.android.ads.runa.AdView
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/bannerads/README.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/bannerads/README.md)

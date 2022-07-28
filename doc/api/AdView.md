@@ -128,4 +128,4 @@ AndroidView(
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/AdView.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/api/AdView.md)

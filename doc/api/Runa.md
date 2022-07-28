@@ -49,4 +49,4 @@ class SampleApplication : Application() {
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/Runa.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/api/Runa.md)

@@ -25,6 +25,7 @@
 |void|onLoadFailure()|広告リクエストが失敗した時に呼ばれます。|
 |void|onClick()|広告がクリックされた時に呼ばれます。|
 |void|onLeftApplication()|アプリケーションから離れる時に呼ばれます。|
+|void|onAdCloseed()|広告をクリックしリンク先への遷移後、アプリに戻ると呼ばれます。|
 
 ---
 
@@ -34,4 +35,4 @@
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/api/AdStateListener.md)
+> [![en](/doc/img/lang/en.png)](/doc/api/AdStateListener.md)

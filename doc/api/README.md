@@ -63,4 +63,4 @@
 
 ---
 LANGUAGE :
-> [![ja](/doc/lang/ja.png)](/doc/ja/api/README.md)
+> [![ja](/doc/img/lang/ja.png)](/doc/ja/api/README.md)

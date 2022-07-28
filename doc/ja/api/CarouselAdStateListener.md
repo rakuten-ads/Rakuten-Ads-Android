@@ -35,4 +35,4 @@ Abstract class
 
 ---
 LANGUAGE :
-> [![en](/doc/lang/en.png)](/doc/api/CarouselAdStateListener.md)
+> [![en](/doc/img/lang/en.png)](/doc/api/CarouselAdStateListener.md)
