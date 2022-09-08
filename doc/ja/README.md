@@ -8,6 +8,7 @@
 ### 広告フォーマット
 
 * **[バナー広告](./bannerads/README.md)**
+* **[カルーセル広告](./carouselads/README.md)**
 
 ---
 # はじめに
@@ -90,6 +91,7 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 ## 5. 実装
 
 * **[バナー広告](./bannerads/README.md)**
+* **[カルーセル広告](./carouselads/README.md)**
 * **[ビューアブルインプレッションの計測](./viewability/README.md)**
 
 ---
