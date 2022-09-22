@@ -15,7 +15,7 @@
 runaモジュールに加え、runa-aextensionモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.6.0'
+  implementation 'com.rakuten.android.ads:runa:1.6.2'
   implementation 'com.rakuten.android.ads:runa-extension:1.6.0'
 ```
 
@@ -30,9 +30,13 @@ runaモジュールに加え、runa-aextensionモジュールを追加します�
 |v1.4.0|v1.4.0 〜 v1.4.1|
 |v1.4.1|v1.4.2 〜 v1.5.0|
 |v1.5.0|v1.5.0|
-|v1.6.0|v1.6.0 〜 v1.6.1|
+|v1.6.0|v1.6.0 〜 v1.6.2|
 
-## 2. ContentGenreクラス
+<div id="helper_adview"></div>
+
+## 2. 特殊なパラメータをAdViewにセットする
+
+### 2.1 ContentGenreクラス
 
 [![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
@@ -44,7 +48,7 @@ ContentGenre(int masterId, String code, Type type)
 >
 > **type** : (enum) タイプを選択 `Type.Children` または `Type.L1`
 
-## 3. CustomTargetingクラス
+### 2.2 CustomTargetingクラス
 
 [![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -59,7 +63,7 @@ val targeting = CustomTargeting.Builder().apply {
 > * ターゲティングはput()メソッドを用いてKey/Valueを指定します。
 > * 必要な値を指定したあとは、build()メソッドでCustomTargetingクラスを生成します。
 
-## 4. RzCookie
+### 2.3 RzCookie
 
 RzCookieを設定します。
 
@@ -81,9 +85,9 @@ import com.rakuten.android.ads.runa.extension.setRzCookie
     AdView().setRzCookie("RZ_COOKIE")
 ```
 
-## 5. RpCookie
+### 2.4 RpCookie
 
-[![support version](http://img.shields.io/badge/extension-_1.4.1-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.4.2)
+[![support version](http://img.shields.io/badge/extension-_1.4.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.4.2)
 
 ```kotlin
 import com.rakuten.android.ads.runa.extension.setRp
@@ -92,7 +96,58 @@ import com.rakuten.android.ads.runa.extension.setRp
     AdView().setRp("RP_COOKIE")
 ```
 
-## 6. Sample Implementation
+<div id="helper_adloader"></div>
+
+## 3. 特殊なパラメータをAdLoaderにセットする
+
+特殊なパラメータをAdLoaderにセットするにはAdLoaderHelperを利用します。<br>
+`runa-extension`モジュールを利用することで、AdLoaderに特殊なパラメータをセットすることができます。
+
+```kotlin
+import com.rakuten.android.ads.runa.extension.AdLoaderHelper
+
+...
+val adView1Builder = AdLoaderHelper.AdViewBuilder(findViewById<AdView>(R.id.adView1)).apply {
+    setAdSpotId("{AD_SPOT_ID1}")
+    val customTargeting = CustomTargeting.Builder().apply {
+      put("K1", "V1", "V2", "V3")
+    }.build()
+    setCustomTargeting(customTargeting)
+    setContentGenre(ContentGenre("{MasterID}", "{CODE}", "{TYPE}"))
+}
+
+val adView2 = findViewById<AdView>(R.id.adView2).apply {
+  adSpotId = "{AD_SPOT_ID2}"
+  adStateListener = object : AdLoaderStateListener() {
+    ...
+  }
+}
+...
+
+val adLoaderHelper = AdLoaderHelper(context)
+  // Add AdView with basic settings
+  .add(
+      adView1Builder,
+      AdLoaderHelper.AdViewBuilder(adView2),
+      AdLoaderHelper.AdViewBuilder(adView3),
+      AdLoaderHelper.AdViewBuilder(adView4)
+  )
+  // Set AdLoaderStateListener
+  .with(setAdStateListener(object : AdLoaderStateListener() {
+    ...
+  }))
+  // Set RZ Cookie
+  .withRzCookie("{RZ_COOKIE}")
+  // Set RP Cookie
+  .withRpCookie("{RP_COOKIE}")
+  .build()
+  // Execute loading
+  .execute()
+```
+
+<div id="implemention_sample"></div>
+
+## 4. Sample Implementation
 
 **拡張プロパティの実装例**
 
