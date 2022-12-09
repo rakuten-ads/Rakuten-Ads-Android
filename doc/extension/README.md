@@ -81,6 +81,8 @@ Normalizer module provides api to normalize any string values for convenience, c
 * convert multi (>=2) spaces to single space trim spaces
 * remove spaces at start and end of phrase
 
+> e.g. `"　Orange APPLE　梨　　ｻｶﾅ"` -> `"orange apple 梨 サカナ"`
+
 Import `normalizer` module to project gradle file.
 ```gradle
 implementation 'com.rakuten.android.ads:normalizer:1.0.0'
