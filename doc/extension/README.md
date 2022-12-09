@@ -71,6 +71,30 @@ val customTargeting = CustomTargeting.Builder().apply {
 }.build()
 ```
 
+#### Use Normalizer
+
+Normalizer module provides api to normalize any string values for convenience, contains following rules:
+
+* convert half-width to full-width (カナ, 濁点, 半濁点, 長音符)
+* convert full-width to half-width (digit, alphabet, space, double quotation)
+* convert upper-case to lower-case (alphabet)
+* convert multi (>=2) spaces to single space trim spaces
+* remove spaces at start and end of phrase
+
+Import `normalizer` module to project gradle file.
+```gradle
+implementation 'com.rakuten.android.ads:normalizer:1.0.0'
+```
+
+```kotlin
+import com.rakuten.android.ads.normalizer.QueryNormalizer
+...
+
+val customTargeting = CustomTargeting.Builder().apply {
+    put("K1", QueryNormalizer.normalize("Orange APPLE　梨　　ｻｶﾅ"))
+}.build()
+```
+
 ### 2.3 RzCookie
 
 Sets the RzCookie

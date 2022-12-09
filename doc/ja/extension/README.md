@@ -63,6 +63,31 @@ val targeting = CustomTargeting.Builder().apply {
 > * ターゲティングはput()メソッドを用いてKey/Valueを指定します。
 > * 必要な値を指定したあとは、build()メソッドでCustomTargetingクラスを生成します。
 
+#### Normalizerを利用する
+
+Normalizerモジュールは文字列を以下のルールの基、標準化します。
+
+* 半角文字列を全角文字列に変換 (カナ, 濁点, 半濁点, 長音符)
+* 全角英数字記号スペースを半角に変換 (digit, alphabet, space, double quotation)
+* アルファベットの大文字を小文字に変換
+* スペース(全角含む)を半角スペースに変換
+* 文字列の始まりまたは終わりのスペースを消去
+
+
+gradleファイルに以下を追加しインポートします。
+```gradle
+implementation 'com.rakuten.android.ads:normalizer:1.0.0'
+```
+
+```kotlin
+import com.rakuten.android.ads.normalizer.QueryNormalizer
+...
+
+val customTargeting = CustomTargeting.Builder().apply {
+    put("K1", QueryNormalizer.normalize("Orange APPLE　梨　　ｻｶﾅ"))
+}.build()
+```
+
 ### 2.3 RzCookie
 
 RzCookieを設定します。
