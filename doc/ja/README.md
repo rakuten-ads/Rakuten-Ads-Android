@@ -42,8 +42,10 @@ allprojects {
 
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
+最新のRunaバージョン :
+
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.6.2'
+  implementation 'com.rakuten.android.ads:runa:1.6.3'
 ```
 
 > * [v1.4.0未満からのマイグレーション](./migration/README.md)
@@ -55,6 +57,25 @@ Application継承クラスのonCreate内で以下の処理を実行してくだ�
 ```kotlin
 Runa.init(this)
 ```
+
+<details>
+<summary>Sample</summary>
+
+```kotlin
+class Application : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        Runa.init(this)
+    }
+}
+```
+
+</details>
+
+### 2.3 実装
+
+* [バナー広告](./bannerads/README.md)
 
 ## 3. 依存関係
 
@@ -84,8 +105,9 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 本SDKは以下の条件でビルドしています。
 
-* Kotlin version 1.3.72
-* OpenJDK version 11.0.8
+* Kotlin version : 1.3.72
+* OpenJDK version : 11.0.8
+* Gradle version : 6.7.1
 
 ## 5. 実装
 

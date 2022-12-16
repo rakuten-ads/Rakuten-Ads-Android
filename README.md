@@ -41,8 +41,10 @@ allprojects {
 
 Next, open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
+Latest Runa version :
+
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.6.2'
+  implementation 'com.rakuten.android.ads:runa:1.6.3'
 ```
 
  * [Migration to v1.4.0+](./doc/migration/README.md)
@@ -54,6 +56,25 @@ In the onCreate method of the class that inherits Application, execute as follow
 ```kotlin
 Runa.init(this)
 ```
+
+<details>
+<summary>Sample</summary>
+
+```kotlin
+class Application : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        Runa.init(this)
+    }
+}
+```
+
+</details>
+
+### 2.3 Implementation
+
+* [Banner Ads](./doc/bannerads/README.md)
 
 ## 3. Dependencies
 
@@ -84,8 +105,9 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 Thid SDK is built by below tools.
 
-* Kotlin version 1.3.72
-* OpenJDK version 11.0.8
+* Kotlin version : 1.3.72
+* OpenJDK version : 11.0.8
+* Gradle version : 6.7.1
 
 
 ## 5. Implementation
