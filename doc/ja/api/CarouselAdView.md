@@ -41,6 +41,8 @@ void | setProperty(Bundle) | プロパティをBundleで設定します。
 Boolean | isLoading() | 広告の読み込み中かを返します。
 void | show() | 広告の描画を開始します。
 
+<div id="xml_attrs"></div>
+
 ### XML属性
 
 XMLレイアウトから以下のパラメータの設定が可能です。

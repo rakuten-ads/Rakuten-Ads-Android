@@ -7,7 +7,8 @@
 
 ### Ad Formats
 
-* **[Banner](./doc/bannerads/README.md)**
+* **[BannerAds](./doc/bannerads/README.md)**
+* **[CarouselAds](./doc/carouselads/README.md)**
 
 ---
 # Get Started
@@ -113,6 +114,7 @@ Thid SDK is built by below tools.
 ## 5. Implementation
 
 * **[Banner ads](./doc/bannerads/README.md)**
+* **[CarouselAds](./doc/carouselads/README.md)**
 * **[Viewability measurement](./doc/viewability/README.md)**
 
 ---
