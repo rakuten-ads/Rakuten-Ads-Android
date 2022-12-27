@@ -46,7 +46,7 @@ allprojects {
 最新のRunaバージョン :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.6.3'
+  implementation 'com.rakuten.android.ads:runa:1.6.4'
 ```
 
 > * [v1.4.0未満からのマイグレーション](./migration/README.md)
