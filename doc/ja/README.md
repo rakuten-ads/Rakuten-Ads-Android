@@ -46,7 +46,7 @@ allprojects {
 最新のRunaバージョン :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.6.4'
+  implementation 'com.rakuten.android.ads:runa:1.7.0'
 ```
 
 > * [v1.4.0未満からのマイグレーション](./migration/README.md)
@@ -106,9 +106,9 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 本SDKは以下の条件でビルドしています。
 
-* Kotlin version : 1.3.72
+* Kotlin version : 1.4.32
 * OpenJDK version : 11.0.8
-* Gradle version : 6.7.1
+* Gradle version : 7.2
 
 ## 5. 実装
 
