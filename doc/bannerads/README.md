@@ -10,7 +10,8 @@
 * **[4. Avoid duplicates between multiple AdView](#avoid_duplication)**
 * **[5. Load multiple ads at once](#load_multiple)**
 * **[6. Use AdSpotCode](#use_adSpotCode)**
-* **[7. Test (Sample AdSpotId)](#use_sample_adspot_id)**
+* **[7. Use HardwareAccelerator](#use_hardwareAccelerator)**
+* **[8. Test (Sample AdSpotId)](#use_sample_adspot_id)**
 
 ---
 
@@ -437,9 +438,37 @@ import com.rakuten.android.ads.runa.AdView;
 ```
 </details>
 
+<div id="use_hardwareAccelerator"></div>
+
+### 7. User HardwareAccelerator
+
+[![support version](http://img.shields.io/badge/runa-1.7.1+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.1)
+
+<details>
+<summary><b>Kotlin</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.key.Config
+
+    ...
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        findViewById<AdView>(R.id.adview).apply {
+            putProperty(Config.HardwareAcceleration.key, true)
+        }.show()
+    }
+    ...  
+```
+</details>
+
 <div id="use_sample_adspot_id"></div>
 
-### 7. Test (Sample AdSpotId)
+### 8. Test (Sample AdSpotId)
 
 Sample display is possible with the following AdSpot ID.<br>
 Please make sure if it is implemented correctly.

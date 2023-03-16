@@ -124,6 +124,18 @@ import com.rakuten.android.ads.runa.extension.setRp
     AdView().setRp("RP_COOKIE")
 ```
 
+### 2.5 Rpoint
+
+[![support version](http://img.shields.io/badge/extension-_1.7.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.1)
+
+```kotlin
+import com.rakuten.android.ads.runa.extension.setRpoint
+
+...
+    val point: Long = 10000L
+    AdView().setRpoint(point)
+```
+
 <div id="helper_adloader"></div>
 
 ## 3. 特殊なパラメータをAdLoaderにセットする
