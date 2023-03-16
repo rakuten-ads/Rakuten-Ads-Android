@@ -10,7 +10,8 @@
 * **[4.複数のAdView間での重複排除](#avoid_duplication)**
 * **[5.複数の広告を一度にロードする](#load_multiple)**
 * **[6.AdSpotCodeを利用する](#use_adSpotCode)**
-* **[7. テスト (サンプル広告枠Id)](#use_sample_adspot_id)**
+* **[7. ハードウェアアクセラレータを有効にする](#use_hardwareAccelerator)**
+* **[8. テスト (サンプル広告枠Id)](#use_sample_adspot_id)**
 
 ---
 
@@ -437,9 +438,37 @@ import com.rakuten.android.ads.runa.AdView
 ```
 </details>
 
+<div id="use_hardwareAccelerator"></div>
+
+### 7. ハードウェアアクセラレータを有効にする
+
+[![support version](http://img.shields.io/badge/runa-1.7.1+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.1)
+
+<details>
+<summary><b>Kotlinによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.key.Config
+
+    ...
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        findViewById<AdView>(R.id.adview).apply {
+            putProperty(Config.HardwareAcceleration.key, true)
+        }.show()
+    }
+    ...  
+```
+</details>
+
 <div id="use_sample_adspot_id"></div>
 
-### 7. Test (Sample AdSpotId)
+### 8. Test (Sample AdSpotId)
 
 以下の広告枠IDでサンプル表示が可能です。<br>
 正しく実装ができているかをご確認ください。
