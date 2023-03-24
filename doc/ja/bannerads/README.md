@@ -443,6 +443,8 @@ import com.rakuten.android.ads.runa.AdView
 
 ### 7. Ad Spot Branch IDを指定する
 
+[![support version](http://img.shields.io/badge/runa-1.8.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.8.0)
+
 画面内に、複数のAdViewに対して同一のAdSpotIDを指定した場合に<br>
 AdSpotBranchIdを指定することで、レポート画面にてそれらを区別することができます。<br>
 adSpotBranchIdには`AdSpotBranch`を指定します。
