@@ -443,6 +443,8 @@ import com.rakuten.android.ads.runa.AdView;
 
 ### 6. Set AdSpotBranch ID
 
+[![support version](http://img.shields.io/badge/runa-1.8.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.8.0)
+
 If you specify the same AdSpotID for multiple AdViews on the screen,<br>
 By specifying AdSpotBranchId, you can distinguish between them in the report screen of Runa.<br>
 Specify `AdSpotBranch` for adSpotBranchId.
@@ -464,7 +466,7 @@ binding.adView3.AdSpotBranchId = AdSpotBranch.ID_3
 
 ### 8. User HardwareAccelerator
 
-[![support version](http://img.shields.io/badge/runa-1.7.1+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.1)
+[![support version](http://img.shields.io/badge/runa-1.8.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.8.0)
 
 <details>
 <summary><b>Kotlin</b></summary>
