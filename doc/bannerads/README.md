@@ -10,8 +10,9 @@
 * **[4. Avoid duplicates between multiple AdView](#avoid_duplication)**
 * **[5. Load multiple ads at once](#load_multiple)**
 * **[6. Use AdSpotCode](#use_adSpotCode)**
-* **[7. Use HardwareAccelerator](#use_hardwareAccelerator)**
-* **[8. Test (Sample AdSpotId)](#use_sample_adspot_id)**
+* **[7. Set AdSpotBranchId](#set_adSpotBranchId)**
+* **[8. Use HardwareAccelerator](#use_hardwareAccelerator)**
+* **[9. Test (Sample AdSpotId)](#use_sample_adspot_id)**
 
 ---
 
@@ -438,9 +439,30 @@ import com.rakuten.android.ads.runa.AdView;
 ```
 </details>
 
+<div id="set_adSpotBranchId"></div>
+
+### 6. Set AdSpotBranch ID
+
+If you specify the same AdSpotID for multiple AdViews on the screen,<br>
+By specifying AdSpotBranchId, you can distinguish between them in the report screen of Runa.<br>
+Specify `AdSpotBranch` for adSpotBranchId.
+
+```kotlin
+import com.rakuten.android.ads.runa.key.AdSpotBranch
+
+binding.adView1.adSpotId = "111"
+binding.adView1.AdSpotBranchId = AdSpotBranch.ID_1
+
+binding.adView2.adSpotId = "111"
+binding.adView2.AdSpotBranchId = AdSpotBranch.ID_2
+
+binding.adView3.adSpotId = "111"
+binding.adView3.AdSpotBranchId = AdSpotBranch.ID_3
+```
+
 <div id="use_hardwareAccelerator"></div>
 
-### 7. User HardwareAccelerator
+### 8. User HardwareAccelerator
 
 [![support version](http://img.shields.io/badge/runa-1.7.1+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.1)
 
@@ -468,7 +490,7 @@ import com.rakuten.android.ads.runa.key.Config
 
 <div id="use_sample_adspot_id"></div>
 
-### 8. Test (Sample AdSpotId)
+### 9. Test (Sample AdSpotId)
 
 Sample display is possible with the following AdSpot ID.<br>
 Please make sure if it is implemented correctly.
