@@ -15,8 +15,8 @@
 runaモジュールに加え、runa-aextensionモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.7.0'
-  implementation 'com.rakuten.android.ads:runa-extension:1.7.0'
+  implementation 'com.rakuten.android.ads:runa:1.8.0'
+  implementation 'com.rakuten.android.ads:runa-extension:1.8.0'
 ```
 
 ### モジュール間の対応バージョン
@@ -33,6 +33,7 @@ runaモジュールに加え、runa-aextensionモジュールを追加します�
 |v1.6.0| v1.6.0 〜 v1.6.2 |
 |     v1.6.1     | v1.6.3 〜 v1.6.4 |
 |     v1.7.0     |     v1.7.0      |
+|     v1.8.0     |     v1.8.0      |
 
 <div id="helper_adview"></div>
 

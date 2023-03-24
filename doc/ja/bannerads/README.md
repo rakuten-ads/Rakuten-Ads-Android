@@ -9,9 +9,10 @@
 * **[3.広告の状態を検知する](#detect_state)**
 * **[4.複数のAdView間での重複排除](#avoid_duplication)**
 * **[5.複数の広告を一度にロードする](#load_multiple)**
-* **[6.AdSpotCodeを利用する](#use_adSpotCode)**
-* **[7. ハードウェアアクセラレータを有効にする](#use_hardwareAccelerator)**
-* **[8. テスト (サンプル広告枠Id)](#use_sample_adspot_id)**
+* **[6.AdSpotCodeを指定する](#set_adSpotCode)**
+* **[7.AdSpotBranchIdを指定する](#set_adSpotBranchId)**
+* **[8. ハードウェアアクセラレータを有効にする](#use_hardwareAccelerator)**
+* **[9. テスト (サンプル広告枠Id)](#use_sample_adspot_id)**
 
 ---
 
@@ -390,9 +391,9 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 ---
 
-<div id="use_adSpotCode"></div>
+<div id="set_adSpotCode"></div>
 
-### 6. AdSpotCodeを利用する
+### 6. AdSpotCodeを指定する
 
 [![support version](http://img.shields.io/badge/runa-1.5.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.5.0)
 
@@ -438,11 +439,33 @@ import com.rakuten.android.ads.runa.AdView
 ```
 </details>
 
+<div id="set_adSpotBranchId"></div>
+
+### 7. Ad Spot Branch IDを指定する
+
+画面内に、複数のAdViewに対して同一のAdSpotIDを指定した場合に<br>
+AdSpotBranchIdを指定することで、レポート画面にてそれらを区別することができます。<br>
+adSpotBranchIdには`AdSpotBranch`を指定します。
+
+```kotlin
+import com.rakuten.android.ads.runa.key.AdSpotBranch
+
+binding.adView1.adSpotId = "111"
+binding.adView1.AdSpotBranchId = AdSpotBranch.ID_1
+
+binding.adView2.adSpotId = "111"
+binding.adView2.AdSpotBranchId = AdSpotBranch.ID_2
+
+binding.adView3.adSpotId = "111"
+binding.adView3.AdSpotBranchId = AdSpotBranch.ID_3
+```
+
+
 <div id="use_hardwareAccelerator"></div>
 
-### 7. ハードウェアアクセラレータを有効にする
+### 8. ハードウェアアクセラレータを有効にする
 
-[![support version](http://img.shields.io/badge/runa-1.7.1+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.1)
+[![support version](http://img.shields.io/badge/runa-1.8.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.8.0)
 
 <details>
 <summary><b>Kotlinによる実装</b></summary>
@@ -468,7 +491,7 @@ import com.rakuten.android.ads.runa.key.Config
 
 <div id="use_sample_adspot_id"></div>
 
-### 8. Test (Sample AdSpotId)
+### 9. Test (Sample AdSpotId)
 
 以下の広告枠IDでサンプル表示が可能です。<br>
 正しく実装ができているかをご確認ください。
