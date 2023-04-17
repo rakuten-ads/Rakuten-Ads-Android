@@ -12,28 +12,29 @@
 ## 1. 拡張モジュールのインポート
 
 以下を`build.gradle`のdependenciesに追加してください。<br>
-runaモジュールに加え、runa-aextensionモジュールを追加します。
+runaモジュールに加え、runa-extensionモジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.8.0'
-  implementation 'com.rakuten.android.ads:runa-extension:1.8.0'
+  implementation 'com.rakuten.android.ads:runa:1.8.1'
+  implementation 'com.rakuten.android.ads:runa-extension:1.8.1'
 ```
 
 ### モジュール間の対応バージョン
 
-|runa-extension|      runa       |
-|:---:|:---------------:|
-|〜 v1.1.0|    〜 v1.1.5     |
-|v1.2.0〜| v1.2.0, v1.2.1  |
-|v1.2.1| v1.2.2 〜 v1.2.7 |
-|v1.3.0| v1.3.0 〜 v1.3.5 |
-|v1.4.0| v1.4.0 〜 v1.4.1 |
-|v1.4.1| v1.4.2 〜 v1.5.0 |
-|v1.5.0|     v1.5.0      |
-|v1.6.0| v1.6.0 〜 v1.6.2 |
+| runa-extension |      runa       |
+|:--------------:|:---------------:|
+|    〜 v1.1.0    |    〜 v1.1.5     |
+|    v1.2.0〜     | v1.2.0, v1.2.1  |
+|     v1.2.1     | v1.2.2 〜 v1.2.7 |
+|     v1.3.0     | v1.3.0 〜 v1.3.5 |
+|     v1.4.0     | v1.4.0 〜 v1.4.1 |
+|     v1.4.1     | v1.4.2 〜 v1.5.0 |
+|     v1.5.0     |     v1.5.0      |
+|     v1.6.0     | v1.6.0 〜 v1.6.2 |
 |     v1.6.1     | v1.6.3 〜 v1.6.4 |
 |     v1.7.0     |     v1.7.0      |
 |     v1.8.0     |     v1.8.0      |
+|     v1.8.1     |     v1.8.1      |
 
 <div id="helper_adview"></div>
 
