@@ -40,6 +40,8 @@ runaモジュールに加え、runa-extensionモジュールを追加します�
 
 ## 2. 特殊なパラメータをAdViewにセットする
 
+<div id="contentGenre"></div>
+
 ### 2.1 ContentGenreクラス
 
 [![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
@@ -51,6 +53,8 @@ ContentGenre(int masterId, String code, Type type)
 > **code** : 広告リクエストのジャンル ID. (e.g. "12345")
 >
 > **type** : (enum) タイプを選択 `Type.Children` または `Type.L1`
+
+<div id="customTargeting"></div>
 
 ### 2.2 CustomTargetingクラス
 
@@ -66,6 +70,8 @@ val targeting = CustomTargeting.Builder().apply {
 
 > * ターゲティングはput()メソッドを用いてKey/Valueを指定します。
 > * 必要な値を指定したあとは、build()メソッドでCustomTargetingクラスを生成します。
+
+<div id="normalizer"></div>
 
 #### Normalizerを利用する
 
@@ -93,6 +99,8 @@ val customTargeting = CustomTargeting.Builder().apply {
 }.build()
 ```
 
+<div id="rzCookie"></div>
+
 ### 2.3 RzCookie
 
 RzCookieを設定します。
@@ -115,6 +123,8 @@ import com.rakuten.android.ads.runa.extension.setRzCookie
     AdView().setRzCookie("RZ_COOKIE")
 ```
 
+<div id="rpCookie"></div>
+
 ### 2.4 RpCookie
 
 [![support version](http://img.shields.io/badge/extension-_1.4.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.4.2)
@@ -125,6 +135,8 @@ import com.rakuten.android.ads.runa.extension.setRp
 ...
     AdView().setRp("RP_COOKIE")
 ```
+
+<div id="rpoint"></div>
 
 ### 2.5 Rpoint
 
@@ -137,6 +149,33 @@ import com.rakuten.android.ads.runa.extension.setRpoint
     val point: Long = 10000L
     AdView().setRpoint(point)
 ```
+
+### 2.6 RecyclerViewなどのスクロール可能なViewとのスクロールの干渉を回避する
+
+水平方向にスクロールが可能な広告を[RecyclerView](https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView)内に配置した際に、RecyclerViewのスクロールが広告の横スクロールに干渉することがあります。その場合、広告内をスクロールしている間はRecyclerViewのスクロールを止める必要があり、またそのスクロールの停止は広告内のスクロールを検知し適切なタイミングで行う必要があります。<br>
+RecyclerViewを停止する判断は`AdViewHelper.RecyclerViewController`クラスを用いて行います。
+
+```java
+import com.rakuten.android.ads.runa.AdView
+import com.rakuten.android.ads.runa.extension.AdViewHelper
+
+  val scrollableListener = object : AdViewHelper.ScrollableListener {
+    override fun onScrollable(isScrollEnabled: Boolean) {
+      /**
+       * 'isScrollEnabled'がfalseの場合, RecyclerViewのスクロールをロックさせます。
+       * trueなら解除します。
+       */
+    }
+  }
+
+  val adView = AdView(context).apply {
+    AdViewHelper.RecyclerViewController(this)
+      .execute(scrollableListener)
+  }
+
+```
+
+> [さらに具体的なサンプル実装はこちらを確認ください。](https://github.com/rakuten-ads/Rakuten-Ads-Android-Sample/blob/master/app/src/main/kotlin/com/runa/sample/RecyclerViewSample2Activity.kt)
 
 <div id="helper_adloader"></div>
 
