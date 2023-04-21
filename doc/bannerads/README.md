@@ -500,10 +500,10 @@ Please make sure if it is implemented correctly.
 |Sample AdSpot ID|Size|Image|
 |:---:|:---:|:---:|
 |18261|300 x 250|<img src="/doc/img/dummy_ads/dummy01_300x250.png" width=300px />|
-|18262|300 x 50|<img src="/doc/img/dummy_ads/dummy02_320x50.png" width=300px />|
-|18263|300 x 100|<img src="/doc/img/dummy_ads/dummy03_320x100.png" width=300px />|
+|18262|320 x 50|<img src="/doc/img/dummy_ads/dummy02_320x50.png" width=300px />|
+|18263|320 x 100|<img src="/doc/img/dummy_ads/dummy03_320x100.png" width=300px />|
 |18264|160 x 600|<img src="/doc/img/dummy_ads/dummy04_160x600.png" height=400px />|
-|18265|729 x 90|<img src="/doc/img/dummy_ads/dummy05_728x90.jpeg" width=300px />|
+|18265|728 x 90|<img src="/doc/img/dummy_ads/dummy05_728x90.jpeg" width=300px />|
 |18266|336 x 280|<img src="/doc/img/dummy_ads/dummy06_336x280.png" width=300px />|
 |18267|970 x 90|<img src="/doc/img/dummy_ads/dummy07_970x90.jpeg" width=300px />|
 |18268|970 x 250|<img src="/doc/img/dummy_ads/dummy08_970x250.jpeg" width=300px />|
