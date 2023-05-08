@@ -9,6 +9,7 @@
 
 * **[バナー広告](./bannerads/README.md)**
 * **[カルーセル広告](./carouselads/README.md)**
+* **[インタースティシャル広告](./interstitialads/README.md)**
 
 ---
 # はじめに
