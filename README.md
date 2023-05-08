@@ -9,6 +9,7 @@
 
 * **[BannerAds](./doc/bannerads/README.md)**
 * **[CarouselAds](./doc/carouselads/README.md)**
+* **[InterstitialAds](./doc/interstitialads/README.md)**
 
 ---
 # Get Started
