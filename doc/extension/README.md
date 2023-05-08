@@ -36,6 +36,7 @@ Open the app-level `build.gradle` file for your app, and look for a "dependencie
 |     v1.7.0     |     v1.7.0      |
 |     v1.8.0     |     v1.8.0      |
 |     v1.8.1     |     v1.8.1      |
+|     v1.8.2     |     v1.9.0      |
 
 <div id="helper_adview"></div>
 
