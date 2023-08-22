@@ -1,18 +1,18 @@
-[TOP](/README.md#top)　>　Banner Ads
+[TOP](/README.md#top)　>　 Banner Ads
 
 ---
 
 # Banner Ads
 
-* **[1. Specify Ad Size](#specify_adsize)**
-* **[2. Define AdView in layout xml](#define_adview_xml)**
-* **[3. Detect ads state](#detect_state)**
-* **[4. Avoid duplicates between multiple AdView](#avoid_duplication)**
-* **[5. Load multiple ads at once](#load_multiple)**
-* **[6. Use AdSpotCode](#use_adSpotCode)**
-* **[7. Set AdSpotBranchId](#set_adSpotBranchId)**
-* **[8. Use HardwareAccelerator](#use_hardwareAccelerator)**
-* **[9. Test (Sample AdSpotId)](#use_sample_adspot_id)**
+- **[1. Specify Ad Size](#specify_adsize)**
+- **[2. Define AdView in layout xml](#define_adview_xml)**
+- **[3. Detect ads state](#detect_state)**
+- **[4. Avoid duplicates between multiple AdView](#avoid_duplication)**
+- **[5. Load multiple ads at once](#load_multiple)**
+- **[6. Use AdSpotCode](#use_adSpotCode)**
+- **[7. Set AdSpotBranchId](#set_adSpotBranchId)**
+- **[8. Use HardwareAccelerator](#use_hardwareAccelerator)**
+- **[9. Test (Sample AdSpotId)](#use_sample_adspot_id)**
 
 ---
 
@@ -26,11 +26,12 @@ AdSize is enum class.
 <details>
 <summary>com.rakuten.android.ads.runa.AdSize</summary>
 
-|Size Type|Desciption|
-|:---|:---|
-|DEFAULT|The ad size set in DashBoard.|
-|ASPECT_FIT|Fit in display width.|
-|CUSTOM|Can be specified to any size.<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
+| Size Type     | Desciption                                                                                                                                       |
+| :------------ | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| DEFAULT       | The ad size set in DashBoard.                                                                                                                    |
+| ASPECT_FIT    | Fit in display width.                                                                                                                            |
+| CUSTOM        | Can be specified to any size.<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < `CUSTOM` < ASPECT_FIT) |
+| UNSAFE_CUSTOM | Can be specified to any size(pixel).<br>This mode ignores the size of an ad content, please carefully use it.                                    |
 
 </details>
 
@@ -47,6 +48,7 @@ AdView(context).apply {
   adViewSize = AdSize.ASPECT_FIT
 }.show()
 ```
+
 </details><br>
 <details>
 <summary><b>Java</b></summary>
@@ -58,6 +60,7 @@ AdView adView = new AdView(context);
 adView.setAdSpotId(123);
 adView.setAdViewSize(AdSize.ASPECT_FIT);
 ```
+
 </details>
 
 ---
@@ -67,6 +70,7 @@ adView.setAdViewSize(AdSize.ASPECT_FIT);
 ### 2. Define AdView in layout xml
 
 R.layout.activity_main
+
 ```xml
   <com.rakuten.android.ads.runa.AdView
         android:id="@+id/adview"
@@ -75,9 +79,10 @@ R.layout.activity_main
         app:adSpotId="@string/ad_spotid"
         app:adSpotSize="AspectFit" />
 ```
-> * `app:adSpotId` : It is unique identifier what is issued per position where ad is to be displayed.
+
+> - `app:adSpotId` : It is unique identifier what is issued per position where ad is to be displayed.
 >
-> * ※ `layout_width`, `layout_height` : The both parameters always sets "`wrap_content`". AdView is sized automatically according to set adspot size on console.
+> - ※ `layout_width`, `layout_height` : The both parameters always sets "`wrap_content`". AdView is sized automatically according to set adspot size on console.
 
 <details>
 <summary><b>Kotlin</b></summary>
@@ -85,6 +90,7 @@ R.layout.activity_main
 [![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 MainActivity.kt
+
 ```kotlin
 import com.rakuten.android.ads.runa.AdView
 
@@ -95,7 +101,7 @@ import com.rakuten.android.ads.runa.AdView
 
         findViewById<AdView>(R.id.adview).show()
     }
-    ...  
+    ...
 ```
 
 </details><br>
@@ -105,6 +111,7 @@ import com.rakuten.android.ads.runa.AdView
 [![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
 
 MainActivity.java
+
 ```java
 import com.rakuten.android.ads.runa.AdView;
 
@@ -116,8 +123,9 @@ import com.rakuten.android.ads.runa.AdView;
 
         ((AdView) findViewById(R.id.adview)).show();
     }
-    ...  
+    ...
 ```
+
 </details>
 
 ---
@@ -132,12 +140,13 @@ Below sample code is to use an [`AdStateListener`](../api/AdStateListener.md). S
 
 **AdStateListener**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;public abstract class
-* `onLoadSuccess` : It is called this method, if it is loaded an advertise successfully.<br><br>
-* `onLoadFailure` : It is called this method, in case of loaded an advertise failure. And if it failed, AdView will be hidden(`View.INVISIBLE`) automatically.
-  * [`ErrorState`](../api/ErrorState.md) : Indicates the status when an error occurred in AdRequest.<br><br>
-* `onClick` : It is called this method, if it is clicked an advertise. &nbsp; (e.g. You use this method in case of to detect that clicked ad.)<br><br>
-* `onLeftApplication` : This method is called after `onClick()` when a user click opens browser(transition to ad's destination URL).<br><br>
-* `onAdClose()` : When a user returns to the app after viewing an ad's destination URL, this method is called.
+
+- `onLoadSuccess` : It is called this method, if it is loaded an advertise successfully.<br><br>
+- `onLoadFailure` : It is called this method, in case of loaded an advertise failure. And if it failed, AdView will be hidden(`View.INVISIBLE`) automatically.
+  - [`ErrorState`](../api/ErrorState.md) : Indicates the status when an error occurred in AdRequest.<br><br>
+- `onClick` : It is called this method, if it is clicked an advertise. &nbsp; (e.g. You use this method in case of to detect that clicked ad.)<br><br>
+- `onLeftApplication` : This method is called after `onClick()` when a user click opens browser(transition to ad's destination URL).<br><br>
+- `onAdClose()` : When a user returns to the app after viewing an ad's destination URL, this method is called.
 
 <details>
 <summary><b>Kotlin</b></summary>
@@ -167,6 +176,7 @@ findViewById<AdView>(R.id.adview).apply {
         }
 }.show()
 ```
+
 </details><br>
 <details>
 <summary><b>Java</b></summary>
@@ -197,6 +207,7 @@ ad.setAdStateListener(new AdStateListener() {
 });
 ad.show();
 ```
+
 </details>
 
 ---
@@ -207,7 +218,7 @@ ad.show();
 
 [![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.2.0)
 
-　Uses [`RunaAdSession`](../api/RunaAdSession.md) to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
+Uses [`RunaAdSession`](../api/RunaAdSession.md) to avoid duplication of display ad content, in case of sets multiple AdView on same Screen.<br>
 Sets multiple AdView to the `RunaAdSession$bind` method to avoid duplication of ads display in those AdViews.<br>
 And, when set multiple AdView in the `bind` method, allow an interval to execute those `show` method, because browse to the ads loaded of the previously bound AdView.<br>
 Below is just a sample to avoid duplication of content in AdView1 and AdView2. It's not necessarily required.
@@ -286,7 +297,8 @@ fun onViewCreated(View view, Bundle savedInstanceState) {
 }
 ...
 ```
-> ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
+
+> ※ adView2 の show メソッドのコールは AdView1 の読み込み完了後に実行されるように実装する必要があります。
 
 </details>
 
@@ -300,10 +312,10 @@ fun onViewCreated(View view, Bundle savedInstanceState) {
 
 [![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
- Use [`AdLoader`](../api/AdLoader.md) to display multiple ads with one load, such as displaying carousel ads.<br>
+Use [`AdLoader`](../api/AdLoader.md) to display multiple ads with one load, such as displaying carousel ads.<br>
 AdLoader consists of a Builder pattern, so need to declare the [`AdLoader$Builder`](../api/AdLoader.md#adLoader_builder) class and add some parameters to load ads.<br>
 Add AdView to draw with the Builder, and sets [`AdLoaderStateListener`](../api/AdLoaderStateListener.md) to detect the loading status of AdLoader as needed. Generates AdLoader with `build` method after added parameters to the Builder, AdLoader starts loading ads that uses `execute` method.
- When loading starts, the loaded AdView will be drawn in sequence. At this time, the drawing order cannot be controlled.
+When loading starts, the loaded AdView will be drawn in sequence. At this time, the drawing order cannot be controlled.
 Also, when loading ads with AdLoader, you don't need to implement deduplication with the previous item [`RunaAdSession`](#avoid_duplication), because this includes deduplication functionality.
 
 <details>
@@ -342,6 +354,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 }
 ...
 ```
+
 > ※ This sample is assumed that the adSpotId setting for AdView is done on layout xml.
 
 </details><br>
@@ -385,6 +398,7 @@ fun onViewCreated(View view, Bundle savedInstanceState) {
 }
 ...
 ```
+
 > ※ This sample is assumed that the adSpotId setting for AdView is done on layout xml.
 
 </details>
@@ -414,8 +428,9 @@ import com.rakuten.android.ads.runa.AdView
             adSpotCode = "{AD_SPOT_CODE}"
         }.show()
     }
-    ...  
+    ...
 ```
+
 </details><br>
 <details>
 <summary><b>Java</b></summary>
@@ -435,8 +450,9 @@ import com.rakuten.android.ads.runa.AdView;
         adView.setAdSpotCode("{AD_SPOT_CODE}");
         adView.show();
     }
-    ...  
+    ...
 ```
+
 </details>
 
 <div id="set_adSpotBranchId"></div>
@@ -486,8 +502,9 @@ import com.rakuten.android.ads.runa.key.Config
             putProperty(Config.HardwareAcceleration.key, true)
         }.show()
     }
-    ...  
+    ...
 ```
+
 </details>
 
 <div id="use_sample_adspot_id"></div>
@@ -497,24 +514,26 @@ import com.rakuten.android.ads.runa.key.Config
 Sample display is possible with the following AdSpot ID.<br>
 Please make sure if it is implemented correctly.
 
-|Sample AdSpot ID|Size|Image|
-|:---:|:---:|:---:|
-|18261|300 x 250|<img src="/doc/img/dummy_ads/dummy01_300x250.png" width=300px />|
-|18262|320 x 50|<img src="/doc/img/dummy_ads/dummy02_320x50.png" width=300px />|
-|18263|320 x 100|<img src="/doc/img/dummy_ads/dummy03_320x100.png" width=300px />|
-|18264|160 x 600|<img src="/doc/img/dummy_ads/dummy04_160x600.png" height=400px />|
-|18265|728 x 90|<img src="/doc/img/dummy_ads/dummy05_728x90.jpeg" width=300px />|
-|18266|336 x 280|<img src="/doc/img/dummy_ads/dummy06_336x280.png" width=300px />|
-|18267|970 x 90|<img src="/doc/img/dummy_ads/dummy07_970x90.jpeg" width=300px />|
-|18268|970 x 250|<img src="/doc/img/dummy_ads/dummy08_970x250.jpeg" width=300px />|
-|18269|300 x 600|<img src="/doc/img/dummy_ads/dummy09_300x600.png" width=300px />|
-
+| Sample AdSpot ID |   Size    |                               Image                               |
+| :--------------: | :-------: | :---------------------------------------------------------------: |
+|      18261       | 300 x 250 | <img src="/doc/img/dummy_ads/dummy01_300x250.png" width=300px />  |
+|      18262       | 320 x 50  |  <img src="/doc/img/dummy_ads/dummy02_320x50.png" width=300px />  |
+|      18263       | 320 x 100 | <img src="/doc/img/dummy_ads/dummy03_320x100.png" width=300px />  |
+|      18264       | 160 x 600 | <img src="/doc/img/dummy_ads/dummy04_160x600.png" height=400px /> |
+|      18265       | 728 x 90  | <img src="/doc/img/dummy_ads/dummy05_728x90.jpeg" width=300px />  |
+|      18266       | 336 x 280 | <img src="/doc/img/dummy_ads/dummy06_336x280.png" width=300px />  |
+|      18267       | 970 x 90  | <img src="/doc/img/dummy_ads/dummy07_970x90.jpeg" width=300px />  |
+|      18268       | 970 x 250 | <img src="/doc/img/dummy_ads/dummy08_970x250.jpeg" width=300px /> |
+|      18269       | 300 x 600 | <img src="/doc/img/dummy_ads/dummy09_300x600.png" width=300px />  |
 
 ---
+
 [TOP](/README.md#top)
 
 [BannerAds Extension](/doc/extension/README.md)
 
 ---
+
 LANGUAGE :
+
 > [![ja](/doc/img/lang/ja.png)](/doc/ja/bannerads/README.md)

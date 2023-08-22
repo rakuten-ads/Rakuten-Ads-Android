@@ -4,15 +4,15 @@
 
 # バナー広告
 
-* **[1.広告サイズを指定する](#specify_adsize)**
-* **[2.レイアウトXMLにAdViewを定義する](#define_adview_xml)**
-* **[3.広告の状態を検知する](#detect_state)**
-* **[4.複数のAdView間での重複排除](#avoid_duplication)**
-* **[5.複数の広告を一度にロードする](#load_multiple)**
-* **[6.AdSpotCodeを指定する](#set_adSpotCode)**
-* **[7.AdSpotBranchIdを指定する](#set_adSpotBranchId)**
-* **[8. ハードウェアアクセラレータを有効にする](#use_hardwareAccelerator)**
-* **[9. テスト (サンプル広告枠Id)](#use_sample_adspot_id)**
+- **[1.広告サイズを指定する](#specify_adsize)**
+- **[2.レイアウト XML に AdView を定義する](#define_adview_xml)**
+- **[3.広告の状態を検知する](#detect_state)**
+- **[4.複数の AdView 間での重複排除](#avoid_duplication)**
+- **[5.複数の広告を一度にロードする](#load_multiple)**
+- **[6.AdSpotCode を指定する](#set_adSpotCode)**
+- **[7.AdSpotBranchId を指定する](#set_adSpotBranchId)**
+- **[8. ハードウェアアクセラレータを有効にする](#use_hardwareAccelerator)**
+- **[9. テスト (サンプル広告枠 Id)](#use_sample_adspot_id)**
 
 ---
 
@@ -27,11 +27,12 @@ enum class<br>
 <details>
 <summary>com.rakuten.android.ads.runa.AdSize</summary>
 
-|種類|詳細|
-|:---|:---|
-|DEFAULT|ダッシュボードで設定したサイズ（AdSizeを指定しない場合は、DEFAULTで表示されます。）|
-|ASPECT_FIT|画面横幅サイズに自動調整したサイズ|
-|CUSTOM|標準サイズを下限に、画面横幅サイズを上限とした任意のサイズ(px)を指定することができます。<br>但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT)|
+| 種類          | 詳細                                                                                                                                                                                                                        |
+| :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DEFAULT       | ダッシュボードで設定したサイズ（AdSize を指定しない場合は、DEFAULT で表示されます。）                                                                                                                                       |
+| ASPECT_FIT    | 画面横幅サイズに自動調整したサイズ                                                                                                                                                                                          |
+| CUSTOM        | 標準サイズを下限に、画面横幅サイズを上限とした任意のサイズ(px)を指定することができます。<br>但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT) |
+| UNSAFE_CUSTOM | 任意のサイズ(px)を指定することができます。但し、この指定は広告自体のサイズを無視するので使用の際は注意してください。                                                                                                        |
 
 </details>
 
@@ -48,6 +49,7 @@ adView.setAdSpotId(123);
 adView.setAdViewSize(AdSize.ASPECT_FIT);
 adView.show();
 ```
+
 </details>
 <details>
 <summary><b>Kotlinによる実装</b></summary>
@@ -60,15 +62,17 @@ AdView(context).apply {
   adViewSize = AdSize.ASPECT_FIT
 }.show()
 ```
+
 </details>
 
 ---
 
 <div id="define_adview_xml"></div>
 
-### 2. レイアウトXMLでAdViewを定義して表示する
+### 2. レイアウト XML で AdView を定義して表示する
 
 R.layout.activity_main
+
 ```xml
   <com.rakuten.android.ads.runa.AdView
         android:id="@+id/adview"
@@ -76,9 +80,10 @@ R.layout.activity_main
         android:layout_height="wrap_content"
         app:adSpotId="@string/ad_spotid" />
 ```
-> * `app:adSpotId` : 広告枠単位で発行されるユニークなID
+
+> - `app:adSpotId` : 広告枠単位で発行されるユニークな ID
 >
-> * ※ `layout_width`と`layout_height`には`wrap_content`"をセットしてください。AdViewが管理画面で設定した広告枠サイズに応じてサイズを適応します。
+> - ※ `layout_width`と`layout_height`には`wrap_content`"をセットしてください。AdView が管理画面で設定した広告枠サイズに応じてサイズを適応します。
 
 <details>
 <summary><b>Javaによる実装</b></summary>
@@ -86,6 +91,7 @@ R.layout.activity_main
 [![Language](http://img.shields.io/badge/language-Java-red.svg?style=flat)](https://www.java.com)
 
 MainActivity.java
+
 ```java
 import com.rakuten.android.ads.runa.AdView;
 
@@ -97,8 +103,9 @@ import com.rakuten.android.ads.runa.AdView;
 
         ((AdView) findViewById(R.id.adview)).show();
     }
-    ...  
+    ...
 ```
+
 </details>
 
 <details>
@@ -107,6 +114,7 @@ import com.rakuten.android.ads.runa.AdView;
 [![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
 
 MainActivity.kt
+
 ```kotlin
 import com.rakuten.android.ads.runa.AdView
 
@@ -117,7 +125,7 @@ import com.rakuten.android.ads.runa.AdView
 
         findViewById<AdView>(R.id.adview).show()
     }
-    ...  
+    ...
 ```
 
 </details>
@@ -133,12 +141,13 @@ import com.rakuten.android.ads.runa.AdView
 
 **AdStateListener**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;public abstract class
-* `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。<br><br>
-* `onLoadFailure` : 広告の読み込みが失敗した場合、このメソッドが呼ばれます。また、失敗した場合にAdViewは`View.INVISIBLE`となります。必要に応じてView.GONEにご設定ください。
-  * [`ErrorState`](../api/ErrorState.md) : 広告リクエストでエラーが発生した時のステータスを示します。<br><br>
-* `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。<br><br>
-* `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。<br><br>
-* `onAdClose()` : 広告の目的のページ（或いはアプリ）からアプリに戻ってきた際にこのメソッドが呼ばれます。
+
+- `onLoadSuccess` : 広告の読み込みが成功した場合、このメソッドが呼ばれます。<br><br>
+- `onLoadFailure` : 広告の読み込みが失敗した場合、このメソッドが呼ばれます。また、失敗した場合に AdView は`View.INVISIBLE`となります。必要に応じて View.GONE にご設定ください。
+  - [`ErrorState`](../api/ErrorState.md) : 広告リクエストでエラーが発生した時のステータスを示します。<br><br>
+- `onClick` : 広告をクリックした際にこのメソッドが呼ばれます。<br><br>
+- `onLeftApplication` : `onClick()`が呼ばれた後、ブラウザ（或いはアプリ）が立ち上がる際にこのメソッドが呼ばれます。<br><br>
+- `onAdClose()` : 広告の目的のページ（或いはアプリ）からアプリに戻ってきた際にこのメソッドが呼ばれます。
 
 <details>
 <summary><b>Javaによる実装</b></summary>
@@ -169,6 +178,7 @@ ad.setAdStateListener(new AdStateListener() {
 });
 ad.show();
 ```
+
 </details>
 <details>
 <summary><b>Kotlinによる実装</b></summary>
@@ -196,21 +206,22 @@ findViewById<AdView>(R.id.adview).apply {
         }
 }.show()
 ```
+
 </details>
 
 ---
 
 <div id="avoid_duplication"></div>
 
-### 4. 複数のAdView間での重複排除
+### 4. 複数の AdView 間での重複排除
 
 [![support version](http://img.shields.io/badge/runa-1.2.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.2.0)
 
-　同一の画面にAdViewを複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
-RunaAdSessionの`bind`メソッドに複数のAdViewを指定することで、それらのAdViewで表示される広告の重複を回避します。<br>
-また、`bind`メソッドに指定したAdViewの`show`メソッドを実行する際は、それらの時間的間隔を空けて実行してください。<br>
-(先にbindしたAdViewの広告データを、次にbindしたAdViewの読み込み時に参照しているためです。)<br>
-以下の実装方法は必ずしも必要ではありませんが、AdView1とAdView2で表示コンテンツの重複を回避する実装例となります。<br>
+同一の画面に AdView を複数個設置した際に、表示される広告コンテンツの重複を回避するには`RunaAdSession`を利用します。<br>
+RunaAdSession の`bind`メソッドに複数の AdView を指定することで、それらの AdView で表示される広告の重複を回避します。<br>
+また、`bind`メソッドに指定した AdView の`show`メソッドを実行する際は、それらの時間的間隔を空けて実行してください。<br>
+(先に bind した AdView の広告データを、次に bind した AdView の読み込み時に参照しているためです。)<br>
+以下の実装方法は必ずしも必要ではありませんが、AdView1 と AdView2 で表示コンテンツの重複を回避する実装例となります。<br>
 
 <details>
 <summary><b>Javaによる実装</b></summary>
@@ -247,7 +258,8 @@ fun onViewCreated(View view, Bundle savedInstanceState) {
 }
 ...
 ```
-> ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
+
+> ※ adView2 の show メソッドのコールは AdView1 の読み込み完了後に実行されるように実装する必要があります。
 
 </details>
 
@@ -286,7 +298,8 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 }
 ...
 ```
-> ※ adView2のshowメソッドのコールはAdView1の読み込み完了後に実行されるように実装する必要があります。
+
+> ※ adView2 の show メソッドのコールは AdView1 の読み込み完了後に実行されるように実装する必要があります。
 
 </details>
 
@@ -300,12 +313,12 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 [![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
-　カルーセル広告などを表示するなど、一度のロードで複数の広告を表示する場合に[`AdLoader`](../api/AdLoader.md)を利用します。<br>
-AdLoaderはBuilderパターンで構成されており、[`AdLoader$Builder`](../api/AdLoader.md#adLoader_builder)クラスを定義して広告のロードに必要なパラメータを追加する必要があります。<br>
-Builderには描画させたいAdViewを追加し、AdLoaderの読み込み状況を検知するための[`AdLoaderStateListener`](../api/AdLoaderStateListener.md)を必要に応じてセットしていきます。<br>
-Builderへのパラメータの追加後は`build`メソッドでAdLoaderを生成し、AdLoaderは`execute`メソッドを実行することでロードを開始します。<br>
-ロードが開始すると、読み込みが完了したAdViewから描画がされていきます。この時、描画の順序を制御することはできません。<br>
-また、AdLoaderで広告を読み込む場合、排他排除機能を含むため前項(5. 複数のAdView間での重複排除)の`RunaAdSession`を用いた重複排除の実装は不要となります。
+カルーセル広告などを表示するなど、一度のロードで複数の広告を表示する場合に[`AdLoader`](../api/AdLoader.md)を利用します。<br>
+AdLoader は Builder パターンで構成されており、[`AdLoader$Builder`](../api/AdLoader.md#adLoader_builder)クラスを定義して広告のロードに必要なパラメータを追加する必要があります。<br>
+Builder には描画させたい AdView を追加し、AdLoader の読み込み状況を検知するための[`AdLoaderStateListener`](../api/AdLoaderStateListener.md)を必要に応じてセットしていきます。<br>
+Builder へのパラメータの追加後は`build`メソッドで AdLoader を生成し、AdLoader は`execute`メソッドを実行することでロードを開始します。<br>
+ロードが開始すると、読み込みが完了した AdView から描画がされていきます。この時、描画の順序を制御することはできません。<br>
+また、AdLoader で広告を読み込む場合、排他排除機能を含むため前項(5. 複数の AdView 間での重複排除)の`RunaAdSession`を用いた重複排除の実装は不要となります。
 
 <details>
 <summary><b>Javaによる実装</b></summary>
@@ -347,7 +360,8 @@ fun onViewCreated(View view, Bundle savedInstanceState) {
 }
 ...
 ```
-> ※ AdViewへのadSpotIdの設定はxml上で行われているものとしています。
+
+> ※ AdView への adSpotId の設定は xml 上で行われているものとしています。
 
 </details>
 <details>
@@ -386,14 +400,16 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 }
 ...
 ```
-> ※ AdViewへのadSpotIdの設定はxml上で行われているものとしています。
+
+> ※ AdView への adSpotId の設定は xml 上で行われているものとしています。
+
 </details>
 
 ---
 
 <div id="set_adSpotCode"></div>
 
-### 6. AdSpotCodeを指定する
+### 6. AdSpotCode を指定する
 
 [![support version](http://img.shields.io/badge/runa-1.5.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.5.0)
 
@@ -415,8 +431,9 @@ import com.rakuten.android.ads.runa.AdView;
         adView.setAdSpotCode("{AD_SPOT_CODE}");
         adView.show();
     }
-    ...  
+    ...
 ```
+
 </details>
 <details>
 <summary><b>Kotlinによる実装</b></summary>
@@ -435,19 +452,20 @@ import com.rakuten.android.ads.runa.AdView
             adSpotCode = "{AD_SPOT_CODE}"
         }.show()
     }
-    ...  
+    ...
 ```
+
 </details>
 
 <div id="set_adSpotBranchId"></div>
 
-### 7. Ad Spot Branch IDを指定する
+### 7. Ad Spot Branch ID を指定する
 
 [![support version](http://img.shields.io/badge/runa-1.8.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.8.0)
 
-画面内に、複数のAdViewに対して同一のAdSpotIDを指定した場合に<br>
-AdSpotBranchIdを指定することで、レポート画面にてそれらを区別することができます。<br>
-adSpotBranchIdには`AdSpotBranch`を指定します。
+画面内に、複数の AdView に対して同一の AdSpotID を指定した場合に<br>
+AdSpotBranchId を指定することで、レポート画面にてそれらを区別することができます。<br>
+adSpotBranchId には`AdSpotBranch`を指定します。
 
 ```kotlin
 import com.rakuten.android.ads.runa.key.AdSpotBranch
@@ -461,7 +479,6 @@ binding.adView2.AdSpotBranchId = AdSpotBranch.ID_2
 binding.adView3.adSpotId = "111"
 binding.adView3.AdSpotBranchId = AdSpotBranch.ID_3
 ```
-
 
 <div id="use_hardwareAccelerator"></div>
 
@@ -487,34 +504,38 @@ import com.rakuten.android.ads.runa.key.Config
             putProperty(Config.HardwareAcceleration.key, true)
         }.show()
     }
-    ...  
+    ...
 ```
+
 </details>
 
 <div id="use_sample_adspot_id"></div>
 
 ### 9. Test (Sample AdSpotId)
 
-以下の広告枠IDでサンプル表示が可能です。<br>
+以下の広告枠 ID でサンプル表示が可能です。<br>
 正しく実装ができているかをご確認ください。
 
-|サンプル広告枠ID|Size|Image|
-|:---:|:---:|:---:|
-|18261|300 x 250|<img src="/doc/img/dummy_ads/dummy01_300x250.png" width=300px />|
-|18262|320 x 50|<img src="/doc/img/dummy_ads/dummy02_320x50.png" width=300px />|
-|18263|320 x 100|<img src="/doc/img/dummy_ads/dummy03_320x100.png" width=300px />|
-|18264|160 x 600|<img src="/doc/img/dummy_ads/dummy04_160x600.png" height=400px />|
-|18265|728 x 90|<img src="/doc/img/dummy_ads/dummy05_728x90.jpeg" width=300px />|
-|18266|336 x 280|<img src="/doc/img/dummy_ads/dummy06_336x280.png" width=300px />|
-|18267|970 x 90|<img src="/doc/img/dummy_ads/dummy07_970x90.jpeg" width=300px />|
-|18268|970 x 250|<img src="/doc/img/dummy_ads/dummy08_970x250.jpeg" width=300px />|
-|18269|300 x 600|<img src="/doc/img/dummy_ads/dummy09_300x600.png" width=300px />|
+| サンプル広告枠 ID |   Size    |                               Image                               |
+| :---------------: | :-------: | :---------------------------------------------------------------: |
+|       18261       | 300 x 250 | <img src="/doc/img/dummy_ads/dummy01_300x250.png" width=300px />  |
+|       18262       | 320 x 50  |  <img src="/doc/img/dummy_ads/dummy02_320x50.png" width=300px />  |
+|       18263       | 320 x 100 | <img src="/doc/img/dummy_ads/dummy03_320x100.png" width=300px />  |
+|       18264       | 160 x 600 | <img src="/doc/img/dummy_ads/dummy04_160x600.png" height=400px /> |
+|       18265       | 728 x 90  | <img src="/doc/img/dummy_ads/dummy05_728x90.jpeg" width=300px />  |
+|       18266       | 336 x 280 | <img src="/doc/img/dummy_ads/dummy06_336x280.png" width=300px />  |
+|       18267       | 970 x 90  | <img src="/doc/img/dummy_ads/dummy07_970x90.jpeg" width=300px />  |
+|       18268       | 970 x 250 | <img src="/doc/img/dummy_ads/dummy08_970x250.jpeg" width=300px /> |
+|       18269       | 300 x 600 | <img src="/doc/img/dummy_ads/dummy09_300x600.png" width=300px />  |
 
 ---
+
 [TOP](../#top)
 
 [バナー広告拡張モジュール](/doc/ja/extension/README.md)
 
 ---
+
 LANGUAGE :
+
 > [![en](/doc/img/lang/en.png)](/doc/bannerads/README.md)
