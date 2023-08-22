@@ -10,7 +10,7 @@
 
 ## 01. Ads won't appear
 
-**If `AdStateListener` calls back `onLoadSuccess()` but Ads does not appear, &nbsp; please try below.**
+**If `AdStateListener` calls back `onLoadSuccess()` but Ads does not appear, &nbsp;please try below.**<br>**There is a possibility that ads could not be displayed on old GoogleChrome and WebView.**
 
 Make sure the version of [`Google Chrome`](https://play.google.com/store/apps/details?id=com.android.chrome). And update to the latest version if it was old.
 
