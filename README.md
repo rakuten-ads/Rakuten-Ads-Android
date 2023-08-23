@@ -7,20 +7,21 @@
 
 ### Ad Formats
 
-* **[BannerAds](./doc/bannerads/README.md)**
-* **[CarouselAds](./doc/carouselads/README.md)**
-* **[InterstitialAds](./doc/interstitialads/README.md)**
+- **[BannerAds](./doc/bannerads/README.md)**
+- **[CarouselAds](./doc/carouselads/README.md)**
+- **[InterstitialAds](./doc/interstitialads/README.md)**
 
 ---
+
 # Get Started
 
 <div id="prerequisites"></div>
 
 ## 1. Prerequisites
 
-* Uses Android Studio 1.0 or higher
-* Target Android API level 21 or higher
-* Uses version 3.5.0 or higher for Gradle build tools.<br>`com.android.tools.build:gradle:{3.5.0+}`
+- Uses Android Studio 1.0 or higher
+- Target Android API level 21 or higher
+- Uses version 3.5.0 or higher for Gradle build tools.<br>`com.android.tools.build:gradle:{3.5.0+}`
 
 <div id="import_sdk"></div>
 
@@ -46,10 +47,10 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
 Latest Runa version :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.9.2'
+  implementation 'com.rakuten.android.ads:runa:1.9.3'
 ```
 
- * [Migration to v1.4.0+](./doc/migration/README.md)
+- [Migration to v1.4.0+](./doc/migration/README.md)
 
 ### 2.2 Launch SDK
 
@@ -76,14 +77,14 @@ class Application : Application() {
 
 ### 2.3 Implementation
 
-* [Banner Ads](./doc/bannerads/README.md)
+- [Banner Ads](./doc/bannerads/README.md)
 
 ## 3. Dependencies
 
 This SDK depends on the following libraries:
 
-* com.google.code.gson:gson:2.8.2
-* com.google.android.gms:play-services-ads-identifier:17.1.0
+- com.google.code.gson:gson:2.8.2
+- com.google.android.gms:play-services-ads-identifier:17.1.0
 
 <details>
 <summary>In case of exclude these libraries.</summary>
@@ -107,16 +108,15 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 Thid SDK is built by below tools.
 
-* Kotlin version : 1.4.32
-* OpenJDK version : 11.0.8
-* Gradle version : 7.2
-
+- Kotlin version : 1.4.32
+- OpenJDK version : 11.0.8
+- Gradle version : 7.2
 
 ## 5. Implementation
 
-* **[Banner ads](./doc/bannerads/README.md)**
-* **[CarouselAds](./doc/carouselads/README.md)**
-* **[Viewability measurement](./doc/viewability/README.md)**
+- **[Banner ads](./doc/bannerads/README.md)**
+- **[CarouselAds](./doc/carouselads/README.md)**
+- **[Viewability measurement](./doc/viewability/README.md)**
 
 ---
 
@@ -129,5 +129,7 @@ Thid SDK is built by below tools.
 [Troubleshooting](./doc/troubleshoot/README.md)
 
 ---
+
 LANGUAGE :
+
 > [![jp](./doc/img/lang/ja.png)](./doc/ja)

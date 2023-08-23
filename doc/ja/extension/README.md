@@ -1,4 +1,4 @@
-[TOP](../#top)　>　Extension
+[TOP](../#top)　>　 Extension
 
 ---
 
@@ -11,40 +11,40 @@
 
 ## 1. 拡張モジュールのインポート
 
-以下を`build.gradle`のdependenciesに追加してください。<br>
-runaモジュールに加え、runa-extensionモジュールを追加します。
+以下を`build.gradle`の dependencies に追加してください。<br>
+runa モジュールに加え、runa-extension モジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.9.2'
+  implementation 'com.rakuten.android.ads:runa:1.9.3'
   implementation 'com.rakuten.android.ads:runa-extension:1.8.3'
 ```
 
 ### モジュール間の対応バージョン
 
-| runa-extension |      runa       |
-|:--------------:|:---------------:|
-|    〜 v1.1.0    |    〜 v1.1.5     |
-|    v1.2.0〜     | v1.2.0, v1.2.1  |
+| runa-extension |       runa       |
+| :------------: | :--------------: |
+|   〜 v1.1.0    |    〜 v1.1.5     |
+|    v1.2.0〜    |  v1.2.0, v1.2.1  |
 |     v1.2.1     | v1.2.2 〜 v1.2.7 |
 |     v1.3.0     | v1.3.0 〜 v1.3.5 |
 |     v1.4.0     | v1.4.0 〜 v1.4.1 |
 |     v1.4.1     | v1.4.2 〜 v1.5.0 |
-|     v1.5.0     |     v1.5.0      |
+|     v1.5.0     |      v1.5.0      |
 |     v1.6.0     | v1.6.0 〜 v1.6.2 |
 |     v1.6.1     | v1.6.3 〜 v1.6.4 |
-|     v1.7.0     |     v1.7.0      |
-|     v1.8.0     |     v1.8.0      |
-|     v1.8.1     |     v1.8.1      |
-|     v1.8.2     |     v1.9.0      |
-|     v1.8.3     | v1.9.1 〜 v1.9.2 |
+|     v1.7.0     |      v1.7.0      |
+|     v1.8.0     |      v1.8.0      |
+|     v1.8.1     |      v1.8.1      |
+|     v1.8.2     |      v1.9.0      |
+|     v1.8.3     | v1.9.1 〜 v1.9.3 |
 
 <div id="helper_adview"></div>
 
-## 2. 特殊なパラメータをAdViewにセットする
+## 2. 特殊なパラメータを AdView にセットする
 
 <div id="contentGenre"></div>
 
-### 2.1 ContentGenreクラス
+### 2.1 ContentGenre クラス
 
 [![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://developer.android.com)
 
@@ -58,11 +58,11 @@ ContentGenre(int masterId, String code, Type type)
 
 <div id="customTargeting"></div>
 
-### 2.2 CustomTargetingクラス
+### 2.2 CustomTargeting クラス
 
 [![support version](http://img.shields.io/badge/extension-1.0.0+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
-CustomTargetingはBuilderパターンのクラスであるため、Builder()を使用しターゲティング設定を行います。
+CustomTargeting は Builder パターンのクラスであるため、Builder()を使用しターゲティング設定を行います。
 
 ```
 val targeting = CustomTargeting.Builder().apply {
@@ -70,24 +70,25 @@ val targeting = CustomTargeting.Builder().apply {
 }.build()
 ```
 
-> * ターゲティングはput()メソッドを用いてKey/Valueを指定します。
-> * 必要な値を指定したあとは、build()メソッドでCustomTargetingクラスを生成します。
+> - ターゲティングは put()メソッドを用いて Key/Value を指定します。
+> - 必要な値を指定したあとは、build()メソッドで CustomTargeting クラスを生成します。
 
 <div id="normalizer"></div>
 
-#### Normalizerを利用する
+#### Normalizer を利用する
 
-Normalizerモジュールは文字列を以下のルールの基、標準化します。
+Normalizer モジュールは文字列を以下のルールの基、標準化します。
 
-* 半角文字列を全角文字列に変換 (カナ, 濁点, 半濁点, 長音符)
-* 全角英数字記号スペースを半角に変換 (digit, alphabet, space, double quotation)
-* アルファベットの大文字を小文字に変換
-* スペース(全角含む)を半角スペースに変換
-* 文字列の始まりまたは終わりのスペースを消去
+- 半角文字列を全角文字列に変換 (カナ, 濁点, 半濁点, 長音符)
+- 全角英数字記号スペースを半角に変換 (digit, alphabet, space, double quotation)
+- アルファベットの大文字を小文字に変換
+- スペース(全角含む)を半角スペースに変換
+- 文字列の始まりまたは終わりのスペースを消去
 
 > e.g. `"　Orange APPLE　梨　　ｻｶﾅ"` -> `"orange apple 梨 サカナ"`
 
-gradleファイルに以下を追加しインポートします。
+gradle ファイルに以下を追加しインポートします。
+
 ```gradle
 implementation 'com.rakuten.android.ads:normalizer:1.0.0'
 ```
@@ -105,7 +106,7 @@ val customTargeting = CustomTargeting.Builder().apply {
 
 ### 2.3 RzCookie
 
-RzCookieを設定します。
+RzCookie を設定します。
 
 [![support version](http://img.shields.io/badge/extension-_1.1.5_〜_1.2.0-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases)
 
@@ -152,10 +153,10 @@ import com.rakuten.android.ads.runa.extension.setRpoint
     AdView().setRpoint(point)
 ```
 
-### 2.6 RecyclerViewなどのスクロール可能なViewとのスクロールの干渉を回避する
+### 2.6 RecyclerView などのスクロール可能な View とのスクロールの干渉を回避する
 
-水平方向にスクロールが可能な広告を[RecyclerView](https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView)内に配置した際に、RecyclerViewのスクロールが広告の横スクロールに干渉することがあります。その場合、広告内をスクロールしている間はRecyclerViewのスクロールを止める必要があり、またそのスクロールの停止は広告内のスクロールを検知し適切なタイミングで行う必要があります。<br>
-RecyclerViewを停止する判断は`AdViewHelper.RecyclerViewController`クラスを用いて行います。
+水平方向にスクロールが可能な広告を[RecyclerView](https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView)内に配置した際に、RecyclerView のスクロールが広告の横スクロールに干渉することがあります。その場合、広告内をスクロールしている間は RecyclerView のスクロールを止める必要があり、またそのスクロールの停止は広告内のスクロールを検知し適切なタイミングで行う必要があります。<br>
+RecyclerView を停止する判断は`AdViewHelper.RecyclerViewController`クラスを用いて行います。
 
 ```java
 import com.rakuten.android.ads.runa.AdView
@@ -181,10 +182,10 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
 
 <div id="helper_adloader"></div>
 
-## 3. 特殊なパラメータをAdLoaderにセットする
+## 3. 特殊なパラメータを AdLoader にセットする
 
-特殊なパラメータをAdLoaderにセットするにはAdLoaderHelperを利用します。<br>
-`runa-extension`モジュールを利用することで、AdLoaderに特殊なパラメータをセットすることができます。
+特殊なパラメータを AdLoader にセットするには AdLoaderHelper を利用します。<br>
+`runa-extension`モジュールを利用することで、AdLoader に特殊なパラメータをセットすることができます。
 
 ```kotlin
 import com.rakuten.android.ads.runa.extension.AdLoaderHelper
@@ -316,7 +317,7 @@ import com.rakuten.android.ads.runa.extension.ExtensionProperty
     }.show()
 ```
 
-> `ExtensionProperty`はExtensionモジュール v1.2.0 から追加されました。
+> `ExtensionProperty`は Extension モジュール v1.2.0 から追加されました。
 
 </details>
 <br>
@@ -362,7 +363,7 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
     }.show()
 ```
 
-> `AdViewHelper`はExtensionモジュール v1.2.1 から追加され、`ExtensionProperty`は当バージョンから非推奨となりました。
+> `AdViewHelper`は Extension モジュール v1.2.1 から追加され、`ExtensionProperty`は当バージョンから非推奨となりました。
 
 </details>
 <br>
@@ -414,8 +415,11 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
 <br><br><br><br><br>
 
 ---
+
 [TOP](../#top)
 
 ---
+
 LANGUAGE :
+
 > [![en](/doc/img/lang/en.png)](/doc/extension/README.md)
