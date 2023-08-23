@@ -7,29 +7,29 @@
 
 ### 広告フォーマット
 
-* **[バナー広告](./bannerads/README.md)**
-* **[カルーセル広告](./carouselads/README.md)**
-* **[インタースティシャル広告](./interstitialads/README.md)**
+- **[バナー広告](./bannerads/README.md)**
+- **[カルーセル広告](./carouselads/README.md)**
+- **[インタースティシャル広告](./interstitialads/README.md)**
 
 ---
+
 # はじめに
 
 <div id="prerequisites"></div>
 
 ## 1. 前提
 
-* Android Studio 1.0 以上
-* Android API level 21 以上
-* Gradle build tools 3.5.0 以上<br>-> `com.android.tools.build:gradle:{3.5.0以上}`
-
+- Android Studio 1.0 以上
+- Android API level 21 以上
+- Gradle build tools 3.5.0 以上<br>-> `com.android.tools.build:gradle:{3.5.0以上}`
 
 <div id="import_sdk"></div>
 
-## 2. RUNA SDKのインポート
+## 2. RUNA SDK のインポート
 
-Gradleの依存設定でアプリにインポートすることが出来ます。プロジェクト直下の`build.gradle`のrepositoriesに以下のように参照先を追加する必要があります。
+Gradle の依存設定でアプリにインポートすることが出来ます。プロジェクト直下の`build.gradle`の repositories に以下のように参照先を追加する必要があります。
 
-### 2.1 プロジェクト全体のbuild.gradle サンプル
+### 2.1 プロジェクト全体の build.gradle サンプル
 
 ```groovy
 allprojects {
@@ -44,17 +44,17 @@ allprojects {
 
 次に、アプリ直下の`build.gradle`の`dependencies`に以下の指定を追加します。
 
-最新のRunaバージョン :
+最新の Runa バージョン :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.9.2'
+  implementation 'com.rakuten.android.ads:runa:1.9.3'
 ```
 
-> * [v1.4.0未満からのマイグレーション](./migration/README.md)
+> - [v1.4.0 未満からのマイグレーション](./migration/README.md)
 
-### 2.2 SDKの起動
+### 2.2 SDK の起動
 
-Application継承クラスのonCreate内で以下の処理を実行してください。
+Application 継承クラスの onCreate 内で以下の処理を実行してください。
 
 ```kotlin
 Runa.init(this)
@@ -77,14 +77,14 @@ class Application : Application() {
 
 ### 2.3 実装
 
-* [バナー広告](./bannerads/README.md)
+- [バナー広告](./bannerads/README.md)
 
 ## 3. 依存関係
 
-本SDKでは以下のライブラリを使用しています。
+本 SDK では以下のライブラリを使用しています。
 
-* com.google.code.gson:gson:2.8.2
-* com.google.android.gms:play-services-ads-identifier:17.1.0
+- com.google.code.gson:gson:2.8.2
+- com.google.android.gms:play-services-ads-identifier:17.1.0
 
 <details>
 <summary>これらのライブラリを除外する場合</summary>
@@ -97,25 +97,26 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
     exclude group: "com.google.code.gson", module: "gson"
 }
 ```
-> * X.X.X : お使いのバージョン
+
+> - X.X.X : お使いのバージョン
 >
-> * ※ 既にご利用され重複する場合には[`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-)で除外してください。
+> - ※ 既にご利用され重複する場合には[`exclude`](https://docs.gradle.org/current/javadoc/org/gradle/api/artifacts/ModuleDependency.html#exclude-java.util.Map-)で除外してください。
 
 </details>
 
 ## 4. ビルド環境
 
-本SDKは以下の条件でビルドしています。
+本 SDK は以下の条件でビルドしています。
 
-* Kotlin version : 1.4.32
-* OpenJDK version : 11.0.8
-* Gradle version : 7.2
+- Kotlin version : 1.4.32
+- OpenJDK version : 11.0.8
+- Gradle version : 7.2
 
 ## 5. 実装
 
-* **[バナー広告](./bannerads/README.md)**
-* **[カルーセル広告](./carouselads/README.md)**
-* **[ビューアブルインプレッションの計測](./viewability/README.md)**
+- **[バナー広告](./bannerads/README.md)**
+- **[カルーセル広告](./carouselads/README.md)**
+- **[ビューアブルインプレッションの計測](./viewability/README.md)**
 
 ---
 
@@ -128,5 +129,7 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 [トラブルシューティング](./troubleshoot/README.md)
 
 ---
+
 LANGUAGE :
+
 > [![en](/doc/img/lang/en.png)](/README.md#top)

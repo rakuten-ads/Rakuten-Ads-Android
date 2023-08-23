@@ -1,4 +1,4 @@
-[TOP](/README.md#top)　>　Extension
+[TOP](/README.md#top)　>　 Extension
 
 ---
 
@@ -16,28 +16,28 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.9.2'
+  implementation 'com.rakuten.android.ads:runa:1.9.3'
   implementation 'com.rakuten.android.ads:runa-extension:1.8.3'
 ```
 
 #### Corresponding versions
 
-| runa-extension |      runa       |
-|:--------------:|:---------------:|
-|    〜 v1.1.0    |    〜 v1.1.5     |
-|     v1.2.0     | v1.2.0, v1.2.1  |
+| runa-extension |       runa       |
+| :------------: | :--------------: |
+|   〜 v1.1.0    |    〜 v1.1.5     |
+|     v1.2.0     |  v1.2.0, v1.2.1  |
 |     v1.2.1     | v1.2.2 〜 v1.2.7 |
 |     v1.3.0     | v1.3.0 〜 v1.3.5 |
 |     v1.4.0     | v1.4.0 〜 v1.4.1 |
 |     v1.4.1     | v1.4.2 〜 v1.5.0 |
-|     v1.5.0     |     v1.5.0      |
+|     v1.5.0     |      v1.5.0      |
 |     v1.6.0     | v1.6.0 〜 v1.6.2 |
 |     v1.6.1     | v1.6.3 〜 v1.6.4 |
-|     v1.7.0     |     v1.7.0      |
-|     v1.8.0     |     v1.8.0      |
-|     v1.8.1     |     v1.8.1      |
-|     v1.8.2     |     v1.9.0      |
-|     v1.8.3     | v1.9.1 〜 v1.9.2 |
+|     v1.7.0     |      v1.7.0      |
+|     v1.8.0     |      v1.8.0      |
+|     v1.8.1     |      v1.8.1      |
+|     v1.8.2     |      v1.9.0      |
+|     v1.8.3     | v1.9.1 〜 v1.9.3 |
 
 <div id="helper_adview"></div>
 
@@ -87,15 +87,16 @@ val customTargeting = CustomTargeting.Builder().apply {
 
 Normalizer module provides api to normalize any string values for convenience, contains following rules:
 
-* convert half-width to full-width (カナ, 濁点, 半濁点, 長音符)
-* convert full-width to half-width (digit, alphabet, space, double quotation)
-* convert upper-case to lower-case (alphabet)
-* convert multi (>=2) spaces to single space trim spaces
-* remove spaces at start and end of phrase
+- convert half-width to full-width (カナ, 濁点, 半濁点, 長音符)
+- convert full-width to half-width (digit, alphabet, space, double quotation)
+- convert upper-case to lower-case (alphabet)
+- convert multi (>=2) spaces to single space trim spaces
+- remove spaces at start and end of phrase
 
 > e.g. `"　Orange APPLE　梨　　ｻｶﾅ"` -> `"orange apple 梨 サカナ"`
 
 Import `normalizer` module to project gradle file.
+
 ```gradle
 implementation 'com.rakuten.android.ads:normalizer:1.0.0'
 ```
@@ -188,7 +189,6 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
 ```
 
 > [A more concrete example can be found here.](https://github.com/rakuten-ads/Rakuten-Ads-Android-Sample/blob/master/app/src/main/kotlin/com/runa/sample/RecyclerViewSample2Activity.kt)
-
 
 <div id="helper_adloader"></div>
 
@@ -427,8 +427,11 @@ import com.rakuten.android.ads.runa.extension.AdViewHelper
 <br><br><br><br><br>
 
 ---
+
 [TOP](/README.md#top)
 
 ---
+
 LANGUAGE :
+
 > [![ja](/doc/img/lang/ja.png)](/doc/ja/extension/README.md)
