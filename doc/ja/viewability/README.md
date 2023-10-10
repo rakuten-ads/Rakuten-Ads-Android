@@ -22,9 +22,7 @@ Viewの監視を開始するには、`register`メソッドで対象のViewと�
 `ViewabilityProvider$register(view: View, url: String, listener: ViewabilityListener)`
 
 > `register`メソッドの引数<br>
->
-> * `view` (必須) : 対象となるView
-> * `url` (必須) : 成果の送信先URL
+> > * `view` (必須) : 対象となるView > * `url` (必須) : 成果の送信先URL
 > * `listener` (オプション) : 視認性が成立すると`onEstablished`がコールされます。
 
 [実装例]
@@ -64,6 +62,33 @@ Viewの視認性の監視を途中で解除したい場合は、`unregister`メ�
 val sampleTargetView = findViewById<LinearLayout>(R.id.sampleTarget)
 
 ViewabilityProvider.unregister(sampleTargetView)
+
+```
+
+<br>
+
+### Open Measurement SDK の有効化
+
+ビューアブルモジュールは Open Measurement SDK をサポートしています。<br>
+`register` メソッドの第四引数に `OmNativeParameter` のインスタンスを渡すことにより、有効化できます。
+
+
+```java
+
+val sampleTargetView = findViewById<LinearLayout>(R.id.sampleTarget)
+
+ViewabilityProvider.register(sampleTargetView, "URL", object: ViewabilityListener {
+
+  override fun onEstablished() {
+      // Transmission completed
+  }
+},
+OmNativeParameter(
+    "iabtechlab.com-omid",
+    URL("https://s3-us-west-2.amazonaws.com/updated-omsdk-files/compliance-js/omid-validation-verification-script-v1-RAKUTEN-03142023.js"),
+    "iabtechlab-Rakuten",
+    URL("https://storage.googleapis.com/rssp-dev-cdn/sdk/js/omsdk-v1-1.4.3.js")
+))
 
 ```
 

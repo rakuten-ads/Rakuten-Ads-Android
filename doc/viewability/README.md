@@ -67,6 +67,31 @@ ViewabilityProvider.unregister(sampleTargetView)
 
 ```
 
+### Enable Open Measurement SDK
+
+Viewable module supports Open Measurement SDK. <br>
+You can enable it by passing the instance of `OmNativeParameter` as the forth argument of `register` method.
+
+
+```java
+
+val sampleTargetView = findViewById<LinearLayout>(R.id.sampleTarget)
+
+ViewabilityProvider.register(sampleTargetView, "URL", object: ViewabilityListener {
+
+  override fun onEstablished() {
+      // Transmission completed
+  }
+},
+OmNativeParameter(
+    "iabtechlab.com-omid",
+    URL("https://s3-us-west-2.amazonaws.com/updated-omsdk-files/compliance-js/omid-validation-verification-script-v1-RAKUTEN-03142023.js"),
+    "iabtechlab-Rakuten",
+    URL("https://storage.googleapis.com/rssp-dev-cdn/sdk/js/omsdk-v1-1.4.3.js")
+))
+
+```
+
 <br><br><br><br><br>
 
 ---
