@@ -1,4 +1,4 @@
-[TOP](/README.md#top)　>　The Visibility Measurement
+[TOP](/README.md#top)　>　 The Visibility Measurement
 
 ---
 
@@ -24,13 +24,11 @@ This method takes a URL and the target View as arguments.
 
 > Method `register` requires the following arguments.<br>
 >
-> * `view` (required) : Target view
-> * `url` (required) : An url to send the results
-> * `callback` (optional) : Called after submitting the result. A callback if needed.
-
+> - `view` (required) : Target view
+> - `url` (required) : An url to send the results
+> - `callback` (optional) : Called after submitting the result. A callback if needed.
 
 The following is an implementation example.
-
 
 ```java
 
@@ -58,7 +56,7 @@ If you want to stop while monitoring, use the `unregister` method.
 
 > Method `unregister` requires the following arguments.<br>
 >
-> * `view` (required) : Target view
+> - `view` (required) : Target view
 
 ```java
 val sampleTargetView = findViewById<LinearLayout>(R.id.sampleTarget)
@@ -67,11 +65,38 @@ ViewabilityProvider.unregister(sampleTargetView)
 
 ```
 
+### Enable Open Measurement SDK
+
+Viewable module supports Open Measurement SDK. <br>
+You can enable it by passing the instance of `OmNativeParameter` as the forth argument of `register` method.
+
+```java
+
+val sampleTargetView = findViewById<LinearLayout>(R.id.sampleTarget)
+
+ViewabilityProvider.register(sampleTargetView, "URL", object: ViewabilityListener {
+
+  override fun onEstablished() {
+      // Transmission completed
+  }
+},
+OmNativeParameter(
+    "iabtechlab.com-omid",
+    URL("https://s3-us-west-2.amazonaws.com/updated-omsdk-files/compliance-js/omid-validation-verification-script-v1-RAKUTEN-03142023.js"),
+    "iabtechlab-Rakuten",
+    URL("https://storage.googleapis.com/rssp-dev-cdn/sdk/js/omsdk-v1-1.4.3.js")
+))
+
+```
+
 <br><br><br><br><br>
 
 ---
+
 [TOP](/README.md#top)
 
 ---
+
 LANGUAGE :
+
 > [![ja](/doc/img/lang/ja.png)](/doc/ja/viewability/README.md)
