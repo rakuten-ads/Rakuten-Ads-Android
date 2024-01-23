@@ -47,7 +47,7 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
 Latest Runa version :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.10.0'
+  implementation 'com.rakuten.android.ads:runa:1.10.1'
 ```
 
 - [Migration to v1.4.0+](./doc/migration/README.md)
