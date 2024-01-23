@@ -16,7 +16,7 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.10.0'
+  implementation 'com.rakuten.android.ads:runa:1.10.1'
   implementation 'com.rakuten.android.ads:runa-extension:1.8.3'
 ```
 
@@ -37,7 +37,7 @@ Open the app-level `build.gradle` file for your app, and look for a "dependencie
 |     v1.8.0     |      v1.8.0       |
 |     v1.8.1     |      v1.8.1       |
 |     v1.8.2     |      v1.9.0       |
-|     v1.8.3     | v1.9.1 〜 v1.10.0 |
+|     v1.8.3     | v1.9.1 〜 v1.10.1 |
 
 <div id="helper_adview"></div>
 
