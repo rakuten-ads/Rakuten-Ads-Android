@@ -148,9 +148,22 @@ import com.rakuten.android.ads.runa.extension.setRp
     AdView().setRp("RP_COOKIE")
 ```
 
+<div id="easyid"></div>
+
+### 2.5 EasyId
+
+[![support version](http://img.shields.io/badge/extension-_1.7.0+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.0)
+
+```kotlin
+import com.rakuten.android.ads.runa.extension.setEasyId
+
+...
+    AdView().setEasyId("Easyid")
+```
+
 <div id="rpoint"></div>
 
-### 2.5 Rpoint
+### 2.6 Rpoint
 
 [![support version](http://img.shields.io/badge/extension-_1.7.1+-informational.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.7.1)
 
@@ -164,7 +177,7 @@ import com.rakuten.android.ads.runa.extension.setRpoint
 
 <div id="avoid_interfere_with_scrollable"></div>
 
-### 2.6 Avoid interfere with scrollable view (ex. RecyclerView)
+### 2.7 Avoid interfere with scrollable view (ex. RecyclerView)
 
 When placing a horizontally scrollable ad inside a RecyclerView, the scrolling of the ad may interfere with the scrolling of the RecyclerView. In that case you need to lock the scrolling of the RecyclerView while scrolling within the ad.<br>
 In order to lock the RecyclerView at the right time, it need to detect scrolling within the ad. For that you need to use `AdViewHelper.RecyclerViewController` class.

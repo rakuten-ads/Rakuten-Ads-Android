@@ -5,7 +5,17 @@
 
 # Rakuten Unified Ads (RUNA) SDK Android
 
-### 広告フォーマット
+* [広告フォーマット](#ad-formats)
+* [1. 前提](#1-prerequisites)
+* [2. RUNA SDK のインポート](#2-import-the-runa-sdk)
+    * [2.1 プロジェクト全体の build.gradle サンプル](#21-example-project-level-buildgradle)
+    * [2.2 SDK の起動](#22-launch-sdk)
+    * [2.3 実装](#23-implementation)
+* [3. 依存関係](#3-dependencies)
+* [4. ビルド環境](#4-build-env-requirement)
+* [5. 実装](#5-implementation)
+
+### [広告フォーマット](#ad-formats)
 
 - **[バナー広告](./bannerads/README.md)**
 - **[カルーセル広告](./carouselads/README.md)**
@@ -17,7 +27,7 @@
 
 <div id="prerequisites"></div>
 
-## 1. 前提
+## [1. 前提](#1-prerequisites)
 
 - Android Studio 1.0 以上
 - Android API level 21 以上
@@ -25,11 +35,11 @@
 
 <div id="import_sdk"></div>
 
-## 2. RUNA SDK のインポート
+## [2. RUNA SDK のインポート](#2-import-the-runa-sdk)
 
 Gradle の依存設定でアプリにインポートすることが出来ます。プロジェクト直下の`build.gradle`の repositories に以下のように参照先を追加する必要があります。
 
-### 2.1 プロジェクト全体の build.gradle サンプル
+### [2.1 プロジェクト全体の build.gradle サンプル](#21-example-project-level-buildgradle)
 
 ```groovy
 allprojects {
@@ -52,7 +62,7 @@ allprojects {
 
 > - [v1.4.0 未満からのマイグレーション](./migration/README.md)
 
-### 2.2 SDK の起動
+### [2.2 SDK の起動](#22-launch-sdk)
 
 Application 継承クラスの onCreate 内で以下の処理を実行してください。
 
@@ -75,11 +85,11 @@ class Application : Application() {
 
 </details>
 
-### 2.3 実装
+### [2.3 実装](#23-implementation)
 
 - [バナー広告](./bannerads/README.md)
 
-## 3. 依存関係
+## [3. 依存関係](#3-dependencies)
 
 本 SDK では以下のライブラリを使用しています。
 
@@ -104,7 +114,7 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 </details>
 
-## 4. ビルド環境
+## [4. ビルド環境](#4-build-env-requirement)
 
 本 SDK は以下の条件でビルドしています。
 
@@ -112,7 +122,7 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 - OpenJDK version : 11.0.8
 - Gradle version : 7.2
 
-## 5. 実装
+## [5. 実装](#5-implementation)
 
 - **[バナー広告](./bannerads/README.md)**
 - **[カルーセル広告](./carouselads/README.md)**
@@ -124,7 +134,7 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 [Public API](./api/README.md)
 
-[Javadoc](https://rakuten-ads.github.io/products/runa/android/javadoc/index.html)
+[Kdoc](https://rakuten-ads.github.io/products/runa/android/kdoc/index.html)
 
 [トラブルシューティング](./troubleshoot/README.md)
 
