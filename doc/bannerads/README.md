@@ -144,7 +144,8 @@ Below sample code is to use an [`AdStateListener`](../api/AdStateListener.md). S
 - `onLoadSuccess` : It is called this method, if it is loaded an advertise successfully.<br><br>
 - `onLoadFailure` : It is called this method, in case of loaded an advertise failure. And if it failed, AdView will be hidden(`View.INVISIBLE`) automatically.
   - [`ErrorState`](../api/ErrorState.md) : Indicates the status when an error occurred in AdRequest.<br><br>
-- `onClick` : It is called this method, if it is clicked an advertise. &nbsp; (e.g. You use this method in case of to detect that clicked ad.)<br><br>
+- `onClick` : It is called this method, if it is clicked an advertise. &nbsp; (e.g. You use this method in case of to detect that clicked ad.)
+  - You can get the click url from View which is the first argument of `onClick(adView: View?)` by casting to AdView.<br><br>
 - `onLeftApplication` : This method is called after `onClick()` when a user click opens browser(transition to ad's destination URL).<br><br>
 - `onAdClose()` : When a user returns to the app after viewing an ad's destination URL, this method is called.
 
@@ -173,6 +174,9 @@ findViewById<AdView>(R.id.adview).apply {
 
         override fun onClick(adView: View?) {
             // Code to be executed when clicked an ad.
+
+            // You can get the click url.
+            val clickUrl = (adView as AdView).clickUrl
         }
 }.show()
 ```
@@ -203,6 +207,9 @@ ad.setAdStateListener(new AdStateListener() {
     @Override
     public void onClick(@Nullable View adView) {
         // Code to be executed when clicked an ad.
+
+        // You can get the click url.
+        String clickUrl = (AdView)adView.clickUrl
     }
 });
 ad.show();
