@@ -4,8 +4,17 @@
 [![Android](http://img.shields.io/badge/support-API_Level_15+-blue.svg?style=flat)](https://developer.android.com)
 
 # Rakuten Unified Ads (RUNA) SDK Android
+* [Ad Formats](#ad-formats)
+* [1. Prerequisites](#1-prerequisites)
+* [2. Import the RUNA SDK](#2-import-the-runa-sdk)
+    * [2.1 Example project-level build.gradle](#21-example-project-level-buildgradle)
+    * [2.2 Launch SDK](#22-launch-sdk)
+    * [2.3 Implementation](#23-implementation)
+* [3. Dependencies](#3-dependencies)
+* [4. Build env requirement](#4-build-env-requirement)
+* [5. Implementation](#5-implementation)
 
-### Ad Formats
+### [Ad Formats](#ad-formats)
 
 - **[BannerAds](./doc/bannerads/README.md)**
 - **[CarouselAds](./doc/carouselads/README.md)**
@@ -17,7 +26,7 @@
 
 <div id="prerequisites"></div>
 
-## 1. Prerequisites
+## [1. Prerequisites](#1-prerequisites)
 
 - Uses Android Studio 1.0 or higher
 - Target Android API level 21 or higher
@@ -25,11 +34,11 @@
 
 <div id="import_sdk"></div>
 
-## 2. Import the RUNA SDK
+## [2. Import the RUNA SDK](#2-import-the-runa-sdk)
 
 Apps can import the RDN Mobile Ads SDK with a Gradle dependency.In order to use that repository, you need to reference it in the app's project-level `build.gradle` file. Open yours and look for an allprojects section:
 
-### 2.1 Example project-level build.gradle
+### [2.1 Example project-level build.gradle](#21-example-project-level-buildgradle)
 
 ```groovy
 allprojects {
@@ -52,7 +61,7 @@ Latest Runa version :
 
 - [Migration to v1.4.0+](./doc/migration/README.md)
 
-### 2.2 Launch SDK
+### [2.2 Launch SDK](#22-launch-sdk)
 
 In the onCreate method of the class that inherits Application, execute as follows and launch the SDK.
 
@@ -75,11 +84,11 @@ class Application : Application() {
 
 </details>
 
-### 2.3 Implementation
+### [2.3 Implementation](#23-implementation)
 
 - [Banner Ads](./doc/bannerads/README.md)
 
-## 3. Dependencies
+## [3. Dependencies](#3-dependencies)
 
 This SDK depends on the following libraries:
 
@@ -104,7 +113,7 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 </details>
 
-## 4. Build env requirement
+## [4. Build env requirement](#4-build-env-requirement)
 
 Thid SDK is built by below tools.
 
@@ -112,7 +121,7 @@ Thid SDK is built by below tools.
 - OpenJDK version : 11.0.8
 - Gradle version : 7.2
 
-## 5. Implementation
+## [5. Implementation](#5-implementation)
 
 - **[Banner ads](./doc/bannerads/README.md)**
 - **[CarouselAds](./doc/carouselads/README.md)**
@@ -124,7 +133,7 @@ Thid SDK is built by below tools.
 
 [Public API](./doc/api/README.md)
 
-[Javadoc](https://rakuten-ads.github.io/products/runa/android/javadoc/index.html)
+[Kdoc](https://rakuten-ads.github.io/products/runa/android/kdoc/index.html)
 
 [Troubleshooting](./doc/troubleshoot/README.md)
 

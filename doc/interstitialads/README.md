@@ -51,7 +51,7 @@ private var mInterstitialAd: InterstitialAd? = null
       }
 
       override fun onLoadFailure(errorState: ErrorState) {
-        // 読み込みが失敗した時に呼ばれます
+        // When ad load is failed
       }
     })
 ...
