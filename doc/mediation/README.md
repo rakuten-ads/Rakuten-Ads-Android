@@ -18,7 +18,7 @@ Please follow the [introduction](https://developers.google.com/admob/android/ban
 
 #### Enable mediation configurations in Admob console.
 
-Ask RUNA support team to enable the configuration of the Admob Mediation. The following 2 steps will be done.
+Ask your business side to enable the configuration of the Admob Mediation. The following 2 steps will be done.
 
 1. Set up a mediation group
 
