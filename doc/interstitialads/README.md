@@ -22,38 +22,38 @@ Finally, to display the interstitial ad, call `InterstitialAd.show(Activity)` me
 import com.rakuten.android.ads.runa.ErrorState
 import com.rakuten.android.ads.runa.InterstitialAd
 import com.rakuten.android.ads.runa.InterstitialAdListener
-import com.rakuten.android.ads.runa.InterstitialAdLoadListener import com.rakuten.android.ads.runa.InterstitialAdSpotData
-private var mInterstitialAd: InterstitialAd? = null
+import com.rakuten.android.ads.runa.InterstitialAdLoadListener
+import com.rakuten.android.ads.runa.InterstitialAdSpotData
 
-...
+var mInterstitialAd: InterstitialAd? = null
 
-  val adSpotData = InterstitialAdSpotData(
+val adSpotData = InterstitialAdSpotData(
     adSpotId = "{adSpotId}",
     adSpotCode = "{adSpotCode}",
     adSize = AdSize.ASPECT_FIT
   )
 
-  InterstitialAd.load(context,
-    adSpotData,
-    object : InterstitialAdLoadListener() {
-      override fun onLoadSuccess(interstitialAd: InterstitialAd) {
-        // This method should be called when the interstitial ad is ready to be displayed.
-        mInterstitialAd = interstitialAd
-        mInterstitialAd?.interstitialAdListener = object : InterstitialAdListener() {
-          override fun onDismiss() {
-            // You can detect when the interstitial ad is closed using an event listener.
-            // And implement the logic to transition to the next screen primarily after the interstitial ad is closed.
-            Intent(requireActivity(), ScreenB::java.class).run {
-                startActivity(this)
-            }
+InterstitialAd.load(context,
+  adSpotData,
+  object : InterstitialAdLoadListener() {
+    override fun onLoadSuccess(interstitialAd: InterstitialAd) {
+      // This method should be called when the interstitial ad is ready to be displayed.
+      mInterstitialAd = interstitialAd
+      mInterstitialAd?.interstitialAdListener = object : InterstitialAdListener() {
+        override fun onDismiss() {
+          // You can detect when the interstitial ad is closed using an event listener.
+          // And implement the logic to transition to the next screen primarily after the interstitial ad is closed.
+          Intent(requireActivity(), ScreenB::java.class).run {
+              startActivity(this)
           }
         }
       }
+    }
 
-      override fun onLoadFailure(errorState: ErrorState) {
-        // When ad load is failed
-      }
-    })
+    override fun onLoadFailure(errorState: ErrorState) {
+      // When ad load is failed
+    }
+  })
 ...
 
 override fun onClick(v: View) {
