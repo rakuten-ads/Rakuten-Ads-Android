@@ -4,11 +4,13 @@
 
 # Interstitial Ads
 
+[![support version](http://img.shields.io/badge/runa-1.6.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.9.1)
+
 An interstitial is a full-screen advertisement that is primarily displayed during transitions between screens.
 
 > **[Screen A] -> [Display InterstitialAds] -> <Close ads> -> [Screen B]**
 
-### Display ads
+### Basic implementation
 
 　To display an interstitial ads, you can use the `InterstitialAd` class.<br>
 You can start loading the ad with the `load` method and detect when the loading is complete using the `InterstitialAdLoadListener` that you set as an argument.<br>
@@ -20,9 +22,7 @@ Finally, to display the interstitial ad, call `InterstitialAd.show(Activity)` me
 import com.rakuten.android.ads.runa.ErrorState
 import com.rakuten.android.ads.runa.InterstitialAd
 import com.rakuten.android.ads.runa.InterstitialAdListener
-import com.rakuten.android.ads.runa.InterstitialAdLoadListener
-import com.rakuten.android.ads.runa.InterstitialAdSpotData
-
+import com.rakuten.android.ads.runa.InterstitialAdLoadListener import com.rakuten.android.ads.runa.InterstitialAdSpotData
 private var mInterstitialAd: InterstitialAd? = null
 
 ...
@@ -61,6 +61,18 @@ override fun onClick(v: View) {
   mInterstitialAd.show(requireActivity())
 }
 ```
+
+### Detect Interstitial Ads State
+
+|Method|Details|
+|:---|:---|
+|onLoadSuccess(View)|Called every time loading is successful for each ad spot ID set in CarouselAdView|
+|onLoadFailure(View, ErrorState)|Called each time an ad request fails for each ad spot ID set in CarouselAdView.|
+|onClick(View, ErrorState)|Called when an ad is clicked.|
+|onLeftApplication()|Called when an ad is clicked and leaves the application.|
+|onAdCloseed()|Called Return to app after clicking ad and navigating to destination.|
+|onDismiss()|Called when an interstitial ad is closed.|
+|onWebViewCrashed(AdView?)|Called when the process inside WebView in AdView is crashed.|
 
 ---
 [TOP](../#top)

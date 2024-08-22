@@ -29,7 +29,7 @@ A listener for receiving notifications during the lifecycle of [CarouselAdView](
 
 ---
 
-* [API一覧](./README.md)
+* [API](./README.md)
 
 * [TOP](/README.md#top)
 
