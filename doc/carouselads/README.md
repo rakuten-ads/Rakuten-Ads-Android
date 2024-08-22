@@ -144,11 +144,13 @@ val carouselAdView = CarouselAdView(this).apply {
         override fun onLeftApplication() {}
 
         override fun onAdClosed() {}
+
+        override fun onWebViewCrashed(adView: AdView?) {}
     }
 }
 ```
 
-|メソッド名|説明|
+|method|details|
 |:---|:---|
 |onLoadSuccess(View)|Called every time loading is successful for each ad spot ID set in CarouselAdView|
 |onLoadFailure(View, ErrorState)|Called each time an ad request fails for each ad spot ID set in CarouselAdView.|
@@ -156,6 +158,7 @@ val carouselAdView = CarouselAdView(this).apply {
 |onLeftApplication()|Called when an ad is clicked and leaves the application.|
 |onAdCloseed()|Called Return to app after clicking ad and navigating to destination.|
 |onAllLoadsFinished()|Called when all loading of the ad spot ID set in CarouselAdView is completed. In this case, it will be called when the read process is completed regardless of the success or failure of each read result.|
+|onWebViewCrashed(AdView?)|Called when the process inside WebView in AdView is crashed.|
 
 <div id="any_implementations"></div>
 

@@ -144,6 +144,8 @@ val carouselAdView = CarouselAdView(this).apply {
         override fun onLeftApplication() {}
 
         override fun onAdClosed() {}
+
+        override fun onWebViewCrashed(adView: AdView?) {}
     }
 }
 ```
@@ -156,6 +158,7 @@ val carouselAdView = CarouselAdView(this).apply {
 |onLeftApplication()|広告がクリックされ、アプリケーションから離れる時に呼ばれます。|
 |onAdCloseed()|広告をクリックしリンク先への遷移後、アプリに戻ると呼ばれます。|
 |onAllLoadsFinished()|CarouselAdViewにセットした広告枠IDのロードが全て終了した時に呼ばれます。この場合、各々の読み込み結果の成否に関係なく読み込み処理が終了した時点で呼ばれます。|
+|onWebViewCrashed(AdView?)|CarouselAdView内のそれぞれのAdViewのWebViewの中でクラッシュが発生した際呼ばれます。|
 
 <div id="any_implementations"></div>
 

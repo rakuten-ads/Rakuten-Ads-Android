@@ -61,6 +61,19 @@ override fun onClick(v: View) {
 }
 ```
 
+### 広告の状態を検知する
+
+|メソッド名|説明|
+|:---|:---|
+|onLoadSuccess(View)|CarouselAdViewにセットした広告枠IDごとに読み込みが成功する度に呼ばれます|
+|onLoadFailure(View, ErrorState)|CarouselAdViewにセットした広告枠IDごとに、広告リクエストが失敗した都度呼ばれます。|
+|onClick(View, ErrorState)|広告がクリックされた時に呼ばれます。|
+|onLeftApplication()|広告がクリックされ、アプリケーションから離れる時に呼ばれます。|
+|onAdCloseed()|広告をクリックしリンク先への遷移後、アプリに戻ると呼ばれます。|
+|onDismiss()|インタースティシャル広告が閉じられた時に呼ばれます。|
+|onWebViewCrashed(AdView?)|CarouselAdView内のそれぞれのAdViewのWebViewの中でクラッシュが発生した際呼ばれます。|
+
+
 ---
 [TOP](../#top)
 
