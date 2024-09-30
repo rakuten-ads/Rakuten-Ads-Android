@@ -16,8 +16,8 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.12.1'
-  implementation 'com.rakuten.android.ads:runa-extension:1.9.3'
+  implementation 'com.rakuten.android.ads:runa:1.12.2'
+  implementation 'com.rakuten.android.ads:runa-extension:1.9.4'
 ```
 
 #### Corresponding versions
@@ -39,6 +39,7 @@ Open the app-level `build.gradle` file for your app, and look for a "dependencie
 |     v1.8.2     |      v1.9.0         |
 |     v1.8.3     |  v1.9.1 〜 v1.11.0  |
 |     v1.9.3     | v1.12.0 〜 v.1.12.1 |
+|     v1.9.4     |      v.1.12.2       |
 
 <div id="helper_adview"></div>
 
@@ -99,7 +100,7 @@ Normalizer module provides api to normalize any string values for convenience, c
 Import `normalizer` module to project gradle file.
 
 ```gradle
-implementation 'com.rakuten.android.ads:normalizer:1.0.0'
+implementation 'com.rakuten.android.ads:normalizer:1.2.1'
 ```
 
 ```kotlin

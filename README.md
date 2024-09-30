@@ -56,7 +56,7 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
 Latest Runa version :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.12.1'
+  implementation 'com.rakuten.android.ads:runa:1.12.2'
 ```
 
 - [Migration to v1.4.0+](./doc/migration/README.md)
@@ -117,9 +117,9 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 Thid SDK is built by below tools.
 
-- Kotlin version : 1.4.32
-- OpenJDK version : 11.0.8
-- Gradle version : 7.2
+- Kotlin version : 1.9.25
+- OpenJDK version : 17.0.12
+- Gradle version : 8.9
 
 ## [5. Implementation](#5-implementation)
 
