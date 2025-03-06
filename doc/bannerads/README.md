@@ -558,7 +558,16 @@ class AdViewFragment : Fragment() {
 
             adStateListener = object : AdLoaderStateListener() {
                 override fun onClick(view: View?, errorState: ErrorState?) {
-                    Log.d("Click URL", (view as AdView).clickUrl)
+                    val clickUrl = (view as AdView).clickUrl
+                    Log.d("Click URL", clickUrl)
+
+                    // Show the page of click url set in RUNA in your WebView
+                    binding.yourWebView.webViewClient = WebViewClient()
+                    binding.yourWebView.loadUrl(clickUrl)
+
+                    // Show the the page of click url set in RUNA in external browser
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(intent)
                 }
             }
         }.show()
@@ -568,7 +577,8 @@ class AdViewFragment : Fragment() {
 
 #### <a target="_self">
 
-It’s basically impossible extent the page of click url in WebView inside `AdView` due to content security policy with X-Frame-Options: DENY error.
+It’s basically impossible extent the page of click url in WebView inside `AdView` due to content security policy with X-Frame-Options: DENY error.<br>
+We recommend you should change the value of `target` attribute of anchor tags in your creative to "\_top".
 
 ---
 
