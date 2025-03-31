@@ -13,6 +13,7 @@
 - **[7. Set AdSpotBranchId](#set_adSpotBranchId)**
 - **[8. Use HardwareAccelerator](#use_hardwareAccelerator)**
 - **[9. Test (Sample AdSpotId)](#use_sample_adspot_id)**
+- **[10. Custom usages at clicking](#custom_usages_at_clicking)**
 
 ---
 
@@ -532,6 +533,52 @@ Please make sure if it is implemented correctly.
 |      18267       | 970 x 90  | <img src="/doc/img/dummy_ads/dummy07_970x90.jpeg" width=300px />  |
 |      18268       | 970 x 250 | <img src="/doc/img/dummy_ads/dummy08_970x250.jpeg" width=300px /> |
 |      18269       | 300 x 600 | <img src="/doc/img/dummy_ads/dummy09_300x600.png" width=300px />  |
+
+<div id="custom_usages_at_clicking"></div>
+
+### 9. Custom usages of clicking ads
+
+When users click AdView, the behavior of opening url depends on target attribute of anchor tag inside the creative.<br>
+However, you can control that with Click Delegation function.
+
+#### <a target="_top">
+
+You can get control the behavior at clicking `AdView` on your client with the click delegation function.
+
+```kotlin
+class AdViewFragment : Fragment() {
+    private lateinit var binding: FragmentAdViewBinding
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        adview.apply {
+            // Click delegation is enabled with the line
+            putProperty("c11c51790bac6cbee0e0483576148145", Delegator.ClickDelegation)
+
+            adStateListener = object : AdLoaderStateListener() {
+                override fun onClick(view: View?, errorState: ErrorState?) {
+                    val clickUrl = (view as AdView).clickUrl
+                    Log.d("Click URL", clickUrl)
+
+                    // Show the page of click url set in RUNA in your WebView
+                    binding.yourWebView.webViewClient = WebViewClient()
+                    binding.yourWebView.loadUrl(clickUrl)
+
+                    // Show the the page of click url set in RUNA in external browser
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(intent)
+                }
+            }
+        }.show()
+    }
+}
+```
+
+#### <a target="_self">
+
+It’s basically impossible extent the page of click url in WebView inside `AdView` due to content security policy with X-Frame-Options: DENY error.<br>
+We recommend you should change the value of `target` attribute of anchor tags in your creative to "\_top".
 
 ---
 
