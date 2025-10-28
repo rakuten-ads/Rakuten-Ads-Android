@@ -21,6 +21,7 @@ public enum class **AdSize** extends [Object](https://developer.android.com/refe
 | ASPECT_FIT    | デフォルトの広告サイズの比率で画面横幅に合わせたサイズ                                                                                                                                                            |
 | CUSTOM        | 標準サイズが下限、画面横幅サイズを上限に任意のサイズ(px)を指定することができます。但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT) |
 | UNSAFE_CUSTOM | 任意のサイズ(px)を指定することができます。但し、この指定は広告自体のサイズを無視するので使用の際は注意してください。                                                                                              |
+| FULL_SCREEN   | Interstitial Ad でのみ有効。広告コンテンツを表示する WebView をスクリーン全体に表示。                                                                                                                             |
 
 ---
 

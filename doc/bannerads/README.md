@@ -33,6 +33,7 @@ AdSize is enum class.
 | ASPECT_FIT    | Fit in display width.                                                                                                                            |
 | CUSTOM        | Can be specified to any size.<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < `CUSTOM` < ASPECT_FIT) |
 | UNSAFE_CUSTOM | Can be specified to any size(pixel).<br>This mode ignores the size of an ad content, please carefully use it.                                    |
+| FULL_SCREEN   | This size can be enabled only in Interstitial Ad.<br> WebView displaying ad contents will be extended to a screen size                           |
 
 </details>
 
