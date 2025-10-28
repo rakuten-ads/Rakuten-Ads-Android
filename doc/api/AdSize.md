@@ -21,6 +21,7 @@ An enum class for adjusting the size of the [AdView](./AdView.md).
 | ASPECT_FIT    | The ad is automatically adjusted to the screen width without changing the aspect ratio of the ad.                                                     |
 | CUSTOM        | Can be specified to any size(pixel).<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < CUSTOM < ASPECT_FIT) |
 | UNSAFE_CUSTOM | Can be specified to any size(pixel).<br>This mode ignores the size of an ad content, please be carefully to use it.                                   |
+| FULL_SCREEN   | This size can be enabled only in Interstitial Ad.<br> WebView displaying ad contents will be extended to a screen size                                |
 
 ---
 

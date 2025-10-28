@@ -33,6 +33,7 @@ enum class<br>
 | ASPECT_FIT    | 画面横幅サイズに自動調整したサイズ                                                                                                                                                                                          |
 | CUSTOM        | 標準サイズを下限に、画面横幅サイズを上限とした任意のサイズ(px)を指定することができます。<br>但し、この指定は広告の横幅のサイズと標準サイズの比率を基に算出されます。<br>指定可能なサイズ: (DEFAULT < `CUSTOM` < ASPECT_FIT) |
 | UNSAFE_CUSTOM | 任意のサイズ(px)を指定することができます。但し、この指定は広告自体のサイズを無視するので使用の際は注意してください。                                                                                                        |
+| FULL_SCREEN   | Interstitial Ad でのみ有効。広告コンテンツを表示する WebView をスクリーン全体に表示。                                                                                                                                       |
 
 </details>
 
