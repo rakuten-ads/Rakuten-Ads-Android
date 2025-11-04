@@ -73,6 +73,15 @@ override fun onClick(v: View) {
 |onDismiss()|インタースティシャル広告が閉じられた時に呼ばれます。|
 |onWebViewCrashed(AdView?)|CarouselAdView内のそれぞれのAdViewのWebViewの中でクラッシュが発生した際呼ばれます。|
 
+### ステータスバーの非表示
+
+`hideStatusBar` オプションを使用することでインタースティシャル広告が表示されるアクティビティのステータスバーを非表示にすることができます。
+
+```kotlin
+import com.rakuten.android.ads.runa.InterstitialAd
+
+InterstitialAd.hideStatusBar = true
+```
 
 ---
 [TOP](../#top)

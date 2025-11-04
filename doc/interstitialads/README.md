@@ -18,7 +18,7 @@ When the ad is successfully loaded, the `onLoadSuccess` method is called and you
 You can detect events for the interstitial ad after it is displayed by setting an `InterstitialAdListener` on the `InterstitialAd` object.<br>
 Finally, to display the interstitial ad, call `InterstitialAd.show(Activity)` method.
 
-```java
+```kotlin
 import com.rakuten.android.ads.runa.ErrorState
 import com.rakuten.android.ads.runa.InterstitialAd
 import com.rakuten.android.ads.runa.InterstitialAdListener
@@ -73,6 +73,16 @@ override fun onClick(v: View) {
 |onAdCloseed()|Called Return to app after clicking ad and navigating to destination.|
 |onDismiss()|Called when an interstitial ad is closed.|
 |onWebViewCrashed(AdView?)|Called when the process inside WebView in AdView is crashed.|
+
+### Hide Status Bar
+
+You can hide a status bar on Activity of Interstitial ad with `hideStatusBar` option.
+
+```kotlin
+import com.rakuten.android.ads.runa.InterstitialAd
+
+InterstitialAd.hideStatusBar = true
+```
 
 ---
 [TOP](../#top)
