@@ -79,7 +79,7 @@ override fun onClick(v: View) {
 | Size          | Details                                                                                                                                |
 | :------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
 | DEFAULT       | The ad is displayed with the size set in Dashboard.                                                                                    |
-| ASPECT_FIT    | The ad is automatically adjuested to the screen width and dispalyed.                                                                   |
+| ASPECT_FIT    | The ad is automatically adjuested to the screen width.                                                                                 |
 | CUSTOM        | The ad is displayed with the size you set, but the actual rendered size is calculated based on the width considering the aspect ratio. |
 | UNSAFE_CUSTOM | The ad is displayed with any sizes you want even if the aspect ratio is different with the ad size.                                    |
 | FULL_SCREEN   | The ad is displayed as you implement in Creative page in Dashboard. SDK just provides full screen Webview.                             |
