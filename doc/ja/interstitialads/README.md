@@ -7,11 +7,11 @@
 インタースティーシャルは全画面表示の広告です。<br>
 主に画面遷移の間に表示させる用途となります。
 
-> **[画面A] -> [インタースティーシャル広告表示] -> <広告を閉じる> -> [画面B]**
+> **[画面 A] -> [インタースティーシャル広告表示] -> <広告を閉じる> -> [画面 B]**
 
 ### 広告を表示する
 
-　インタースティーシャル広告の表示には`InterstitialAd`クラスを利用します。<br>
+インタースティーシャル広告の表示には`InterstitialAd`クラスを利用します。<br>
 `load`メソッドで読み込みを開始し、引数に設定した`InterstitialAdLoadListener`で読み込み完了を検知させます。<br>
 正常に読み込まれると`onLoadSuccess`が呼ばれ、引数の`InterstitialAd`を取得することができます。<br>
 `InterstitialAd`に`InterstitialAdListener`をセットすることで表示後のインタースティーシャル広告のイベントの検知ができます。<br>
@@ -63,15 +63,25 @@ override fun onClick(v: View) {
 
 ### 広告の状態を検知する
 
-|メソッド名|説明|
-|:---|:---|
-|onLoadSuccess(View)|CarouselAdViewにセットした広告枠IDごとに読み込みが成功する度に呼ばれます|
-|onLoadFailure(View, ErrorState)|CarouselAdViewにセットした広告枠IDごとに、広告リクエストが失敗した都度呼ばれます。|
-|onClick(View, ErrorState)|広告がクリックされた時に呼ばれます。|
-|onLeftApplication()|広告がクリックされ、アプリケーションから離れる時に呼ばれます。|
-|onAdCloseed()|広告をクリックしリンク先への遷移後、アプリに戻ると呼ばれます。|
-|onDismiss()|インタースティシャル広告が閉じられた時に呼ばれます。|
-|onWebViewCrashed(AdView?)|CarouselAdView内のそれぞれのAdViewのWebViewの中でクラッシュが発生した際呼ばれます。|
+| メソッド名                      | 説明                                                                                     |
+| :------------------------------ | :--------------------------------------------------------------------------------------- |
+| onLoadSuccess(View)             | CarouselAdView にセットした広告枠 ID ごとに読み込みが成功する度に呼ばれます              |
+| onLoadFailure(View, ErrorState) | CarouselAdView にセットした広告枠 ID ごとに、広告リクエストが失敗した都度呼ばれます。    |
+| onClick(View, ErrorState)       | 広告がクリックされた時に呼ばれます。                                                     |
+| onLeftApplication()             | 広告がクリックされ、アプリケーションから離れる時に呼ばれます。                           |
+| onAdCloseed()                   | 広告をクリックしリンク先への遷移後、アプリに戻ると呼ばれます。                           |
+| onDismiss()                     | インタースティシャル広告が閉じられた時に呼ばれます。                                     |
+| onWebViewCrashed(AdView?)       | CarouselAdView 内のそれぞれの AdView の WebView の中でクラッシュが発生した際呼ばれます。 |
+
+### サイズオプション
+
+| サイズ        | 詳細                                                                                                                         |
+| :------------ | :--------------------------------------------------------------------------------------------------------------------------- |
+| DEFAULT       | ダッシュボードで設定されたサイズで広告が表示されます。                                                                       |
+| ASPECT_FIT    | 広告は画面の幅に合わせて自動的に調整されます。                                                                               |
+| CUSTOM        | 設定したサイズで広告が表示されますが、実際にレンダリングされるサイズは、アスペクト比を考慮した上で幅に基づいて計算されます。 |
+| UNSAFE_CUSTOM | 広告サイズとアスペクト比が異なる場合でも、指定した任意のサイズで広告が表示されます。                                         |
+| FULL_SCREEN   | ダッシュボードのクリエイティブページで実装した通りに広告が表示されます。SDK はフルスクリーンの Webview を提供します。        |
 
 ### ステータスバーの非表示
 
@@ -84,8 +94,11 @@ InterstitialAd.hideStatusBar = true
 ```
 
 ---
+
 [TOP](../#top)
 
 ---
+
 LANGUAGE :
+
 > [![en](/doc/img/lang/en.png)](/doc/interstitialads/README.md)
