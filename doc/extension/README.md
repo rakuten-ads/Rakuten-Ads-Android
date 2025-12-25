@@ -16,30 +16,30 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.12.2'
+  implementation 'com.rakuten.android.ads:runa:1.13.3'
   implementation 'com.rakuten.android.ads:runa-extension:1.9.4'
 ```
 
 #### Corresponding versions
 
-| runa-extension |        runa         |
-| :------------: | :-----------------: |
-|   〜 v1.1.0    |    〜 v1.1.5        |
-|     v1.2.0     |  v1.2.0, v1.2.1     |
-|     v1.2.1     |  v1.2.2 〜 v1.2.7   |
-|     v1.3.0     |  v1.3.0 〜 v1.3.5   |
-|     v1.4.0     |  v1.4.0 〜 v1.4.1   |
-|     v1.4.1     |  v1.4.2 〜 v1.5.0   |
-|     v1.5.0     |      v1.5.0         |
-|     v1.6.0     |  v1.6.0 〜 v1.6.2   |
-|     v1.6.1     |  v1.6.3 〜 v1.6.4   |
-|     v1.7.0     |      v1.7.0         |
-|     v1.8.0     |      v1.8.0         |
-|     v1.8.1     |      v1.8.1         |
-|     v1.8.2     |      v1.9.0         |
-|     v1.8.3     |  v1.9.1 〜 v1.11.0  |
-|     v1.9.3     | v1.12.0 〜 v.1.12.1 |
-|     v1.9.4     |      v.1.12.2       |
+| runa-extension |        runa        |
+| :------------: | :----------------: |
+|   〜 v1.1.0    |     〜 v1.1.5      |
+|     v1.2.0     |   v1.2.0, v1.2.1   |
+|     v1.2.1     |  v1.2.2 〜 v1.2.7  |
+|     v1.3.0     |  v1.3.0 〜 v1.3.5  |
+|     v1.4.0     |  v1.4.0 〜 v1.4.1  |
+|     v1.4.1     |  v1.4.2 〜 v1.5.0  |
+|     v1.5.0     |       v1.5.0       |
+|     v1.6.0     |  v1.6.0 〜 v1.6.2  |
+|     v1.6.1     |  v1.6.3 〜 v1.6.4  |
+|     v1.7.0     |       v1.7.0       |
+|     v1.8.0     |       v1.8.0       |
+|     v1.8.1     |       v1.8.1       |
+|     v1.8.2     |       v1.9.0       |
+|     v1.8.3     | v1.9.1 〜 v1.11.0  |
+|     v1.9.3     | v1.12.0 〜 v1.12.1 |
+|     v1.9.4     | v1.12.2 〜 v1.13.3 |
 
 <div id="helper_adview"></div>
 
