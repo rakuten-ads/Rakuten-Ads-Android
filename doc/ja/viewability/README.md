@@ -70,7 +70,14 @@ ViewabilityProvider.unregister(sampleTargetView)
 ### Open Measurement SDK の有効化
 
 ビューアブルモジュールは Open Measurement SDK をサポートしています。<br>
-`register` メソッドの第四引数に `OmNativeParameter` のインスタンスを渡すことにより、有効化できます。
+OpenMeasurementNativeClient を利用して、ユースケースに応じて以下のメソッドを実行できます。
+
+| メソッド             | 説明                                                                                                                                                                                                                                     |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| start()              | OM SDK セッションを作成します。セッションを開始しても、現時点ではインプレッションは発生しません。これは、トラッキングのためにセッションを準備するだけです。イベントをディスパッチする前にセッションを開始することが重要です。            |
+| loadedAd()           | 理想的には、クリエイティブが読み込まれたらすぐに、広告セッションの早い段階で発生させるべきですが、インプレッションの直前に送信しても問題ありません。                                                                                     |
+| impressionOccurred() | インプレッションの定義は一般的に広告のレンダリング時とされているため、このタイミングでイベントをディスパッチするのが適切です。このイベントは一度だけディスパッチされるべきであり、複数回トリガーしようとするとエラーになります。         |
+| finish()             | インプレッションが完了し、広告が破棄されるときにセッションを停止してください。セッションを停止した後で、そのセッションを再度開始したり、終了したセッションでインプレッションをトリガーしようとするとエラーになることに注意してください。 |
 
 ```java
 
@@ -81,13 +88,17 @@ ViewabilityProvider.register(sampleTargetView, "URL", object: ViewabilityListene
   override fun onEstablished() {
       // Transmission completed
   }
-},
-OmNativeParameter(
+})
+
+// Enbale OM SDK
+val omParams = OmNativeParameter(
     "iabtechlab.com-omid",
     URL("https://s3-us-west-2.amazonaws.com/updated-omsdk-files/compliance-js/omid-validation-verification-script-v1-RAKUTEN-03142023.js"),
     "iabtechlab-Rakuten",
     URL("https://storage.googleapis.com/rssp-dev-cdn/sdk/js/omsdk-v1-1.4.3.js")
-))
+)
+val omClient = OpenMeasurementNativeClient(sampleTargetView, omParams)
+omClient.start()
 
 ```
 

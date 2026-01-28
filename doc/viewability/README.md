@@ -68,7 +68,14 @@ ViewabilityProvider.unregister(sampleTargetView)
 ### Enable Open Measurement SDK
 
 Viewable module supports Open Measurement SDK. <br>
-You can enable it by passing the instance of `OmNativeParameter` as the forth argument of `register` method.
+You can utilize `OpenMeasurementNativeClient` and execute following methods depending on your use cases.
+
+| Method               | Description                                                                                                                                                                                                                            |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| start()              | Create OM SDK session. Starting the session does not trigger an impression yet – it only prepares the session for tracking. It is important to start the session before dispatching any events.                                        |
+| loadedAd()           | Ideally this would occur as early in your ad session as the creative is loaded, but it is ok to send it just before the impression.                                                                                                    |
+| impressionOccurred() | The definition of an impression is generally accepted to be on ad render so this is likely when you will want to dispatch the event. The event should be dispatched only once and attempting to trigger it multiple times is an error. |
+| finish()             | Stop the session when the impression has completed and the ad will be destroyed. Note, that after you’ve stopped the session it is an error to attempt to start it again or trigger an impression on the finished session.             |
 
 ```java
 
@@ -79,14 +86,17 @@ ViewabilityProvider.register(sampleTargetView, "URL", object: ViewabilityListene
   override fun onEstablished() {
       // Transmission completed
   }
-},
-OmNativeParameter(
+})
+
+// Enbale OM SDK
+val omParams = OmNativeParameter(
     "iabtechlab.com-omid",
     URL("https://s3-us-west-2.amazonaws.com/updated-omsdk-files/compliance-js/omid-validation-verification-script-v1-RAKUTEN-03142023.js"),
     "iabtechlab-Rakuten",
     URL("https://storage.googleapis.com/rssp-dev-cdn/sdk/js/omsdk-v1-1.4.3.js")
-))
-
+)
+val omClient = OpenMeasurementNativeClient(sampleTargetView, omParams)
+omClient.start()
 ```
 
 <br><br><br><br><br>
