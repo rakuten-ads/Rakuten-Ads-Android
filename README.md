@@ -19,6 +19,7 @@
 - **[BannerAds](./doc/bannerads/README.md)**
 - **[CarouselAds](./doc/carouselads/README.md)**
 - **[InterstitialAds](./doc/interstitialads/README.md)**
+- **[VideoAds](./doc/video/README.md)**
 
 ---
 
@@ -56,7 +57,7 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
 Latest Runa version :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.12.2'
+  implementation 'com.rakuten.android.ads:runa:1.14.2'
 ```
 
 - [Migration to v1.4.0+](./doc/migration/README.md)
@@ -125,6 +126,7 @@ Thid SDK is built by below tools.
 
 - **[Banner ads](./doc/bannerads/README.md)**
 - **[CarouselAds](./doc/carouselads/README.md)**
+- **[VideoAds](./doc/video/README.md)**
 - **[Viewability measurement](./doc/viewability/README.md)**
 
 ---
