@@ -12,7 +12,8 @@
 - **[6.AdSpotCode を指定する](#set_adSpotCode)**
 - **[7.AdSpotBranchId を指定する](#set_adSpotBranchId)**
 - **[8. ハードウェアアクセラレータを有効にする](#use_hardwareAccelerator)**
-- **[9. テスト (サンプル広告枠 Id)](#use_sample_adspot_id)**
+- **[9. テキストズームを無効にする](#disable_text_zoom)**
+- **[10. テスト (サンプル広告枠 Id)](#use_sample_adspot_id)**
 
 ---
 
@@ -510,9 +511,39 @@ import com.rakuten.android.ads.runa.key.Config
 
 </details>
 
+<div id="disable_text_zoom"></div>
+
+### 9. テキストズームを無効にする
+
+[![support version](http://img.shields.io/badge/runa-1.13.5+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.13.5)
+
+デフォルトでは、`AdView` 内の WebView はデバイスのフォントサイズ設定（`textSize`）を引き継ぎます。`disableTextZoom` を有効にすると、デバイスのアクセシビリティフォントスケールに関わらず、WebView のテキストズーム設定が無効化され、広告が常に本来のサイズでレンダリングされます。
+
+<details>
+<summary><b>Kotlinによる実装</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+
+    ...
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        findViewById<AdView>(R.id.adview).apply {
+            disableTextZoom = true
+        }.show()
+    }
+    ...
+```
+
+</details>
+
 <div id="use_sample_adspot_id"></div>
 
-### 9. Test (Sample AdSpotId)
+### 10. Test (Sample AdSpotId)
 
 以下の広告枠 ID でサンプル表示が可能です。<br>
 正しく実装ができているかをご確認ください。

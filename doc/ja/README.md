@@ -20,6 +20,7 @@
 - **[バナー広告](./bannerads/README.md)**
 - **[カルーセル広告](./carouselads/README.md)**
 - **[インタースティシャル広告](./interstitialads/README.md)**
+- **[動画広告](./video/README.md)**
 
 ---
 
@@ -57,7 +58,7 @@ allprojects {
 最新の Runa バージョン :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.12.0'
+  implementation 'com.rakuten.android.ads:runa:1.14.1'
 ```
 
 > - [v1.4.0 未満からのマイグレーション](./migration/README.md)
@@ -118,14 +119,15 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 本 SDK は以下の条件でビルドしています。
 
-- Kotlin version : 1.4.32
-- OpenJDK version : 11.0.8
-- Gradle version : 7.2
+- Kotlin version : 1.9.25
+- OpenJDK version : 17.0.12
+- Gradle version : 8.9
 
 ## [5. 実装](#5-implementation)
 
 - **[バナー広告](./bannerads/README.md)**
 - **[カルーセル広告](./carouselads/README.md)**
+- **[動画広告](./video/README.md)**
 - **[ビューアブルインプレッションの計測](./viewability/README.md)**
 
 ---

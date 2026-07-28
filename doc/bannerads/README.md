@@ -12,8 +12,9 @@
 - **[6. Use AdSpotCode](#use_adSpotCode)**
 - **[7. Set AdSpotBranchId](#set_adSpotBranchId)**
 - **[8. Use HardwareAccelerator](#use_hardwareAccelerator)**
-- **[9. Test (Sample AdSpotId)](#use_sample_adspot_id)**
-- **[10. Custom usages at clicking](#custom_usages_at_clicking)**
+- **[9. Disable Text Zoom](#disable_text_zoom)**
+- **[10. Test (Sample AdSpotId)](#use_sample_adspot_id)**
+- **[11. Custom usages at clicking](#custom_usages_at_clicking)**
 
 ---
 
@@ -516,9 +517,39 @@ import com.rakuten.android.ads.runa.key.Config
 
 </details>
 
+<div id="disable_text_zoom"></div>
+
+### 9. Disable Text Zoom
+
+[![support version](http://img.shields.io/badge/runa-1.13.5+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.13.5)
+
+By default, the WebView inside `AdView` inherits the device's font size setting (`textSize`). Enabling `disableTextZoom` removes the text zoom setting from the WebView so that the ad is always rendered at its original size, regardless of the device's accessibility font scale.
+
+<details>
+<summary><b>Kotlin</b></summary>
+
+[![Language](http://img.shields.io/badge/language-Kotlin-green.svg?style=flat)](https://kotlinlang.org/)
+
+```kotlin
+import com.rakuten.android.ads.runa.AdView
+
+    ...
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        findViewById<AdView>(R.id.adview).apply {
+            disableTextZoom = true
+        }.show()
+    }
+    ...
+```
+
+</details>
+
 <div id="use_sample_adspot_id"></div>
 
-### 9. Test (Sample AdSpotId)
+### 10. Test (Sample AdSpotId)
 
 Sample display is possible with the following AdSpot ID.<br>
 Please make sure if it is implemented correctly.
@@ -537,7 +568,7 @@ Please make sure if it is implemented correctly.
 
 <div id="custom_usages_at_clicking"></div>
 
-### 9. Custom usages of clicking ads
+### 11. Custom usages of clicking ads
 
 When users click AdView, the behavior of opening url depends on target attribute of anchor tag inside the creative.<br>
 However, you can control that with Click Delegation function.
