@@ -44,7 +44,7 @@ allprojects {
 次に、アプリ直下のbuild.gradleのdependenciesに以下の指定を追加します。
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.14.2'
+  implementation 'com.rakuten.android.ads:runa:1.14.3'
   implementation 'com.rakuten.android.ads:runa-gad-adapter:1.0.1'
 ```
 
