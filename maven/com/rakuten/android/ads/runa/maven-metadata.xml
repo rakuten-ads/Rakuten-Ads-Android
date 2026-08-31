@@ -3,8 +3,8 @@
   <groupId>com.rakuten.android.ads</groupId>
   <artifactId>runa</artifactId>
   <versioning>
-    <latest>1.14.2</latest>
-    <release>1.14.2</release>
+    <latest>1.14.3</latest>
+    <release>1.14.3</release>
     <versions>
       <version>0.2.0</version>
       <version>0.2.1</version>
@@ -76,7 +76,8 @@
       <version>1.14.0</version>
       <version>1.14.1</version>
       <version>1.14.2</version>
+      <version>1.14.3</version>
     </versions>
-    <lastUpdated>20260728014429</lastUpdated>
+    <lastUpdated>20260831080707</lastUpdated>
   </versioning>
 </metadata>
