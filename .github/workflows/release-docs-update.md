@@ -48,14 +48,11 @@ sync whenever a release branch is opened for review.
 
 ## Instructions
 
-1. Determine the release version from the pull request's head branch name
-   (`github.event.pull_request.head.ref`), which has the form `release/<version>`.
-2. Search the repository for every occurrence of
-   `com.rakuten.android.ads:runa:<version>` in `README.md` and any Markdown file under
-   `doc/` (this includes `doc/ja/` and other subdirectories).
-3. If any of those occurrences reference a version different from the release version
-   determined in step 1, update them so the dependency snippet points at the release
-   version. Do not modify any other content in these files, and do not touch files
+1. Search the repository for every occurrence of dependencies referred in `README.md` and any Markdown file under `doc/` (this includes `doc/ja/` and other subdirectories),
+  like `com.rakuten.android.ads:runa:<version>`.
+2. If any of those occurrences reference a version different from the release version
+   updated in the diff of current PR, update them so the dependency snippet points at the release version. 
+   Do not modify any other content in these files, and do not touch files
    outside `README.md` and `doc/**/*.md`.
 4. If every occurrence already matches the release version, make no changes.
 5. Only push changes when at least one file was actually updated.
@@ -63,7 +60,7 @@ sync whenever a release branch is opened for review.
 ## Notes
 
 - Keep edits minimal and scoped strictly to the version string inside the dependency
-  coordinate (`com.rakuten.android.ads:runa:<version>`); do not reformat surrounding
+  coordinate; do not reformat surrounding
   text or unrelated documentation.
 - Run `gh aw compile` after editing this file to regenerate the GitHub Actions workflow.
 - See https://github.github.com/gh-aw/ for complete configuration options and tools
