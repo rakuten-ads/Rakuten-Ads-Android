@@ -28,10 +28,10 @@
 <div id="prerequisites"></div>
 
 ## [1. Prerequisites](#1-prerequisites)
-
-- Uses Android Studio 1.0 or higher
-- Target Android API level 21 or higher
-- Uses version 3.5.0 or higher for Gradle build tools.<br>`com.android.tools.build:gradle:{3.5.0+}`
+- Target Android SDK 28 or higher
+- Kotlin 1.9.0 above
+- AGP 8.8.1 above
+- Gradle 8.12.1 above
 
 <div id="import_sdk"></div>
 
@@ -44,7 +44,7 @@ Apps can import the RDN Mobile Ads SDK with a Gradle dependency.In order to use 
 ```groovy
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         maven {
           url 'https://github.com/rakuten-ads/Rakuten-Ads-Android/raw/master/maven'
         }
@@ -59,8 +59,6 @@ Latest Runa version :
 ```groovy
   implementation 'com.rakuten.android.ads:runa:1.14.3'
 ```
-
-- [Migration to v1.4.0+](./doc/migration/README.md)
 
 ### [2.2 Launch SDK](#22-launch-sdk)
 
@@ -118,9 +116,10 @@ implementation("com.rakuten.android.ads:runa:X.X.X") {
 
 Thid SDK is built by below tools.
 
-- Kotlin version : 1.9.25
+- Kotlin version : 2.2.10
+- Gradle version : 8.10.0
 - OpenJDK version : 17.0.12
-- Gradle version : 8.9
+
 
 ## [5. Implementation](#5-implementation)
 
