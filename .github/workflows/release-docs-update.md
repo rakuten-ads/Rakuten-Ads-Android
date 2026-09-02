@@ -13,7 +13,7 @@ engine:
   id: copilot
   # Pin an explicit model: the `auto` alias cannot be resolved when the model
   # catalog request is rejected, which aborts the agent before it starts.
-  model: gpt-4.1
+  model: gpt-5.6
 
 tools:
   github:
