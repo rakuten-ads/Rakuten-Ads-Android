@@ -9,7 +9,15 @@ permissions:
   contents: read
   pull-requests: read
 
-engine: copilot
+engine:
+  id: copilot
+  # Pin an explicit model: the `auto` alias cannot be resolved when the model
+  # catalog request is rejected, which aborts the agent before it starts.
+  model: claude-sonnet-4.5
+  env:
+    # Keep the AWF reflect payload under the runner temp dir, which is writable
+    # by the job user (the default location fails with EACCES).
+    AWF_REFLECT_PATH: ${{ runner.temp }}/gh-aw/awf-reflect.json
 
 tools:
   github:
