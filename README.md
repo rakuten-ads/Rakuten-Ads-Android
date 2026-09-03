@@ -57,7 +57,7 @@ Next, open the app-level `build.gradle` file for your app, and look for a "depen
 Latest Runa version :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:1.14.3'
+  implementation 'com.rakuten.android.ads:runa:2.0.0'
 ```
 
 ### [2.2 Launch SDK](#22-launch-sdk)
@@ -100,7 +100,7 @@ This SDK depends on the following libraries:
 If you are already using these libraries, you can exclude them in the following ways to avoid conflicts:
 
 ```
-implementation("com.rakuten.android.ads:runa:X.X.X") {
+implementation("com.rakuten.android.ads:runa:2.0.0") {
     exclude group: "com.google.android.gms", module: "play-services-ads-identifier"
     exclude group: "com.google.code.gson", module: "gson"
 }
