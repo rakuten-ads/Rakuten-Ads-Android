@@ -28,6 +28,9 @@ safe-outputs:
     allowed-files:
       - "README.md"
       - "doc/**/*.md"
+    protected-files:
+      exclude:
+        - "README.md"
 
 ---
 
