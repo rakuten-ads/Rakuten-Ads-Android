@@ -45,7 +45,7 @@ Next, open the app-level `build.gradle` file for your app, and add runa and runa
 
 ```groovy
   implementation 'com.rakuten.android.ads:runa:2.0.0'
-  implementation 'com.rakuten.android.ads:runa-gad-adapter:1.0.1'
+  implementation 'com.rakuten.android.ads:runa-gad-adapter:2.0.0'
 ```
 
 #### Configure RUNA parameters
