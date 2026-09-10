@@ -16,8 +16,8 @@ Before using these configurations, appropriate values need to be confirmed first
 Open the app-level `build.gradle` file for your app, and look for a "dependencies" section.
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.14.3'
-  implementation 'com.rakuten.android.ads:runa-extension:1.9.5'
+  implementation 'com.rakuten.android.ads:runa:2.0.0'
+  implementation 'com.rakuten.android.ads:runa-extension:2.0.0'
 ```
 
 #### Corresponding versions
@@ -101,7 +101,7 @@ Normalizer module provides api to normalize any string values for convenience, c
 Import `normalizer` module to project gradle file.
 
 ```gradle
-implementation 'com.rakuten.android.ads:normalizer:1.2.1'
+implementation 'com.rakuten.android.ads:normalizer:2.0.0'
 ```
 
 ```kotlin

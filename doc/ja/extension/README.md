@@ -15,8 +15,8 @@
 runa モジュールに加え、runa-extension モジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.14.3'
-  implementation 'com.rakuten.android.ads:runa-extension:1.9.5'
+  implementation 'com.rakuten.android.ads:runa:2.0.0'
+  implementation 'com.rakuten.android.ads:runa-extension:2.0.0'
 ```
 
 ### モジュール間の対応バージョン
@@ -93,7 +93,7 @@ Normalizer モジュールは文字列を以下のルールの基、標準化し
 gradle ファイルに以下を追加しインポートします。
 
 ```gradle
-implementation 'com.rakuten.android.ads:normalizer:1.2.1'
+implementation 'com.rakuten.android.ads:normalizer:2.0.0'
 ```
 
 ```kotlin
