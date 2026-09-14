@@ -15,7 +15,7 @@
 runa モジュールに加え、runa-extension モジュールを追加します。
 
 ```gradle
-  implementation 'com.rakuten.android.ads:runa:1.14.3'
+  implementation 'com.rakuten.android.ads:runa:1.14.4'
   implementation 'com.rakuten.android.ads:runa-extension:1.9.5'
 ```
 
@@ -39,7 +39,7 @@ runa モジュールに加え、runa-extension モジュールを追加します
 |     v1.8.3     | v1.9.1 〜 v1.11.0  |
 |     v1.9.3     | v1.12.0 〜 v1.12.1 |
 |     v1.9.4     | v1.12.2 〜 v1.14.2 |
-|     v1.9.5     |       v1.14.3      |
+|     v1.9.5     | v1.14.3 〜 v1.14.4 |
 
 <div id="helper_adview"></div>
 
