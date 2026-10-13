@@ -58,7 +58,7 @@ allprojects {
 最新の Runa バージョン :
 
 ```groovy
-  implementation 'com.rakuten.android.ads:runa:2.0.0'
+  implementation 'com.rakuten.android.ads:runa:2.0.1'
 ```
 
 > - [v1.4.0 未満からのマイグレーション](./migration/README.md)
@@ -103,7 +103,7 @@ class Application : Application() {
 既に同ライブラリを利用している場合、以下の記述で除外し競合を回避することが出来ます。<br>
 
 ```
-implementation("com.rakuten.android.ads:runa:2.0.0") {
+implementation("com.rakuten.android.ads:runa:2.0.1") {
     exclude group: "com.google.android.gms", module: "play-services-ads-identifier"
     exclude group: "com.google.code.gson", module: "gson"
 }
