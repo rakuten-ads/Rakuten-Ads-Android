@@ -3,7 +3,7 @@
 [![Platform](http://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat)](https://developer.android.com)
 [![Android](http://img.shields.io/badge/support-API_Level_15+-blue.svg?style=flat)](https://developer.android.com)
 
-# Rakuten Unified Ads (RUNA) SDK Android
+# RUNA SDK for Android
 * [Ad Formats](#ad-formats)
 * [1. Prerequisites](#1-prerequisites)
 * [2. Import the RUNA SDK](#2-import-the-runa-sdk)
@@ -16,10 +16,10 @@
 
 ### [Ad Formats](#ad-formats)
 
-- **[BannerAds](./doc/bannerads/README.md)**
-- **[CarouselAds](./doc/carouselads/README.md)**
-- **[InterstitialAds](./doc/interstitialads/README.md)**
-- **[VideoAds](./doc/video/README.md)**
+- **[Banner Ads](./doc/bannerads/README.md)**
+- **[Carousel Ads](./doc/carouselads/README.md)**
+- **[Interstitial Ads](./doc/interstitialads/README.md)**
+- **[Video Ads](./doc/video/README.md)**
 
 ---
 
@@ -37,7 +37,7 @@
 
 ## [2. Import the RUNA SDK](#2-import-the-runa-sdk)
 
-Apps can import the RDN Mobile Ads SDK with a Gradle dependency.In order to use that repository, you need to reference it in the app's project-level `build.gradle` file. Open yours and look for an allprojects section:
+Apps can import the RUNA SDK with a Gradle dependency.In order to use that repository, you need to reference it in the app's project-level `build.gradle` file. Open yours and look for an allprojects section:
 
 ### [2.1 Example project-level build.gradle](#21-example-project-level-buildgradle)
 
@@ -124,10 +124,10 @@ Thid SDK is built by below tools.
 
 ## [5. Implementation](#5-implementation)
 
-- **[Banner ads](./doc/bannerads/README.md)**
-- **[CarouselAds](./doc/carouselads/README.md)**
-- **[VideoAds](./doc/video/README.md)**
-- **[Viewability measurement](./doc/viewability/README.md)**
+- **[Banner Ads](./doc/bannerads/README.md)**
+- **[Carousel Ads](./doc/carouselads/README.md)**
+- **[Video Ads](./doc/video/README.md)**
+- **[Viewability Measurement](./doc/viewability/README.md)**
 
 ---
 

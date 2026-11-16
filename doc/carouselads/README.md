@@ -1,8 +1,8 @@
-[TOP](/README.md#top)　>　CarouselAds
+[TOP](/README.md#top)　>　Carousel Ads
 
 ---
 
-# CarouselAds
+# Carousel Ads
 
 [![support version](http://img.shields.io/badge/runa-1.6.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.6.0)
 
@@ -18,8 +18,8 @@
 ## 1. Overview
 
 Carousel ads are horizontal banner ads that allow app users to scroll horizontally.<br>
-Ads can be displayed in the carousel ad frame as many as the specified ad space ID (AdSpotID).<br>
-Based on the size specified in the ad space setting on the dashboard, it is drawn according to the resolution of the device.<br>
+Ads can be displayed in the carousel ad frame as many as the specified ad spot ID (AdSpotID).<br>
+Based on the size specified in the ad spot setting on the dashboard, it is drawn according to the resolution of the device.<br>
 Runa recommends that you keep the size of the ads displayed in the carousel frame consistent.
 
 <center><img src="/doc/img/carouselads/001.png" height="200" /></center>
@@ -37,7 +37,7 @@ Runa recommends that you keep the size of the ads displayed in the carousel fram
 ### 2.1 Basic implementation
 
 Use the [`CarouselAdView`](/doc/ja/api/CarouselAdView.md) class to implement carousel ads.<br>
-In the display of this advertisement, the included ad space is displayed left-aligned and cannot be displayed right-aligned.<br>
+In the display of this advertisement, the included ad spot is displayed left-aligned and cannot be displayed right-aligned.<br>
 There are two ways to place it on the Activity or Fragment to be displayed, defining it in the layout XML file or defining it directly in the program.<br>
 
 <details>

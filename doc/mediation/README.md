@@ -28,7 +28,7 @@ Ask your business side to enable the configuration of the Admob Mediation. The f
 
 #### Import RUNA SDK
 
-Apps can import the RDN Mobile Ads SDK with a Gradle dependency. In order to use that repository, you need to reference it in the app's project-level build.gradle file. Open yours and look for an allprojects section:
+Apps can import the RUNA SDK with a Gradle dependency. In order to use that repository, you need to reference it in the app's project-level build.gradle file. Open yours and look for an allprojects section:
 
 ```groovy
 allprojects {

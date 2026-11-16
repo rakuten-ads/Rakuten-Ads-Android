@@ -8,7 +8,7 @@
 - **[2. Define AdView in layout xml](#define_adview_xml)**
 - **[3. Detect ads state](#detect_state)**
 - **[4. Avoid duplicates between multiple AdView](#avoid_duplication)**
-- **[5. Load multiple ads at once](#load_multiple)**
+- **[5. Single Request](#single_request)**
 - **[6. Use AdSpotCode](#use_adSpotCode)**
 - **[7. Set AdSpotBranchId](#set_adSpotBranchId)**
 - **[8. Use HardwareAccelerator](#use_hardwareAccelerator)**
@@ -34,7 +34,6 @@ AdSize is enum class.
 | ASPECT_FIT    | Fit in display width.                                                                                                                            |
 | CUSTOM        | Can be specified to any size.<br>However, this specify is calculated based on the width.<br>Specifiable range: (DEFAULT < `CUSTOM` < ASPECT_FIT) |
 | UNSAFE_CUSTOM | Can be specified to any size(pixel).<br>This mode ignores the size of an ad content, please carefully use it.                                    |
-| FULL_SCREEN   | This size can be enabled only in Interstitial Ad.<br> WebView displaying ad contents will be extended to a screen size                           |
 
 </details>
 
@@ -316,9 +315,9 @@ fun onViewCreated(View view, Bundle savedInstanceState) {
 
 ---
 
-<div id="load_multiple"></div>
+<div id="single_request"></div>
 
-### 5. Load multiple ads at once
+### 5. Single Request
 
 [![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
@@ -616,7 +615,7 @@ We recommend you should change the value of `target` attribute of anchor tags in
 
 [TOP](/README.md#top)
 
-[BannerAds Extension](/doc/extension/README.md)
+[Banner Ads Extension](/doc/extension/README.md)
 
 ---
 

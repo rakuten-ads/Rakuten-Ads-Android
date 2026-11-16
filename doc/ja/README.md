@@ -3,7 +3,7 @@
 [![Platform](http://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat)](https://developer.android.com)
 [![Android](http://img.shields.io/badge/support-API_Level_15+-blue.svg?style=flat)](https://developer.android.com)
 
-# Rakuten Unified Ads (RUNA) SDK Android
+# RUNA SDK for Android
 
 * [広告フォーマット](#ad-formats)
 * [1. 前提](#1-prerequisites)

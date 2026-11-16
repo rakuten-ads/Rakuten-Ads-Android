@@ -8,7 +8,7 @@
 
 An interstitial is a full-screen advertisement that is primarily displayed during transitions between screens.
 
-> **[Screen A] -> [Display InterstitialAds] -> <Close ads> -> [Screen B]**
+> **[Screen A] -> [Display Interstitial Ads] -> <Close ads> -> [Screen B]**
 
 ### Basic implementation
 

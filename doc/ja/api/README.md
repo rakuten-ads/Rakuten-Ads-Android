@@ -47,7 +47,7 @@
 * ### [Runa](./Runa.md)
 > v1.4.0+
 >
-> Runa SDKを起動するためのオブジェクト
+> RUNA SDKを起動するためのオブジェクト
 
 * ### [RunaAdSession](./RunaAdSession.md)
 > v1.2.0+

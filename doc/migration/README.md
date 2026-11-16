@@ -6,7 +6,7 @@
 
 When migrating from a version lower than v1.4.0 to v1.4.0 or above, the following new steps are required.
 
-### 1.1 Launch Runa SDK
+### 1.1 Launch RUNA SDK
 
 In the onCreate method of the class that inherits [`Application`](https://developer.android.com/reference/android/app/Application), implement as follows and launch the SDK.
 

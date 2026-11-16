@@ -11,7 +11,7 @@
 
 public object class **Runa** extends [Object](https://developer.android.com/reference/java/lang/Object.html)<br>
 
-Runa SDKを起動するためのオブジェクト
+RUNA SDKを起動するためのオブジェクト
 
 
 ### Public Method Summary

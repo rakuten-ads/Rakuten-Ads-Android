@@ -47,7 +47,7 @@
 * ### [Runa](./Runa.md)
 > v1.4.0+
 >
-> The object to launch Runa SDK.
+> The object to launch RUNA SDK.
 
 * ### [RunaAdSession](./RunaAdSession.md)
 > v1.2.0+
