@@ -8,7 +8,7 @@
 - **[2. Define AdView in layout xml](#define_adview_xml)**
 - **[3. Detect ads state](#detect_state)**
 - **[4. Avoid duplicates between multiple AdView](#avoid_duplication)**
-- **[5. Load multiple ads at once](#load_multiple)**
+- **[5. Single Request](#single_request)**
 - **[6. Use AdSpotCode](#use_adSpotCode)**
 - **[7. Set AdSpotBranchId](#set_adSpotBranchId)**
 - **[8. Use HardwareAccelerator](#use_hardwareAccelerator)**
@@ -316,9 +316,9 @@ fun onViewCreated(View view, Bundle savedInstanceState) {
 
 ---
 
-<div id="load_multiple"></div>
+<div id="single_request"></div>
 
-### 5. Load multiple ads at once
+### 5. Single Request
 
 [![support version](http://img.shields.io/badge/runa-1.3.0+-blueviolet.svg?style=flat)](https://github.com/rakuten-ads/Rakuten-Ads-Android/releases/tag/1.3.0)
 
