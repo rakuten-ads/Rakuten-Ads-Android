@@ -1,8 +1,8 @@
-[TOP](/README.md#top)　>　[CarouselAds](../) > Implementation details by parameter
+[TOP](/README.md#top)　>　[Carousel Ads](../) > Implementation details by parameter
 
 ---
 
-# CarouselAds Implementation details by parameter
+# Carousel Ads Implementation details by parameter
 
 * **[1. NestedAdSize: DEFAULT](#1_0)**
   * **[1.1 Basic implementation](#1_1)**
@@ -583,7 +583,7 @@ findViewById<CarouselAdView>(R.id.carouselAds).apply {
 ```
 
 ---
-[CarouselAds](../README.md#any_implementations)
+[Carousel Ads](../README.md#any_implementations)
 
 [TOP](/README.md#top)
 

@@ -11,14 +11,14 @@
 
 public object class **Runa** extends [Object](https://developer.android.com/reference/java/lang/Object.html)<br>
 
-An object to launch Runa SDK.
+An object to launch RUNA SDK.
 
 
 ### Public Method Summary
 
 |Return|Method|Details|
 |:---:|:---|:---|
-|void|init([Application](https://developer.android.com/reference/android/app/Application))|A method to launch Runa SDK.|
+|void|init([Application](https://developer.android.com/reference/android/app/Application))|A method to launch RUNA SDK.|
 |void|setDebug(boolean)|Enable debug mode|
 |Boolean|getDebug|Whether debug mode is enabled.|
 

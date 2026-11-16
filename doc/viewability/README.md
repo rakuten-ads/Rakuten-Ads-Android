@@ -1,8 +1,8 @@
-[TOP](/README.md#top)　>　 The Visibility Measurement
+[TOP](/README.md#top)　>　 Viewability Measurement
 
 ---
 
-# The Visibility Measurement for Search Ads
+# Viewability Measurement
 
 This function can measure the visibility of any target View and call back after the visibility is established.
 <br>

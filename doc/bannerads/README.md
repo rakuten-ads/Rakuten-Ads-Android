@@ -615,7 +615,7 @@ We recommend you should change the value of `target` attribute of anchor tags in
 
 [TOP](/README.md#top)
 
-[BannerAds Extension](/doc/extension/README.md)
+[Banner Ads Extension](/doc/extension/README.md)
 
 ---
 
