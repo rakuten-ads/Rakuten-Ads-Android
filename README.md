@@ -16,10 +16,10 @@
 
 ### [Ad Formats](#ad-formats)
 
-- **[BannerAds](./doc/bannerads/README.md)**
-- **[CarouselAds](./doc/carouselads/README.md)**
-- **[InterstitialAds](./doc/interstitialads/README.md)**
-- **[VideoAds](./doc/video/README.md)**
+- **[Banner Ads](./doc/bannerads/README.md)**
+- **[Carousel Ads](./doc/carouselads/README.md)**
+- **[Interstitial Ads](./doc/interstitialads/README.md)**
+- **[Video Ads](./doc/video/README.md)**
 
 ---
 
